@@ -4,16 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.ExampleMatcher
 import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.exact
-import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
-import org.springframework.web.reactive.function.BodyInserter
-import org.springframework.web.reactive.function.BodyInserters
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import pers.wzr.dao.UserRepository
 import pers.wzr.entity.User
 import pers.wzr.entity.UserBuilder
+import pers.wzr.response.ResponseCode
 import pers.wzr.util.VerificationCodeUtils
 import reactor.core.publisher.Mono
 
@@ -22,7 +20,20 @@ class UserHandler {
     @Autowired
     lateinit var repository: UserRepository
 
-    fun login(request: ServerRequest): Mono<ServerResponse>
+    fun checkUsernameExists(request: ServerRequest):Mono<ServerResponse>
+    {
+        val username = request.pathVariable("username")
+        val user = UserBuilder().username(username).build()
+        val matcher = ExampleMatcher.matching().withMatcher("username", exact())
+                .withIgnorePaths("id","password","email","nickname")
+        return repository.findOne(Example.of(user,matcher)).flatMap { b->
+            ServerResponse.ok().body(Mono.just(ResponseCode.USERNAME_EXISTS),String::class.java)
+        }.switchIfEmpty(
+            ServerResponse.ok().body(Mono.just(ResponseCode.USERNAME_NOT_EXISTS),String::class.java)
+        )
+    }
+
+    fun signIn(request: ServerRequest): Mono<ServerResponse>
     {
         val username = request.queryParam("username").get()
         val password = request.queryParam("password").get()
@@ -33,19 +44,32 @@ class UserHandler {
             val matcher = ExampleMatcher.matching()
                     .withMatcher("username", exact())
                     .withMatcher("password", exact())
-                    .withIgnorePaths("id")
-            return repository.findOne(Example.of(user, matcher)).flatMap { u ->
-                ServerResponse.ok().body(Mono.just(u), User::class.java)
-            }
+                    .withIgnorePaths("id","nickname","email")
+            return repository.findOne(Example.of(user,matcher)).flatMap { t->
+                ServerResponse.ok().body(Mono.just(ResponseCode.SIGN_IN_SUCCESS),String::class.java)
+            }.switchIfEmpty(
+                ServerResponse.ok().body(Mono.just(ResponseCode.SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR),String::class.java)
+            )
         }
-        return ServerResponse.ok().body(Mono.just("10001"),String::class.java)
+        return ServerResponse.ok().body(Mono.just(ResponseCode.SIGN_IN_FAILED_VERIFICATION_CODE_ERROR),String::class.java)
     }
 
-    fun save(request:ServerRequest): Mono<ServerResponse>
+    fun signUp(request:ServerRequest): Mono<ServerResponse>
     {
-        return request.bodyToMono(User::class.java).flatMap { u->
-            ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(repository.save(u),User::class.java)
+        val code = request.queryParam("code").get()
+        if(VerificationCodeUtils.verify(code))
+        {
+            return request.bodyToMono(User::class.java).flatMap { u->
+//                println(u)
+//                println(u.id)
+//                println(u.nickname)
+                repository.save(u).then(ServerResponse.ok().body(Mono.just(ResponseCode.SIGN_UP_SUCCESS),String::class.java))
+//                ServerResponse.ok().body(repository.save(u),User::class.java)
+//                    ResponseCode.SIGN_UP_SUCCESS
+//                } ,String::class.java)
+            }
         }
+        return ServerResponse.ok().body(Mono.just(ResponseCode.SIGN_UP_FAILED_VERIFICATION_CODE_ERROR),String::class.java)
     }
 
     fun delete(request: ServerRequest):Mono<ServerResponse>

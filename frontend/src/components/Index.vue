@@ -13,11 +13,11 @@
                         </b-input-group-append>
                     </b-input-group>
                 </b-col>
-                <b-col offset="3">
-                    <b-button variant="success" @click="signUpModal = !signUpModal">注册</b-button>
+                <b-col offset="2">
+                    <b-button variant="success" v-if="showSignUpButton" id="signUp" @click="signUpModal = !signUpModal">注册</b-button>
                 </b-col>
                 <b-col>
-                    <b-button variant="success" @click="signInModal = !signInModal">登录</b-button>
+                    <b-button variant="success" id="signIn" @click="signInButtonClick">{{ signInButtonText }}</b-button>
                 </b-col>
             </b-row>
             <br>
@@ -39,13 +39,6 @@
             </b-row>
             <br>
             <br>
-            <b-row>
-                <b-col>
-                    <b-carousel controls indicators>
-                        <b-carousel-slide caption="111" text="222" img-src=""></b-carousel-slide>
-                    </b-carousel>
-                </b-col>
-            </b-row>
             <b-modal
                 title="登录"
                 @show="resetSignInModal"
@@ -55,15 +48,15 @@
                 <b-form>
                     <b-form-group>
                         <b-input-group prepend="用户名">
-                            <b-form-input v-model="username" required ></b-form-input>
+                            <b-form-input v-model="username" required @blur.prevent="signInUsernameCheck"></b-form-input>
                         </b-input-group>
                         <br>
                         <b-input-group prepend="密码">
-                            <b-form-input v-model="password" required type="password"></b-form-input>
+                            <b-form-input v-model="password" required type="password" @blur.prevent="signInPasswordCheck"></b-form-input>
                         </b-input-group>
                         <br>
                         <b-input-group prepend="验证码">
-                            <b-form-input v-model="code" required>
+                            <b-form-input v-model="code" required @blur.prevent="signInCodeCheck">
                             </b-form-input>
                             <b-input-group-append>
                                 <b-img :src="verificationCodeImage" @click="resetVerificationCode"></b-img>
@@ -81,23 +74,23 @@
                 <b-form>
                     <b-form-group>
                         <b-input-group prepend="用户名">
-                            <b-form-input v-model="username" required ></b-form-input>
+                            <b-form-input v-model="username" required @blur.prevent="signUpUsernameCheck"></b-form-input>
                         </b-input-group>
                         <br>
                         <b-input-group prepend="密码">
-                            <b-form-input v-model="password" required type="password"></b-form-input>
+                            <b-form-input v-model="password" required type="password" @blur.prevent="signUpPasswordCheck"></b-form-input>
                         </b-input-group>
                         <br>
                         <b-input-group prepend="昵称">
-                            <b-form-input v-model="nickname" required></b-form-input>
+                            <b-form-input v-model="nickname" required @blur.prevent="signUpNicknameCheck"></b-form-input>
                         </b-input-group>
                         <br>
                         <b-input-group prepend="邮箱">
-                            <b-form-input v-model="email" required></b-form-input>
+                            <b-form-input v-model="email" required @blue.prevent="signUpEmailCheck"></b-form-input>
                         </b-input-group>
                         <br>
                         <b-input-group prepend="验证码">
-                            <b-form-input v-model="code" required ></b-form-input>
+                            <b-form-input v-model="code" required @blur.prevent="signUpCodeCheck"></b-form-input>
                             <b-input-group-append>
                                 <b-img :src="verificationCodeImage" @click="resetVerificationCode"></b-img>
                             </b-input-group-append>
@@ -106,19 +99,40 @@
                 </b-form>
             </b-modal>
 
-            <b-modal v-model="signInSuccess">
+            <b-modal v-model="signInSuccess" @ok="signInSuccessHandle">
                 登录成功
             </b-modal>
-            <b-modal v-model="signInFailedCodeError">
+            <b-modal v-model="signInFailedCodeError" @ok="signInModal = true">
                 登录失败，验证码错误
             </b-modal>
-            <b-modal v-model="signInFailedUsernameOrPasswordIncorrect">
+            <b-modal v-model="signInFailedUsernameOrPasswordIncorrect" @ok="signInModal = true">
                 登录失败，用户名或密码错误
             </b-modal>
             <b-modal v-model="signUpSuccess">
                 注册成功
             </b-modal>
+            <b-modal v-model="usernameExists" @ok="signUpModal = true">
+                用户名已存在，请选择其他用户名
+            </b-modal>
+            <b-modal v-model="signUpFailedCodeError" @ok="signUpModal = true">
+                注册失败，验证码错误
+            </b-modal>
+            <b-modal v-model="signInUsernameEmpty" @ok="signInModal = true">请输入用户名</b-modal>
+            <b-modal v-model="signInPasswordEmpty" @ok="signInModal = true">请输入密码</b-modal>
+            <b-modal v-model="signInCodeEmpty" @ok="signInModal = true">请输入验证码</b-modal>
+            <b-modal v-model="signUpUsernameEmpty" @ok="signUpModal = true">请输入用户名</b-modal>
+            <b-modal v-model="signUpPasswordEmpty" @ok="signUpModal = true">请输入密码</b-modal>
+            <b-modal v-model="signUpNicknameEmpty" @ok="signUpModal = true">请输入昵称</b-modal>
+            <b-modal v-model="signUpEmailEmpty" @ok="signUpModal = true">请输入邮箱</b-modal>
+            <b-modal v-model="signUpCodeEmpty" @ok="signUpModal = true">请输入验证码</b-modal>
         </b-container>
+        <b-row>
+            <b-col cols="8" offset="2">
+                <b-carousel controls indicators>
+                    <b-carousel-slide caption="111" text="222" img-src="../assets/banner.jpg"></b-carousel-slide>
+                </b-carousel>
+            </b-col>
+        </b-row>
     </div>
 </template>
 
@@ -142,6 +156,18 @@ export default {
             signInFailedCodeError:false,
             signInFailedUsernameOrPasswordIncorrect:false,
             signUpSuccess:false,
+            usernameExists:false,
+            signUpFailedCodeError:false,
+            signInUsernameEmpty:false,
+            signInPasswordEmpty:false,
+            signInCodeEmpty:false,
+            signUpUsernameEmpty:false,
+            signUpPasswordEmpty:false,
+            signUpEmailEmpty:false,
+            signUpNicknameEmpty:false,
+            signUpCodeEmpty:false,
+            signInButtonText:'登录',
+            showSignUpButton:true
         }
     },
     methods:{
@@ -165,21 +191,102 @@ export default {
                 })
         },
         signIn(){
-            axios.post("http://localhost:8080/login?username="+this.username+"&password="+this.password+"&code="+this.code).then(res=>{
-                console.log(res.data)
-                if(res.data == "10000")
+            axios.post("http://localhost:8080/sign/in?username="+this.username+"&password="+this.password+"&code="+this.code).then(res=>{
+                if(res.data === 10000)
                     this.signInSuccess = true
-            }).catch(e=>{
-                console.log(e.data)
+                else if(res.data === 10001)
+                    this.signInFailedUsernameOrPasswordIncorrect = true
+                else if(res.data === 10002)
+                    this.signInFailedCodeError = true
             })
+        },
+        signInUsernameCheck(){
+            if(!this.username)
+            {
+                this.signInUsernameEmpty = true
+            }
+        },
+        signInPasswordCheck(){
+            if(!this.password)
+            {
+                this.signInPasswordEmpty = true
+            }
+        },
+        signInCodeCheck(){
+            if(!this.code)
+            {
+                this.signInCodeEmpty = true
+            }
         },
         signUp(){
-            axios.post("http://localhost:8080/save",{
-                username:this.username
+            axios.post("http://localhost:8080/sign/up?code="+this.code,{
+                username:this.username,
+                password:this.password,
+                nickname:this.nickname,
+                email:this.email
             }).then(res=>{
-                console.log(res.data)
+                if(res.data === 20000)
+                {
+                    this.signUpSuccess = true
+                }
+                if(res.data === 20001)
+                {
+                    this.signUpFailedCodeError = true
+                }
             })
         },
+        signUpUsernameCheck(){
+            if(!this.username)
+            {
+                this.signUpUsernameEmpty = true
+                return
+            }
+            axios.get("http://localhost:8080/check/username/"+this.username).then(res=>{
+                if(res.data === 30001) {
+                    this.usernameExists = true
+                }
+            })
+        },
+        signUpPasswordCheck(){
+            if(!this.password)
+            {
+                if(this.usernameExists === false)
+                    this.signUpPasswordEmpty = true
+            }
+        },
+        signUpEmailCheck(){
+            if(!this.email)
+            {
+                this.signUpEmailEmpty = true
+            }
+        },
+        signUpNicknameCheck(){
+            if(!this.nickname)
+            {
+                this.signUpNicknameEmpty = true
+            }
+        },
+        signUpCodeCheck(){
+            if(!this.code)
+            {
+                this.signUpCodeEmpty = true
+            }
+        },
+        signInSuccessHandle(){
+            this.signInButtonText = '退出'
+            this.showSignUpButton = false
+        },
+        signInButtonClick(){
+            if(this.showSignUpButton)
+            {
+                this.signInModal = true
+            }
+            else
+            {
+                this.signInButtonText = '登录'
+                this.showSignUpButton = true
+            }
+        }
     }
 }
 </script>

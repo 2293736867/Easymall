@@ -4,84 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d886830d-0296-4574-8c62-1474c44426f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/CommonsApplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/JwtUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commons/src/test/kotlin/pers/wzr/commons/CommonsApplicationTests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/GatewayApplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/config/RouterConfiguration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/constant/Path.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/constant/URI.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/exception/ExceptionHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gateway/src/test/kotlin/pers/wzr/gateway/GatewayApplicationTests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/dao/Repository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/entity/Product.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/entity/ProductBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/handler/Handler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/router/Router.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/UserServiceApplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/entity/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/entity/UserBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/handler/Handler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/router/Router.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/test/kotlin/pers/wzr/userservice/UserServiceApplicationTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.attach_pid4384" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/WzrApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/config/CORSConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/dao/UserRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/entity/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/entity/UserBuilder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/handler/UserHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/handler/VerificationHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/response/Response.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/response/ResponseBuilder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/response/ResponseCode.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/router/UserRouter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/router/VerificationCodeRouter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/util/VerificationCodeUtils.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/WzrApplicationTests.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/router.js" afterDir="false" />
-    </list>
+    <list default="true" id="d886830d-0296-4574-8c62-1474c44426f5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,17 +85,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UserService">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Commons" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="commons.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.commons.CommonsApplication" />

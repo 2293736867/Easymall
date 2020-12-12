@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Mongo-Product">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.20">
+    <root id="1">
+      <ServerVersion>4.4.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="product">
+      <Current>1</Current>
+    </schema>
+    <table id="3" parent="2" name="product"/>
+    <column id="4" parent="3" name="_id">
+      <DataType>ObjectId(0)|12s</DataType>
+    </column>
+    <column id="5" parent="3" name="_class">
+      <Position>1</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="6" parent="3" name="category">
+      <Position>2</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="7" parent="3" name="code">
+      <Position>3</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="8" parent="3" name="description">
+      <Position>4</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="9" parent="3" name="imageUrl">
+      <Position>5</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="10" parent="3" name="name">
+      <Position>6</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="11" parent="3" name="pnum">
+      <Position>7</Position>
+      <DataType>Double(0)|8s</DataType>
+    </column>
+    <column id="12" parent="3" name="price">
+      <Position>8</Position>
+      <DataType>Double(0)|8s</DataType>
+    </column>
+  </database-model>
+</dataSource>

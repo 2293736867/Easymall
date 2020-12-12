@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d886830d-0296-4574-8c62-1474c44426f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/EasymallApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/cache/ProductQueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/cache/UserQueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/config/CORSConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/config/SessionConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/dao/ProductRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/dao/UserRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/builder/UserBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/property/UserProperty.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/exception/GlobalExceptionHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/exception/TestException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/TestHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/VerificationHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/response/Response.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/TestRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/VerificationCodeRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/util/VerificationCodeUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/resources/sql/easymall.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/test/kotlin/pers/wzr/easymall/EasymallApplicationTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/test/kotlin/pers/wzr/easymall/userservice/UserServiceTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.attach_pid6744" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8646f2bd-03ec-407d-90ed-3cbaeacafb20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/da9445cb-7b55-4f96-ac68-b484ef2c87dd.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/jwt/JwtUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/response/Response.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/response/ResponseCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Commons/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/config/CORSConfiguration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/config/SessionConfiguration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProductService/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/cache/QueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/handler/Handler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/cache/QueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/dao/Repository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/filter/Filter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/handler/Handler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/router/Router.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/VerificationCodeApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/handler/Handler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/router/Router.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/utils/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Verificationcode/src/test/kotlin/pers/wzr/verificationcode/VerificationcodeApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Verificationcode/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/src/main/kotlin/pers/wzr/commons/CommonsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/CommonsApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/src/main/kotlin/pers/wzr/commons/JwtUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/util/JwtUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Verificationcode/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Commons/src/test/kotlin/pers/wzr/commons/CommonsApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/src/test/kotlin/pers/wzr/commons/CommonsApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/main/kotlin/pers/wzr/gateway/GatewayApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/GatewayApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/main/kotlin/pers/wzr/gateway/config/RouterConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/config/RouterConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/main/kotlin/pers/wzr/gateway/constant/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/constant/Path.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/main/kotlin/pers/wzr/gateway/constant/URI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/constant/URI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/main/kotlin/pers/wzr/gateway/exception/ExceptionHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/exception/ExceptionHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/Gateway/src/test/kotlin/pers/wzr/gateway/GatewayApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/test/kotlin/pers/wzr/gateway/GatewayApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/kotlin/pers/wzr/productservice/ProductServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/ProductServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/kotlin/pers/wzr/productservice/dao/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/dao/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/kotlin/pers/wzr/productservice/entity/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/entity/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/kotlin/pers/wzr/productservice/entity/ProductBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/entity/ProductBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/kotlin/pers/wzr/productservice/handler/Handler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/kotlin/pers/wzr/productservice/router/Router.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/router/Router.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/ProductService/src/test/kotlin/pers/wzr/productservice/ProductServiceApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/test/kotlin/pers/wzr/productservice/ProductServiceApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/Commons/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/main/kotlin/pers/wzr/userservice/UserServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/UserServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/main/kotlin/pers/wzr/userservice/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/entity/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/main/kotlin/pers/wzr/userservice/entity/UserBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/entity/UserBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/main/kotlin/pers/wzr/userservice/handler/Handler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/main/kotlin/pers/wzr/userservice/router/Router.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/UserService/src/test/kotlin/pers/wzr/userservice/UserServiceApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/test/kotlin/pers/wzr/userservice/UserServiceApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_old/src/main/kotlin/pers/wzr/router/VerificationCodeRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_old/src/main/kotlin/pers/wzr/router/VerificationCodeRouter.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/Commons">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Gateway">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/ProductService">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/UserService">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Verificationcode">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/Commons">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/UserService">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="userservice" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="userservice" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="userservice" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1lPfR5nYZvqWd22E3GfMctFwqFz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mongo" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.21422862" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/filter" />
+      <recent name="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/response" />
+      <recent name="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice" />
+      <recent name="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="pers.wzr.commons.jwt" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="pers.wzr.verificationcode.utils" />
+      <recent name="pers.wzr.userservice.filter" />
+      <recent name="pers.wzr.commons.verification.code" />
+      <recent name="pers.wzr.commons" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.VerificationCode">
+    <configuration name="Commons [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Commons" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserService [compileKotlin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileKotlin" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Commons" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="commons.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.commons.CommonsApplication" />
+      <option name="HIDE_BANNER" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.gateway.GatewayApplication" />
+      <option name="HIDE_BANNER" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="productservice.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.productservice.ProductServiceApplication" />
+      <option name="HIDE_BANNER" value="true" />
+      <option name="VM_PARAMETERS" value="-cp $PROJECT_DIR$/ProductService/build/classes/kotlin/main:$PROJECT_DIR$/ProductService/build/resources/main:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.4.0/b905dd39e8378dba388bc0c91dc0d59b78101bbb/spring-boot-configuration-processor-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-mongodb-reactive/2.4.0/76e3868bb12b19a727c132f45acc72bf6e4bfa9a/spring-boot-starter-data-mongodb-reactive-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-webflux/2.4.0/566ff0b0b4faf1bad1a1113c22a2a5163474c7d3/spring-boot-starter-webflux-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.11.3/ad8d29545c5ab0cdd6d49ee38f7ece8d9f772815/jackson-module-kotlin-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor.kotlin/reactor-kotlin-extensions/1.1.0/d7490007744eb445e3db9111704bda7d8abd1f8d/reactor-kotlin-extensions-1.1.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.4.10/e2b3c6695eee6085e606d96d685396dce23a3a06/kotlin-reflect-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactor/1.4.1/6134f8658e441fdd859fadd638f85adc555cc86b/kotlinx-coroutines-reactor-1.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.4.10/998caa30623f73223194a8b657abd2baec4880ea/kotlin-stdlib-jdk8-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/2.4.0/26162567b7644e6d245b9d8dcf6fd4efb2bf74f4/spring-boot-starter-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.4.0/683c9c676c438e5945b0f12808575f22160c5e54/reactor-core-3.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-reactivestreams/4.1.1/2623286fa67c23a03e8c522cf2f1c4207c170b54/mongodb-driver-reactivestreams-4.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/3.1.1/cfb8d2af769a3d57b80b6dc2f622007682e4dd0a/spring-data-mongodb-3.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.4.0/e688a97ab229ae5a4a0c3ccb3f4419c9457a25b6/spring-boot-starter-json-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/5.3.1/49c0194e5398a3f0b667b46529f92f77c38ad120/spring-webflux-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0/8810fb38f581a08865165d5b0a842303449bbeb3/spring-boot-starter-reactor-netty-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.1/4e1e1d1c6b5a00597162db84132414c409bcf615/spring-web-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.11.3/4f7b27416934dc929bb6c2d2c5fe521829e6a4ec/jackson-databind-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.11.3/25d4e9c777e7a8805c4a000a8629d3009c779c9b/jackson-annotations-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.4.10/ea29e063d2bbe695be13e9d044dcfb0c7add398e/kotlin-stdlib-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactive/1.4.1/20b2855788efa0c1a7d4ae6e5b9b15f43bc707d5/kotlinx-coroutines-reactive-1.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.4.10/30e46450b0bb3dbf43898d2f461be4a942784780/kotlin-stdlib-jdk7-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0/e1f7cd3b65e4706fbe3160c76f5815d4dbc79915/spring-boot-autoconfigure-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.4.0/d8c0caa04526c8cc1dfcbb9c5badae3c99c49884/spring-boot-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0/4f1ba27a364170a26bbd448b14ba3907d21f2154/spring-boot-starter-logging-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.1/47af5b161749cd249fc074b4f140e011a3337efd/spring-core-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.27/359d62567480b07a679dc643f82fc926b100eed5/snakeyaml-1.27.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0/reactive-streams-1.0.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-core/4.1.1/8604ac94a1f0ee7534543c9a5d6c3732b6776cde/mongodb-driver-core-4.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/bson/4.1.1/ff6bfa9529c34814479df5a78a2a2fbb79abc574/bson-4.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.1/191e436f0b526fbe8f3cebdfd7dc048a3e1106fc/spring-tx-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.1/736836c8098981ddabd309a0c15f967594da62bc/spring-context-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.4.1/1f3e6d1a09a0495043d26a16e626b898473f3d91/spring-data-commons-2.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.1/a4bb5ffad5564e4a0e25955e3a40b1c6158385b2/spring-beans-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.1/aee660842a21fbf49f6e5921aa07974f1650c498/spring-expression-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.11.3/dcdfce3e4af9da18d69b1be6f3d7c91256105831/jackson-datatype-jdk8-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.11.3/dd53d93fd448b345eeb75bec336d9c91dc56b796/jackson-datatype-jsr310-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.11.3/ab66d5c5b8008161ae89be8a3d98efff9ef1b915/jackson-module-parameter-names-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor.netty/reactor-netty-http/1.0.1/1842c244c1d34d17a2b5a96e116af3448753189e/reactor-netty-http-1.0.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.11.3/c2351800432bdbdd8284c3f5a7f0782a352aa84a/jackson-core-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.4.10/6229be3465805c99db1142ad75e6c6ddeac0b04c/kotlin-stdlib-common-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.4.1/936067d1e0195f638396f60e71da745bb14a35ca/kotlinx-coroutines-core-jvm-1.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.13.3/966f6fd1af4959d6b12bfa880121d4a2b164f857/log4j-to-slf4j-2.13.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.30/d58bebff8cbf70ff52b59208586095f467656c30/jul-to-slf4j-1.7.30.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.1/1158888aa7517f8997eb43afe47776d9d2de8a38/spring-jcl-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.1/25c310880484082ffba3130deb8e10c5afb29f10/spring-aop-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor.netty/reactor-netty-core/1.0.1/d3b6861cd9cd8b1e3387f14d80eb9c6724fd052b/reactor-netty-core-1.0.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.54.Final/327a4ae62b0a41cdf02f610f06eb353f10c17ef8/netty-codec-http2-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.54.Final/70eb9509289d1cee549cf12bae71929d1a4a12c7/netty-codec-http-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.54.Final/7d7a3cf2a9ed327c713cf593c7ba4bf9d9bfb072/netty-resolver-dns-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.54.Final/e351768ffd4f5210698bbd534511fc8fc89c6b/netty-transport-native-epoll-4.1.54.Final-linux-x86_64.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/864344400c3d4d92dfeb0a305dc87d953677c03c/logback-core-1.2.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.13.3/ec1508160b93d274b1add34419b897bae84c6ca9/log4j-api-2.13.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.54.Final/8fa9d18b09a8a79bf64e8bc1bd775cbd77277199/netty-handler-proxy-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.54.Final/e83dfe8ebe3622d2cd5cce8532a9ca49cad51e9/netty-handler-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.54.Final/295680345b12a86c21fa7af5d9a77e0e0fcff46a/netty-codec-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.54.Final/ddb9a255819b87b8812932d1d1001f4d9dc7f89e/netty-transport-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.54.Final/15c513ef8a2e56e88d3736752ea10eae758f47d8/netty-buffer-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.54.Final/8c330383cda87204ab38e7401ab0f56c0d43b799/netty-common-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.54.Final/886c9875a8360f5b3495960ec8be9af3632431f9/netty-codec-dns-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.54.Final/7eed781e7531b990f8360e1a5010b53ca73878f5/netty-resolver-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.54.Final/ac7d48202cf62c8d51abe89f228d338a41cb49cd/netty-transport-native-unix-common-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.54.Final/8f8239e989e80cd470eaea90ee5746dbf24f5b8e/netty-codec-socks-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0/c5db16eb1454c26665bc61cd21c3f654714e0ff4/spring-boot-devtools-2.4.0.jar:$PROJECT_DIR$/Commons/build/classes/kotlin/main" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="userservice.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.userservice.UserServiceApplication" />
+      <option name="HIDE_BANNER" value="true" />
+      <option name="VM_PARAMETERS" value="-cp $PROJECT_DIR$/UserService/build/classes/kotlin/main:$PROJECT_DIR$/UserService/build/resources/main:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.4.0/b905dd39e8378dba388bc0c91dc0d59b78101bbb/spring-boot-configuration-processor-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-mongodb-reactive/2.4.0/76e3868bb12b19a727c132f45acc72bf6e4bfa9a/spring-boot-starter-data-mongodb-reactive-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-webflux/2.4.0/566ff0b0b4faf1bad1a1113c22a2a5163474c7d3/spring-boot-starter-webflux-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.11.3/ad8d29545c5ab0cdd6d49ee38f7ece8d9f772815/jackson-module-kotlin-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor.kotlin/reactor-kotlin-extensions/1.1.0/d7490007744eb445e3db9111704bda7d8abd1f8d/reactor-kotlin-extensions-1.1.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.4.10/e2b3c6695eee6085e606d96d685396dce23a3a06/kotlin-reflect-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactor/1.4.1/6134f8658e441fdd859fadd638f85adc555cc86b/kotlinx-coroutines-reactor-1.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.4.10/998caa30623f73223194a8b657abd2baec4880ea/kotlin-stdlib-jdk8-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/2.4.0/26162567b7644e6d245b9d8dcf6fd4efb2bf74f4/spring-boot-starter-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.4.0/683c9c676c438e5945b0f12808575f22160c5e54/reactor-core-3.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-reactivestreams/4.1.1/2623286fa67c23a03e8c522cf2f1c4207c170b54/mongodb-driver-reactivestreams-4.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/3.1.1/cfb8d2af769a3d57b80b6dc2f622007682e4dd0a/spring-data-mongodb-3.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.4.0/e688a97ab229ae5a4a0c3ccb3f4419c9457a25b6/spring-boot-starter-json-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/5.3.1/49c0194e5398a3f0b667b46529f92f77c38ad120/spring-webflux-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-reactor-netty/2.4.0/8810fb38f581a08865165d5b0a842303449bbeb3/spring-boot-starter-reactor-netty-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.1/4e1e1d1c6b5a00597162db84132414c409bcf615/spring-web-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.11.3/4f7b27416934dc929bb6c2d2c5fe521829e6a4ec/jackson-databind-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.11.3/25d4e9c777e7a8805c4a000a8629d3009c779c9b/jackson-annotations-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.4.10/ea29e063d2bbe695be13e9d044dcfb0c7add398e/kotlin-stdlib-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactive/1.4.1/20b2855788efa0c1a7d4ae6e5b9b15f43bc707d5/kotlinx-coroutines-reactive-1.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.4.10/30e46450b0bb3dbf43898d2f461be4a942784780/kotlin-stdlib-jdk7-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.4.0/e1f7cd3b65e4706fbe3160c76f5815d4dbc79915/spring-boot-autoconfigure-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.4.0/d8c0caa04526c8cc1dfcbb9c5badae3c99c49884/spring-boot-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.4.0/4f1ba27a364170a26bbd448b14ba3907d21f2154/spring-boot-starter-logging-2.4.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.1/47af5b161749cd249fc074b4f140e011a3337efd/spring-core-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.27/359d62567480b07a679dc643f82fc926b100eed5/snakeyaml-1.27.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0/reactive-streams-1.0.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-core/4.1.1/8604ac94a1f0ee7534543c9a5d6c3732b6776cde/mongodb-driver-core-4.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/bson/4.1.1/ff6bfa9529c34814479df5a78a2a2fbb79abc574/bson-4.1.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.1/191e436f0b526fbe8f3cebdfd7dc048a3e1106fc/spring-tx-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.1/736836c8098981ddabd309a0c15f967594da62bc/spring-context-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.4.1/1f3e6d1a09a0495043d26a16e626b898473f3d91/spring-data-commons-2.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.1/a4bb5ffad5564e4a0e25955e3a40b1c6158385b2/spring-beans-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.1/aee660842a21fbf49f6e5921aa07974f1650c498/spring-expression-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.11.3/dcdfce3e4af9da18d69b1be6f3d7c91256105831/jackson-datatype-jdk8-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.11.3/dd53d93fd448b345eeb75bec336d9c91dc56b796/jackson-datatype-jsr310-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.11.3/ab66d5c5b8008161ae89be8a3d98efff9ef1b915/jackson-module-parameter-names-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor.netty/reactor-netty-http/1.0.1/1842c244c1d34d17a2b5a96e116af3448753189e/reactor-netty-http-1.0.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.11.3/c2351800432bdbdd8284c3f5a7f0782a352aa84a/jackson-core-2.11.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.4.10/6229be3465805c99db1142ad75e6c6ddeac0b04c/kotlin-stdlib-common-1.4.10.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.4.1/936067d1e0195f638396f60e71da745bb14a35ca/kotlinx-coroutines-core-jvm-1.4.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.13.3/966f6fd1af4959d6b12bfa880121d4a2b164f857/log4j-to-slf4j-2.13.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.30/d58bebff8cbf70ff52b59208586095f467656c30/jul-to-slf4j-1.7.30.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.1/1158888aa7517f8997eb43afe47776d9d2de8a38/spring-jcl-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.1/25c310880484082ffba3130deb8e10c5afb29f10/spring-aop-5.3.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor.netty/reactor-netty-core/1.0.1/d3b6861cd9cd8b1e3387f14d80eb9c6724fd052b/reactor-netty-core-1.0.1.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.54.Final/327a4ae62b0a41cdf02f610f06eb353f10c17ef8/netty-codec-http2-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.54.Final/70eb9509289d1cee549cf12bae71929d1a4a12c7/netty-codec-http-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.54.Final/7d7a3cf2a9ed327c713cf593c7ba4bf9d9bfb072/netty-resolver-dns-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.54.Final/e351768ffd4f5210698bbd534511fc8fc89c6b/netty-transport-native-epoll-4.1.54.Final-linux-x86_64.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/864344400c3d4d92dfeb0a305dc87d953677c03c/logback-core-1.2.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.13.3/ec1508160b93d274b1add34419b897bae84c6ca9/log4j-api-2.13.3.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.54.Final/8fa9d18b09a8a79bf64e8bc1bd775cbd77277199/netty-handler-proxy-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.54.Final/e83dfe8ebe3622d2cd5cce8532a9ca49cad51e9/netty-handler-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.54.Final/295680345b12a86c21fa7af5d9a77e0e0fcff46a/netty-codec-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.54.Final/ddb9a255819b87b8812932d1d1001f4d9dc7f89e/netty-transport-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.54.Final/15c513ef8a2e56e88d3736752ea10eae758f47d8/netty-buffer-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.54.Final/8c330383cda87204ab38e7401ab0f56c0d43b799/netty-common-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.54.Final/886c9875a8360f5b3495960ec8be9af3632431f9/netty-codec-dns-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.54.Final/7eed781e7531b990f8360e1a5010b53ca73878f5/netty-resolver-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.54.Final/ac7d48202cf62c8d51abe89f228d338a41cb49cd/netty-transport-native-unix-common-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.54.Final/8f8239e989e80cd470eaea90ee5746dbf24f5b8e/netty-codec-socks-4.1.54.Final.jar:$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.4.0/c5db16eb1454c26665bc61cd21c3f654714e0ff4/spring-boot-devtools-2.4.0.jar:$PROJECT_DIR$/Commons/build/classes/kotlin/main" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VerificationCode" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="verificationcode.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.verificationcode.VerificationCodeApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.Commons [build]" />
+      <item itemvalue="Gradle.UserService [compileKotlin]" />
+      <item itemvalue="Spring Boot.Commons" />
+      <item itemvalue="Spring Boot.Main" />
+      <item itemvalue="Spring Boot.ProductService" />
+      <item itemvalue="Spring Boot.UserService" />
+      <item itemvalue="Spring Boot.VerificationCode" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.UserService [compileKotlin]" />
+        <item itemvalue="Gradle.Commons [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      username: easymall
+      password: easymall
+      database: easymall

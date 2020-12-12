@@ -15,5 +15,4 @@ class VerificationCodeRouter {
         return RouterFunctions
         .route(RequestPredicates.GET("/verification/code"),handler::code)
     }
-
 }

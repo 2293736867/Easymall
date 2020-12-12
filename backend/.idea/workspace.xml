@@ -4,32 +4,173 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d886830d-0296-4574-8c62-1474c44426f5" name="Default Changelist" comment="" />
+    <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/EasymallApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/ProductQueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserQueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/config/CORSConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/config/SessionConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ProductRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/UserRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/UserBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/UserProperty.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/exception/GlobalExceptionHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/exception/TestException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/TestHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/VerificationHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/Response.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/TestRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/VerificationCodeRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/VerificationCodeUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/easymall.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/EasymallApplicationTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/userservice/UserServiceTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.attach_pid6744" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/dataSources/8646f2bd-03ec-407d-90ed-3cbaeacafb20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/dataSources/da9445cb-7b55-4f96-ac68-b484ef2c87dd.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/src/main/kotlin/pers/wzr/commons/jwt/JwtUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/src/main/kotlin/pers/wzr/commons/response/Response.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/src/main/kotlin/pers/wzr/commons/response/ResponseCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/config/CORSConfiguration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/config/SessionConfiguration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/cache/QueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/handler/Handler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/cache/QueryCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/dao/Repository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/filter/Filter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/handler/Handler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/router/Router.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/VerificationCodeApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/handler/Handler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/router/Router.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/src/main/kotlin/pers/wzr/verificationcode/utils/Utils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/src/test/kotlin/pers/wzr/verificationcode/VerificationcodeApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/CommonsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/src/main/kotlin/pers/wzr/commons/CommonsApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/src/main/kotlin/pers/wzr/commons/JwtUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JwtUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Verificationcode/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commons/src/test/kotlin/pers/wzr/commons/CommonsApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/src/test/kotlin/pers/wzr/commons/CommonsApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/GatewayApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/GatewayApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/config/RouterConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/config/RouterConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/constant/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/constant/Path.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/constant/URI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/constant/URI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/kotlin/pers/wzr/gateway/exception/ExceptionHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/kotlin/pers/wzr/gateway/exception/ExceptionHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/test/kotlin/pers/wzr/gateway/GatewayApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/src/test/kotlin/pers/wzr/gateway/GatewayApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Gateway/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/ProductServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/ProductServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/dao/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/dao/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/entity/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/entity/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/entity/ProductBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/entity/ProductBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/handler/Handler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice/router/Router.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/kotlin/pers/wzr/productservice/router/Router.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/test/kotlin/pers/wzr/productservice/ProductServiceApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/src/test/kotlin/pers/wzr/productservice/ProductServiceApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/Commons/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/ProductService/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/UserServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/UserServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/entity/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/entity/UserBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/kotlin/pers/wzr/userservice/entity/UserBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/handler/Handler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice/router/Router.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/test/kotlin/pers/wzr/userservice/UserServiceApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/UserService/src/test/kotlin/pers/wzr/userservice/UserServiceApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_old/src/main/kotlin/pers/wzr/router/VerificationCodeRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_old/src/main/kotlin/pers/wzr/router/VerificationCodeRouter.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/Commons">
-      <ProjectState />
-    </projectState>
-    <projectState path="$PROJECT_DIR$/Gateway">
-      <ProjectState />
-    </projectState>
-    <projectState path="$PROJECT_DIR$/ProductService">
-      <ProjectState />
-    </projectState>
-    <projectState path="$PROJECT_DIR$/UserService">
+    <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="easymall" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -46,7 +187,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1lPfR5nYZvqWd22E3GfMctFwqFz" />
+  <component name="ProjectId" id="1lSqrY0Y64w0vZ3VySnqZCNtbbv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -56,77 +197,202 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mongo" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
+    <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend_multiple_modules" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/UserService/src/main/kotlin/pers/wzr/userservice" />
-      <recent name="$PROJECT_DIR$/ProductService/src/main/kotlin/pers/wzr/productservice" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="pers.wzr.easymall.entity.validation" />
+      <recent name="pers.wzr.easymall.entity.entity" />
+      <recent name="pers.wzr.easymall.entity.builder" />
+      <recent name="pers.wzr.easymall.validator" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="pers.wzr.commons" />
+      <recent name="pers.wzr.easymall.entity.validation" />
+      <recent name="pers.wzr.easymall.router" />
+      <recent name="pers.wzr.easymall.filter" />
+      <recent name="pers.wzr.easymall.exception" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.UserService">
-    <configuration name="Commons" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="commons.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.commons.CommonsApplication" />
-      <option name="HIDE_BANNER" value="true" />
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTests.delete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.delete&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests.getAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.getAll&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests.signUp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.signUp&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests.update" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.update&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="build.gradle.kts" type="KotlinStandaloneScriptRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="easymall.test" />
+      <option name="filePath" value="$PROJECT_DIR$/build.gradle.kts" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" value="$PROJECT_DIR$/build.gradle.kts" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="gateway.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.gateway.GatewayApplication" />
+      <module name="easymall.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.easymall.EasymallApplication" />
       <option name="HIDE_BANNER" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="productservice.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.productservice.ProductServiceApplication" />
-      <option name="HIDE_BANNER" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="userservice.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.userservice.UserServiceApplication" />
-      <option name="HIDE_BANNER" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.Commons" />
+      <item itemvalue="Gradle.UserServiceTests.signUp" />
+      <item itemvalue="Gradle.UserServiceTests.update" />
+      <item itemvalue="Gradle.UserServiceTests.delete" />
+      <item itemvalue="Gradle.UserServiceTests.getAll" />
       <item itemvalue="Spring Boot.Main" />
-      <item itemvalue="Spring Boot.ProductService" />
-      <item itemvalue="Spring Boot.UserService" />
+      <item itemvalue="Application.build.gradle.kts" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.build.gradle.kts" />
+        <item itemvalue="Gradle.UserServiceTests.getAll" />
+        <item itemvalue="Gradle.UserServiceTests.delete" />
+        <item itemvalue="Gradle.UserServiceTests.update" />
+        <item itemvalue="Gradle.UserServiceTests.signUp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="Vcs.Log.Tabs.Properties">

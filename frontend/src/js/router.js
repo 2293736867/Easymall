@@ -1,10 +1,9 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import Login from "@/components/Login"
 import Index from "@/components/Index"
-import ProductHeader from "@/components/ProductHeader";
-import ProductCard from "@/components/ProductCard";
-import Product from "@/components/Product";
+import ProductHeader from "@/components/product/ProductHeader";
+import Product from "@/components/product/Product";
+import ProductDetail from "@/components/product/ProductDetail";
 
 Vue.use(VueRouter)
 
@@ -15,22 +14,16 @@ const routes = [
         props: true
     },
     {
-        path: '/index/:val',
-        name: 'index',
-        component: Login,
-        props: true
-    },
-    {
         path:'/product/header',
         component: ProductHeader
     },
     {
-        path:'/product/body',
-        component: ProductCard
-    },
-    {
         path:'/product',
         component: Product
+    },
+    {
+        path:'/product/:id',
+        component: ProductDetail
     }
 ]
 

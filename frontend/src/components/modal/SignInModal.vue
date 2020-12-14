@@ -2,22 +2,22 @@
     <div>
         <b-modal
             title="登录"
-            @show="resetSignInModal"
-            v-model="signInModal"
+            @show="reset"
+            id="signInModal"
             @ok="signIn"
         >
             <b-form>
                 <b-form-group>
                     <b-input-group prepend="用户名">
-                        <b-form-input v-model="username" required @blur.prevent="signInUsernameCheck"></b-form-input>
+                        <b-form-input v-model="username" @blur.prevent="checkUsername"></b-form-input>
                     </b-input-group>
                     <br>
                     <b-input-group prepend="密码">
-                        <b-form-input v-model="password" required type="password" @blur.prevent="signInPasswordCheck"></b-form-input>
+                        <b-form-input v-model="password" type="password" @blur.prevent="checkPassword"></b-form-input>
                     </b-input-group>
                     <br>
                     <b-input-group prepend="验证码">
-                        <b-form-input v-model="code" required @blur.prevent="signInCodeCheck">
+                        <b-form-input v-model="code" @blur.prevent="checkCode">
                         </b-form-input>
                         <b-input-group-append>
                             <b-img :src="verificationCodeImage" @click="resetVerificationCode"></b-img>
@@ -26,81 +26,91 @@
                 </b-form-group>
             </b-form>
         </b-modal>
+
+        <b-modal id="signInMessageModal" @close="close" @hidden="close" @cancel="close" title="提示信息">
+            {{message}}
+        </b-modal>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import URL from "@/js/URL";
 
 export default {
-    name: "Modal",
+    name: "SignInModal",
     data() {
         return{
             username:'',
             password:'',
-            code:''
+            code:'',
+            verificationCodeImage:'',
+            hasMessageModal:false,
+            message:'',
         }
     },
-    methods:{
-        resetSignInModal() {
+    methods: {
+        reset() {
             this.username = ''
             this.password = ''
             this.code = ''
             this.resetVerificationCode()
         },
-        async resetVerificationCode(){
-            this.verificationCodeImage = await axios.get("http://localhost:8080/verification/code").then(function (res){
-                return 'data:image/png;base64,'+res.data
+        async resetVerificationCode() {
+            this.verificationCodeImage = await axios.get(URL.code).then(function (res) {
+                return 'data:image/png;base64,' + res.data
             })
         },
-        signIn(){
-            axios.post("http://localhost:8080/sign/in",{
-                username:this.username,
-                password:this.password,
-                code:this.code
-            }).then(res=>{
-                if(res.data === 10000)
-                    this.signInSuccess = true
-                else if(res.data === 10001)
-                    this.signInFailedUsernameOrPasswordIncorrect = true
-                else if(res.data === 10002)
-                    this.signInFailedCodeError = true
-            })
-        },
-        signInUsernameCheck(){
-            if(!this.username)
+        signIn(bvHandler) {
+            if(this.checkUsername() && this.checkPassword() && this.checkCode())
             {
-                this.signInUsernameEmpty = true
+                axios.post(URL.signIn, {
+                    username: this.username,
+                    password: this.password,
+                    code: this.code
+                }).then(res => {
+                    if (res.data === 1000)
+                    {
+                        this.showMessage('登录成功')
+                        this.$bvModal.hide('signInModal')
+                    }
+                    else if (res.data === 1001)
+                        this.showMessage('登录失败，用户名或密码错误')
+                    else if (res.data === 1002)
+                        this.showMessage('验证码错误')
+                })
             }
+            bvHandler.preventDefault()
         },
-        signInPasswordCheck(){
-            if(!this.password)
-            {
-                this.signInPasswordEmpty = true
-            }
+        checkUsername(){
+            return this.checkIsNotEmpty(this.username,'用户名为空')
         },
-        signInCodeCheck(){
-            if(!this.code)
-            {
-                this.signInCodeEmpty = true
-            }
+        checkPassword(){
+            return this.checkIsNotEmpty(this.password,'密码为空')
         },
-        signInSuccessHandle(){
-            this.signInButtonText = '退出'
-            this.showSignUpButton = false
+        checkCode(){
+            return this.checkIsNotEmpty(this.code,'验证码为空')
         },
-        signInButtonClick(){
-            if(this.showSignUpButton)
+        checkIsNotEmpty(str, message){
+            if(!str)
             {
-                this.signInModal = true
+                if(!this.hasMessageModal)
+                {
+                    this.showMessage(message)
+                }
+                return false
             }
-            else
-            {
-                this.signInButtonText = '登录'
-                this.showSignUpButton = true
-            }
-
+            return true
+        },
+        close(){
+            this.hasMessageModal = false
+        },
+        showMessage(message){
+            this.message = message
+            this.hasMessageModal = true
+            this.$bvModal.show('signInMessageModal')
         }
+    }
 }
 </script>
 

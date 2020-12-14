@@ -24,13 +24,19 @@ class ProductBuilder {
 
     fun category(category: String): ProductBuilder
     {
-        product.categoty = category
+        product.category = category
         return this
     }
 
     fun pnm(pnum:Int): ProductBuilder
     {
         product.pnum = pnum
+        return this
+    }
+
+    fun description(des:String):ProductBuilder
+    {
+        product.description = des
         return this
     }
 

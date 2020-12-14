@@ -2,30 +2,31 @@
     <div>
         <b-modal
             title="注册"
-            @show="resetSignUpModel"
-            v-model="signUpModal"
+            @show="reset"
+            id="signUpModal"
             @ok="signUp"
         >
             <b-form>
                 <b-form-group>
                     <b-input-group prepend="用户名">
-                        <b-form-input v-model="username" required @blur.prevent="signUpUsernameCheck"></b-form-input>
+                        <b-form-input v-model="username" @blur.prevent="checkUsername"></b-form-input>
                     </b-input-group>
                     <br>
                     <b-input-group prepend="密码">
-                        <b-form-input v-model="password" required type="password" @blur.prevent="signUpPasswordCheck"></b-form-input>
+                        <b-form-input v-model="password" type="password" @blur.prevent="checkPassword"></b-form-input>
                     </b-input-group>
                     <br>
                     <b-input-group prepend="昵称">
-                        <b-form-input v-model="nickname" required @blur.prevent="signUpNicknameCheck"></b-form-input>
+                        <b-form-input v-model="nickname" @blur.prevent="checkNickname"></b-form-input>
                     </b-input-group>
                     <br>
                     <b-input-group prepend="邮箱">
-                        <b-form-input v-model="email" required @blue.prevent="signUpEmailCheck"></b-form-input>
+                        <b-form-input v-model="email" @blur.prevent="checkEmail"></b-form-input>
                     </b-input-group>
                     <br>
                     <b-input-group prepend="验证码">
-                        <b-form-input v-model="code" required @blur.prevent="signUpCodeCheck"></b-form-input>
+                        <b-form-input v-model="code" @blur.prevent="checkCode">
+                        </b-form-input>
                         <b-input-group-append>
                             <b-img :src="verificationCodeImage" @click="resetVerificationCode"></b-img>
                         </b-input-group-append>
@@ -33,102 +34,111 @@
                 </b-form-group>
             </b-form>
         </b-modal>
+
+        <b-modal id="signUpMessageModal" title="提示信息" @cancel="close" @close="close" @hide="close">
+            {{ message }}
+        </b-modal>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import URL from "@/js/URL";
 
 export default {
     name: "SignUpModal",
-    data(){
+    data() {
         return{
-            signInModal:false,
-            signUpModal:false,
             username:'',
             password:'',
-            nickname:'',
             email:'',
+            nickname:'',
             code:'',
             verificationCodeImage:'',
-            signInSuccess:false,
-            signInFailedCodeError:false,
-            signInFailedUsernameOrPasswordIncorrect:false,
-            signUpSuccess:false,
-            usernameExists:false,
-            signUpFailedCodeError:false,
-            signInUsernameEmpty:false,
-            signInPasswordEmpty:false,
-            signInCodeEmpty:false,
-            signUpUsernameEmpty:false,
-            signUpPasswordEmpty:false,
-            signUpEmailEmpty:false,
-            signUpNicknameEmpty:false,
-            signUpCodeEmpty:false,
-            signInButtonText:'登录',
-            showSignUpButton:true
+            hasMessageModal:false,
+            message:'',
         }
     },
-    method:{
-        resetSignUpModel(){
-            this.resetSignInModal()
-            this.nickname = ''
+    methods: {
+        reset() {
+            this.username = ''
+            this.password = ''
+            this.code = ''
             this.email = ''
+            this.nickname = ''
+            this.resetVerificationCode()
         },
-        signUp(){
-            axios.post("http://localhost:8080/sign/up?code="+this.code,{
-                username:this.username,
-                password:this.password,
-                nickname:this.nickname,
-                email:this.email
-            }).then(res=>{
-                if(res.data === 20000)
-                {
-                    this.signUpSuccess = true
-                }
-                if(res.data === 20001)
-                {
-                    this.signUpFailedCodeError = true
-                }
+        async resetVerificationCode() {
+            this.verificationCodeImage = await axios.get(URL.code).then(function (res) {
+                return 'data:image/png;base64,' + res.data
             })
         },
-        signUpUsernameCheck(){
-            if(!this.username)
+        signUp(bvHandler) {
+            if(this.checkUsername() && this.checkPassword() && this.checkCode() && this.checkEmail() && this.checkNickname())
             {
-                this.signUpUsernameEmpty = true
-                return
-            }
-            axios.get("http://localhost:8080/check/username/"+this.username).then(res=>{
-                if(res.data === 30001) {
-                    this.usernameExists = true
+                var result = true
+                axios.get(URL.checkUsername+this.username).then(res=>{
+                    if(res.data === 3001) {
+                        this.showMessage('用户名已存在')
+                        result = false
+                    }
+                })
+
+                if(result)
+                {
+                    axios.post(URL.signUp, {
+                        username: this.username,
+                        password: this.password,
+                        nickname:this.nickname,
+                        email:this.email,
+                        code: this.code
+                    }).then(res => {
+                        if (res.data === 1003)
+                        {
+                            this.showMessage('注册成功')
+                            this.$bvModal.hide('signUpModal')
+                        }
+                        else if (res.data === 1004)
+                            this.showMessage('验证码错误')
+                    })
                 }
-            })
-        },
-        signUpPasswordCheck(){
-            if(!this.password)
-            {
-                if(this.usernameExists === false)
-                    this.signUpPasswordEmpty = true
             }
+            bvHandler.preventDefault()
         },
-        signUpEmailCheck(){
-            if(!this.email)
+        checkUsername() {
+            return this.checkIsNotEmpty(this.username,'用户名为空')
+        },
+        checkPassword() {
+            return this.checkIsNotEmpty(this.password,'密码为空')
+        },
+        checkCode() {
+            return this.checkIsNotEmpty(this.code,'验证码为空')
+        },
+        checkNickname() {
+            return this.checkIsNotEmpty(this.nickname,'昵称为空')
+        },
+        checkEmail() {
+            return this.checkIsNotEmpty(this.email,'邮箱为空')
+        },
+        checkIsNotEmpty(str, message){
+            if(!str)
             {
-                this.signUpEmailEmpty = true
+                if(!this.hasMessageModal)
+                {
+                    this.showMessage(message)
+                }
+                return false
             }
+            return true
         },
-        signUpNicknameCheck(){
-            if(!this.nickname)
-            {
-                this.signUpNicknameEmpty = true
-            }
+        close(){
+            this.hasMessageModal = false
         },
-        signUpCodeCheck(){
-            if(!this.code)
-            {
-                this.signUpCodeEmpty = true
-            }
-        },
+        showMessage(message){
+            this.message = message
+            this.hasMessageModal = true
+            this.$bvModal.show('signUpMessageModal')
+        }
     }
 }
 </script>

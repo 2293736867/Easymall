@@ -17,14 +17,13 @@ class CustomValidator {
     fun <T> hasErrors(obj: T, vararg group: Class<*>): Boolean {
         val e = if (group.isEmpty()) validator.validate(obj) else validator.validate(obj, group[0])
         e.forEach{
-            when(it.message)
-            {
-                ValidationMessage.USER_NAME_IS_BLANK -> response = Response.build(ResponseCode.VALIDATION_USERNAME_IS_BLACK)
-                ValidationMessage.PASSWORD_IS_BLANK -> response = Response.build(ResponseCode.VALIDATION_PASSWORD_IS_BLACK)
-                ValidationMessage.CODE_IS_BLANK -> response = Response.build(ResponseCode.VALIDATION_CODE_IS_BLACK)
-                ValidationMessage.NAME_IS_BLACK -> response = Response.build(ResponseCode.VALIDATION_NAME_IS_BLACK)
-                ValidationMessage.CATEGORY_IS_BLACK -> response = Response.build(ResponseCode.VALIDATION_CATEGORY_IS_BLACK)
-                else -> response = Response.build(ResponseCode.ERROR_VALIDATION_CODE)
+            response = when(it.message) {
+                ValidationMessage.USER_NAME_IS_BLANK -> Response.code(ResponseCode.VALIDATION_USERNAME_IS_BLACK)
+                ValidationMessage.PASSWORD_IS_BLANK -> Response.code(ResponseCode.VALIDATION_PASSWORD_IS_BLACK)
+                ValidationMessage.CODE_IS_BLANK -> Response.code(ResponseCode.VALIDATION_CODE_IS_BLACK)
+                ValidationMessage.NAME_IS_BLACK -> Response.code(ResponseCode.VALIDATION_NAME_IS_BLACK)
+                ValidationMessage.CATEGORY_IS_BLACK -> Response.code(ResponseCode.VALIDATION_CATEGORY_IS_BLACK)
+                else -> Response.code(ResponseCode.ERROR_VALIDATION_CODE)
             }
         }
         return e.isNotEmpty()

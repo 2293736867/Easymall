@@ -13,11 +13,13 @@ import pers.wzr.easymall.entity.entity.User
 import pers.wzr.easymall.entity.builder.UserBuilder
 import pers.wzr.easymall.entity.property.UserProperty
 import pers.wzr.easymall.entity.validation.UserSignInAndSignUp
+import pers.wzr.easymall.entity.validation.UserUpdate
 import pers.wzr.easymall.response.Response
 import pers.wzr.easymall.response.ResponseCode
 import pers.wzr.easymall.util.JwtUtils
 import pers.wzr.easymall.validator.CustomValidator
 import pers.wzr.easymall.util.VerificationCodeUtils
+import pers.wzr.easymall.validator.ValidationGroup
 import reactor.core.publisher.Mono
 
 @Component
@@ -36,16 +38,16 @@ class UserHandler {
         val matcher = ExampleMatcher.matching().withMatcher(UserProperty.username(), exact())
                 .withIgnorePaths(*UserProperty.other())
         return repository.findOne(Example.of(user,matcher)).flatMap {
-            Response.build(ResponseCode.USER_USERNAME_EXISTS)
+            Response.code(ResponseCode.USER_USERNAME_EXISTS)
         }.switchIfEmpty(
-            Response.build(ResponseCode.USER_USERNAME_NOT_EXISTS)
+            Response.code(ResponseCode.USER_USERNAME_NOT_EXISTS)
         )
     }
 
     fun signIn(request: ServerRequest): Mono<ServerResponse>
     {
         return request.bodyToMono(UserSignInAndSignUp::class.java).flatMap {
-            if(validator.hasErrors(it))
+            if(validator.hasErrors(it,ValidationGroup.UserSignIn::class.java))
                 return@flatMap validator.errors()
             val username = it.username
             val password = it.password
@@ -58,57 +60,69 @@ class UserHandler {
                     .withMatcher(UserProperty.password(), exact())
                     .withIgnorePaths(*UserProperty.other())
                 return@flatMap repository.findOne(Example.of(user,matcher)).flatMap {
-                    Response.build(ResponseCode.USER_SIGN_IN_SUCCESS)
+                    Response.code(ResponseCode.USER_SIGN_IN_SUCCESS)
                 }.switchIfEmpty(
-                    Response.build(ResponseCode.USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR)
+                    Response.code(ResponseCode.USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR)
                 )
             }
-            return@flatMap Response.build(ResponseCode.USER_SIGN_IN_FAILED_VERIFICATION_CODE_ERROR)
+            return@flatMap Response.code(ResponseCode.USER_SIGN_IN_FAILED_VERIFICATION_CODE_ERROR)
         }
     }
 
     fun signUp(request:ServerRequest): Mono<ServerResponse>
     {
         return request.bodyToMono(UserSignInAndSignUp::class.java).flatMap {
-            if(validator.hasErrors(it))
+            if(validator.hasErrors(it,ValidationGroup.UserSignUp::class.java))
                 return@flatMap validator.errors()
             if(VerificationCodeUtils.verify(it.code))
             {
                 val username = it.username
                 val password = it.password
-                repository.save(UserBuilder().username(username).password(password).build())
-                return@flatMap request.session().flatMap {t->
-                    t.attributes["token"] = JwtUtils.generateJWT(username,password)
-                    Response.build(ResponseCode.USER_SIGN_UP_SUCCESS)
+                return@flatMap repository.save(UserBuilder().username(username).password(password).nickname(it.nickname).email(it.email).build()).flatMap {
+                    request.session().flatMap {
+                        it.attributes["token"] = JwtUtils.generateJWT(username,password)
+                        Response.code(ResponseCode.USER_SIGN_UP_SUCCESS)
+                    }
                 }
             }
-            return@flatMap Response.build(ResponseCode.USER_SIGN_UP_FAILED_VERIFICATION_CODE_ERROR)
+            return@flatMap Response.code(ResponseCode.USER_SIGN_UP_FAILED_VERIFICATION_CODE_ERROR)
         }
     }
 
     fun update(request: ServerRequest):Mono<ServerResponse>
     {
-        return request.bodyToMono(User::class.java).flatMap {
-            repository.save(it).then(Response.build(ResponseCode.USER_UPDATE_SUCCESS))
-        }.switchIfEmpty(
-            Response.build(ResponseCode.USER_UPDATE_FAILED_NOT_EXISTS)
-        )
+        return request.bodyToMono(UserUpdate::class.java).flatMap {
+            if(validator.hasErrors(it))
+                return@flatMap validator.errors()
+            val username = it.username
+            val user = UserBuilder().username(username).build()
+            val matcher = ExampleMatcher.matching().withMatcher(UserProperty.username(), exact())
+                .withIgnorePaths(*UserProperty.other())
+            repository.findOne(Example.of(user,matcher)).flatMap { n ->
+                user.id = n.id
+                user.email = it.email
+                user.nickname = it.nickname
+                repository.save(user).then(Response.code(ResponseCode.USER_UPDATE_SUCCESS))
+            }.switchIfEmpty(
+                Response.code(ResponseCode.USER_UPDATE_FAILED_NOT_FOUND)
+            )
+        }
     }
 
     fun delete(request: ServerRequest):Mono<ServerResponse>
     {
         return repository.findById(request.pathVariable("id"))
         .flatMap {
-            repository.delete(it).then(Response.build(ResponseCode.USER_DELETE_SUCCESS))
+            repository.delete(it).then(Response.code(ResponseCode.USER_DELETE_SUCCESS))
         }.switchIfEmpty(
-            Response.build(ResponseCode.USER_DELETE_FAILED_NOT_FOUND)
+            Response.code(ResponseCode.USER_DELETE_FAILED_NOT_FOUND)
         )
     }
 
     fun getAll(request: ServerRequest):Mono<ServerResponse>
     {
         cache.fluxUser = repository.findAll()
-        return Response.build(ResponseCode.USER_GET_ALL_SUCCESS)
+        return Response.code(ResponseCode.USER_GET_ALL_SUCCESS)
     }
 
     fun getById(request: ServerRequest):Mono<ServerResponse>
@@ -116,18 +130,18 @@ class UserHandler {
         val u = repository.findById(request.pathVariable("id"))
         cache.monoUser = u
         return u.flatMap {
-            Response.build(ResponseCode.USER_GET_ONE_SUCCESS)
+            Response.code(ResponseCode.USER_GET_ONE_SUCCESS)
         }.switchIfEmpty(
-            Response.build(ResponseCode.USER_GET_ONE_FAILED_NOT_EXISTS)
+            Response.code(ResponseCode.USER_GET_ONE_FAILED_NOT_FOUND)
         )
     }
 
     fun data(request: ServerRequest):Mono<ServerResponse>
     {
         return when(request.pathVariable("code")){
-            ResponseCode.USER_GET_ONE_SUCCESS -> Response.build(cache.monoUser, User::class.java)
-            ResponseCode.USER_GET_ALL_SUCCESS -> Response.build(cache.fluxUser, User::class.java)
-            else -> Response.build(ResponseCode.ERROR_GET_GATE_CODE)
+            ResponseCode.USER_GET_ONE_SUCCESS -> Response.mono(cache.monoUser, User::class.java)
+            ResponseCode.USER_GET_ALL_SUCCESS -> Response.flux(cache.fluxUser, User::class.java)
+            else -> Response.code(ResponseCode.ERROR_GET_GATE_CODE)
         }
     }
 }

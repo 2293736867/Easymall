@@ -49,7 +49,7 @@ class UserServiceTests {
     @Test
     fun delete()
     {
-        println(client.delete().uri("delete/a7e321ab-313f-4811-91ff-b582a5ae30e4").retrieve().bodyToMono(String::class.java).block())
+        println(client.delete().uri("delete/83f539d0-27ca-4692-a4c9-a4b177105c37").retrieve().bodyToMono(String::class.java).block())
     }
 
     @Test

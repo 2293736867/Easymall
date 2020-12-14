@@ -10,7 +10,7 @@ class ProductAdd{
     @Min(1)
     var price = 0.0
     @NotBlank(message = ValidationMessage.CATEGORY_IS_BLACK)
-    var categoty = ""
+    var category = ""
     @Min(1)
     var pnum = 0
     var description = ""

@@ -5,47 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.attach_pid3465" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/ProductProperty.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserUpdate.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationGroup.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/03d6527d-ec28-4cc4-a238-ae594fda59e0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/1794d814-9a14-45aa-8fc6-0282f05b9f7c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/7a31319f-fe4d-49af-a509-25a68833492e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/b5658fdf-beda-4f3e-9fbb-4d7a1a871b65.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/c58586af-e8da-4e10-90f7-fb02c52f8f8c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/product/Product.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/product/ProductHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/js/URL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/Response.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/Response.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/easymall.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/easymall.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/userservice/UserServiceTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/userservice/UserServiceTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/assets/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Header.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Login.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Product.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/ProductCard.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/ProductHeader.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/modal/MessageModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/modal/SignInModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/modal/SignInModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/modal/SignUpModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/modal/SignUpModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/modal/SignInModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/modal/SignUpModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/product/Product.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/product/ProductDetail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/product/ProductHeader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/URL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +89,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">

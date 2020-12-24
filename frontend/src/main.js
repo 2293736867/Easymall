@@ -1,16 +1,11 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import {BootstrapVue, BootstrapVueIcons} from 'bootstrap-vue'
-import router from "@/js/router";
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import ElementPlus from 'element-plus'
+import 'element-plus/lib/theme-chalk/index.css'
+import './index.css'
+import router from "./js/router";
 
-Vue.use(BootstrapVue)
-Vue.use(BootstrapVueIcons)
-Vue.config.productionTip = false
-Vue.prototype.$eventBus = new Vue()
-
-new Vue({
-    render: h => h(App),
-    router
-}).$mount('#app')
+const app = createApp(App)
+app.use(ElementPlus)
+app.use(router)
+app.mount('#app')

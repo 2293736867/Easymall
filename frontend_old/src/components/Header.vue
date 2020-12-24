@@ -75,16 +75,6 @@ export default {
                 path:'/'
             })
         },
-        to(){
-            router.push({
-                path:'/'
-            })
-        },
-        to(){
-            router.push({
-                path:'/'
-            })
-        },
         toFoodAndDrinks(){
             router.push({
                 path:'/'

@@ -8,7 +8,12 @@ import org.springframework.web.reactive.config.WebFluxConfigurer
 @Configuration
 @EnableWebFlux
 class CORSConfig:WebFluxConfigurer {
+    private companion object{
+        const val FRONTEND_PORT = "3000"
+        const val LOCALHOST = "http://localhost:"
+        const val FRONTEND_ADDRESS = LOCALHOST+ FRONTEND_PORT
+    }
     override fun addCorsMappings(registry: CorsRegistry) {
-        registry.addMapping("/**").allowedOrigins("http://localhost:3000","http://localhost:8081").allowedMethods("*")
+        registry.addMapping("/**").allowedOrigins(FRONTEND_ADDRESS).allowedMethods("*")
     }
 }

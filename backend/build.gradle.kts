@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.4.0"
+    id("org.springframework.boot") version "2.4.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     kotlin("jvm") version "1.4.21"
     kotlin("plugin.spring") version "1.4.21"
@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "pers.wzr"
-version = "2.0"
+version = "2.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 configurations {
@@ -37,11 +37,11 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
 
     //customize
-    implementation("com.auth0:java-jwt:3.11.0")
-    implementation("cn.hutool:hutool-all:5.5.2")
+    implementation("com.auth0:java-jwt:3.12.0")
+    implementation("cn.hutool:hutool-all:5.5.4")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("com.google.guava:guava:30.0-jre")
+    implementation("com.google.guava:guava:30.1-jre")
 }
 
 tasks.withType<KotlinCompile> {

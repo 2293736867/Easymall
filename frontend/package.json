@@ -1,21 +1,21 @@
 {
-  "name": "frontend",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
-  "dependencies": {
-    "vue": "^3.0.4",
-    "vue-router": "^3.4.9"
-  },
-  "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-    "axios": "^0.21.0",
-    "bufferutil": "^4.0.2",
-    "element-plus": "^1.0.1-beta.10",
-    "utf-8-validate": "^5.0.3",
-    "vite": "^1.0.0-rc.13",
-    "vue-router": "^3.4.9"
-  }
+    "name": "element-plus-vite-starter",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite --port 3000",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "element-plus": "latest",
+        "vue": "^3.0.2"
+    },
+    "devDependencies": {
+        "@vue/compiler-sfc": "^3.0.2",
+        "axios": "^0.21.0",
+        "bufferutil": "^4.0.2",
+        "utf-8-validate": "^5.0.3",
+        "vite": "^1.0.0-rc.8",
+        "vue-router": "^4.0.1"
+    }
 }

@@ -1,20 +1,23 @@
 <template>
-    <div class="block">
-        <el-carousel height="400px">
-            <el-carousel-item v-for="item in 4" :key="item">
-            </el-carousel-item>
-        </el-carousel>
-    </div>
+    <el-container>
+        <el-header>
+            <Header></Header>
+        </el-header>
+        <el-main>
+            <router-view></router-view>
+        </el-main>
+    </el-container>
 </template>
 
 <script>
+import Header from "./header/Header.vue";
+import Carousel from "./content/Carousel.vue";
+
 export default {
-    name: "Index"
+    name: "Index",
+    components: {Carousel, Header}
 }
 </script>
 
 <style scoped>
-    .el-carousel__item:nth-child(n){
-        background-image: url("../assets/banner.jpg");
-    }
 </style>

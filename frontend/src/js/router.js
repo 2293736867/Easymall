@@ -1,16 +1,28 @@
-import Index from '../components/Index.vue'
-Vue.use(VueRouter)
+import {createWebHistory,createRouter} from 'vue-router'
+import Index from "../components/Index.vue";
+import AllProductsContent from "../components/content/AllProductsContent.vue";
+import IndexContent from "../components/content/IndexContent.vue";
 
-const routes = [
-    {
-        path:'/',
-        component:Index
-    }
-]
+const routerHistory = createWebHistory()
 
-const router = new VueRouter({
-    mode:'history',
-    routes:routes
+const router = createRouter({
+    history:routerHistory,
+    routes:[
+        {
+            path:'/',
+            component:Index,
+            children:[
+                {
+                    path:'/',
+                    component:IndexContent
+                },
+                {
+                    path:'/all',
+                    component:AllProductsContent
+                }
+            ]
+        },
+    ]
 })
 
 export default router

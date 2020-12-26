@@ -12,15 +12,18 @@
       <change afterPath="$PROJECT_DIR$/public/banner.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/logo.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MessageTest.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/content/AllProductsContent.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/content/Carousel.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/content/IndexContent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/Product.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/header/Header.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/header/HeaderSearchBarAndLogo.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/header/Navbar.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/other/SideBar.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/js/URL.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/js/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/gloabl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
@@ -36,10 +39,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="package.json" />
-        <option value="Vue Single File Component" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -107,6 +110,13 @@
       <workItem from="1608826918032" duration="91000" />
       <workItem from="1608827050098" duration="3632000" />
       <workItem from="1608859401715" duration="3062000" />
+      <workItem from="1608944806935" duration="3000" />
+      <workItem from="1608947096517" duration="922000" />
+      <workItem from="1608950436642" duration="4556000" />
+      <workItem from="1608957986981" duration="4521000" />
+      <workItem from="1608962521927" duration="2191000" />
+      <workItem from="1608964957096" duration="6789000" />
+      <workItem from="1608971764290" duration="292000" />
     </task>
     <servers />
   </component>

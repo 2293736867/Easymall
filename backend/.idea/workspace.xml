@@ -5,48 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.attach_pid3465" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ShoppingCardRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/ShoppingCard.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/config/CORSConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/config/CORSConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_multiple_modules/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_multiple_modules/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_multiple_modules/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/frontend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/assets/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/assets/logo.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/AllProductsContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/AllProductsContent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/Carousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/Carousel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/HeaderSearchBarAndLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/HeaderSearchBarAndLogo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/other/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/other/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/URL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/assets/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/assets/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/assets/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/Header.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/Index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/modal/SignInModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/modal/SignUpModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/product/Product.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/product/ProductDetail.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/components/product/ProductHeader.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/js/URL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/js/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/vue.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend_old/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,11 +109,11 @@
       <recent name="pers.wzr.easymall.validator" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="pers.wzr.easymall.entity.property" />
-      <recent name="pers.wzr.easymall.entity.validation" />
-      <recent name="pers.wzr.easymall.validator.groups" />
+      <recent name="pers.wzr.easymall.entity.entity" />
+      <recent name="pers.wzr.easymall.dao" />
+      <recent name="pers.wzr.easymall.handler" />
       <recent name="pers.wzr.easymall.router" />
-      <recent name="pers.wzr.easymall.filter" />
+      <recent name="pers.wzr.easymall.entity.property" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">

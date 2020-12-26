@@ -2,8 +2,6 @@ package pers.wzr.easymall.router
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.web.reactive.function.server.RequestPredicate
-import org.springframework.web.reactive.function.server.RequestPredicates
 import org.springframework.web.reactive.function.server.router
 import pers.wzr.easymall.handler.UserHandler
 

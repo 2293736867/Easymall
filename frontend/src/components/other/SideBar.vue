@@ -1,9 +1,14 @@
 <template>
-    <el-menu :collapse="isCollapse" class="el-menu-vertical-demo side-bar" default-active="1-1-1" @close="handleClose"
-             @open="handleOpen">
+    <el-menu :collapse="isCollapse" class="el-menu-vertical-demo side-bar" default-active="1-1-1">
         <el-menu-item index="0">
-            <i class="el-icon-full-screen" @mouseenter="isCollapse = !isCollapse"></i>
-            <span>展开/收起</span>
+            <el-badge :value="cardNum">
+                <i class="el-icon-shopping-cart-1"></i>
+            </el-badge>
+        </el-menu-item>
+        <el-menu-item>
+            <el-badge :value="favoriteNum">
+                <i class="el-icon-star-off"></i>
+            </el-badge>
         </el-menu-item>
         <el-submenu index="1">
             <template #title>
@@ -21,7 +26,15 @@
 
 <script>
 export default {
-    name: "SideBar"
+    name: "SideBar",
+    data() {
+        return {
+            isCollapse: true,
+            cardNum:'12',
+            favoriteNum:'12',
+        }
+    },
+    methods: {}
 }
 </script>
 

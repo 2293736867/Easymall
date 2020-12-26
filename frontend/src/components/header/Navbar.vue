@@ -6,6 +6,10 @@
         <el-menu-item index="3">电脑平板</el-menu-item>
         <el-menu-item index="4">家用电器</el-menu-item>
         <el-menu-item index="5">汽车用品</el-menu-item>
+        <el-menu-item index="6">食品材料</el-menu-item>
+        <el-menu-item index="7">图书杂志</el-menu-item>
+        <el-menu-item index="8">服装服饰</el-menu-item>
+        <el-menu-item index="9">理财产品</el-menu-item>
     </el-menu>
 </template>
 
@@ -13,12 +17,6 @@
 import router from "../../js/router";
 export default {
     name: "Navbar",
-    // props:[{
-    //     active:{
-    //         type:'number',
-    //         default:0
-    //     }
-    // }],
     data(){
         return {
             activeIndex:"0",

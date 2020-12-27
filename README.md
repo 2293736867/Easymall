@@ -2,15 +2,24 @@
 
 一个商城项目，目前仅完成一小部分。
 
-相关库以及技术栈：
+前端库：
+
+- `ElementPlus`
+- `Vue3`
+- `axios`
+- `vue-router`
+- `vite`
+- `jssha`
+
+后端库：
 
 - `Kotlin`
 - `Spring Boot WebFlux`
 - `Mongodb`
 - `Docker`
-- `BootstrapVue`
-- `Vue`
-- `axios`
+- `JWT`
+- `guava`
+
 
 # 2 项目目录说明
 
@@ -19,9 +28,28 @@
 
 # 3 目前已完成
 
-- 前端用户登录注册
+- 前端UI首页
+- 用户登录/注册
+- 商品展示
+- 商品详情
 
-# 4 更新日志
+# 4 Todo
+
+- `Token`+`Session`
+- 商品展示完善
+- 购物车
+
+
+# 5 更新日志
+# 12/27/2020
+- 3.0正式版
+- `BootstrapVue`迁移到`ElementPlus`完成
+- `Vue2`迁移到`Vue3`完成
+- `UI`重大改进
+- 更加友好的表单校验
+- 引入`SHA3-512`加密
+- 若干，忘记了
+
 # 12/26/2020
 3.0 alpha版。
 

@@ -1,14 +1,14 @@
 <template>
-    <HeaderSearchBarAndLogo></HeaderSearchBarAndLogo>
+    <SearchBarAndLogoAndSignInUp></SearchBarAndLogoAndSignInUp>
     <Navbar></Navbar>
 </template>
 
 <script>
-import HeaderSearchBarAndLogo from "./HeaderSearchBarAndLogo.vue";
+import SearchBarAndLogoAndSignInUp from "./SearchBarAndLogoAndSignInUp.vue";
 import Navbar from "./Navbar.vue";
 export default {
     name: "Header",
-    components: {Navbar, HeaderSearchBarAndLogo},
+    components: {Navbar, SearchBarAndLogoAndSignInUp},
 }
 </script>
 

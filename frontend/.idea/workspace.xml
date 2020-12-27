@@ -11,19 +11,22 @@
       <change afterPath="$PROJECT_DIR$/public/1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/banner.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MessageTest.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/content/AllProductsContent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/content/Carousel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/content/IndexContent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/content/Product.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/index/Carousel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/index/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/products/AllProducts.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/products/Product.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/user/ShoppingCard.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/header/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/HeaderSearchBarAndLogo.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/header/Navbar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/SearchBarAndLogoAndSignInUp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/indexrouter/IndexRouter.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/other/SideBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/URL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/constant/REG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/constant/URL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/router/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/utils/Utils.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/store/gloabl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
@@ -41,8 +44,8 @@
       <list>
         <option value="package.json" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -62,10 +65,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/js" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/frontend" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -77,10 +80,11 @@
       <recent name="$PROJECT_DIR$/src/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/content" />
-      <recent name="$PROJECT_DIR$/src/components/header" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/components/content/index" />
+      <recent name="$PROJECT_DIR$/src/components/content/products" />
+      <recent name="$PROJECT_DIR$/src/components/content/user" />
+      <recent name="$PROJECT_DIR$/src/components/index" />
+      <recent name="$PROJECT_DIR$/src/js/router" />
     </key>
   </component>
   <component name="RunManager">
@@ -117,6 +121,13 @@
       <workItem from="1608962521927" duration="2191000" />
       <workItem from="1608964957096" duration="6789000" />
       <workItem from="1608971764290" duration="292000" />
+      <workItem from="1608980092683" duration="287000" />
+      <workItem from="1608980529545" duration="2000" />
+      <workItem from="1608980664599" duration="155000" />
+      <workItem from="1609001948385" duration="282000" />
+      <workItem from="1609039220330" duration="5130000" />
+      <workItem from="1609046081585" duration="271000" />
+      <workItem from="1609046376338" duration="8517000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,8 @@
 import {createWebHistory,createRouter} from 'vue-router'
-import Index from "../components/Index.vue";
-import AllProductsContent from "../components/content/AllProductsContent.vue";
-import IndexContent from "../components/content/IndexContent.vue";
-import Product from "../components/content/Product.vue";
+import IndexRouter from "../../components/indexrouter/IndexRouter.vue";
+import AllProducts from "../../components/content/products/AllProducts.vue";
+import Index from "../../components/content/index/Index.vue";
+import Product from "../../components/content/products/Product.vue";
 
 const routerHistory = createWebHistory()
 
@@ -11,22 +11,22 @@ const router = createRouter({
     routes:[
         {
             path:'/',
-            component:Index,
+            component:IndexRouter,
             children:[
                 {
                     path:'/',
-                    component:IndexContent
+                    component:Index
                 },
                 {
                     path:'/all',
-                    component:AllProductsContent
+                    component:AllProducts
                 },
                 {
                     path:'/product',
                     component:Product
                 }
             ]
-        },
+        }
     ]
 })
 

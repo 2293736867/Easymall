@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ShoppingCardRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/ShoppingCard.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/AllProductsContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/AllProductsContent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/Carousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/Carousel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/HeaderSearchBarAndLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/HeaderSearchBarAndLogo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/other/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/other/SideBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/URL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/MessageTest.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/AllProductsContent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/HeaderSearchBarAndLogo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/URL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/store/gloabl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/gloabl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,6 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mongo" />
-    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -86,7 +82,7 @@
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend_multiple_modules" />
-    <property name="settings.editor.selected.configurable" value="http.certificates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />

@@ -17,7 +17,7 @@ class ShoppingCardRouter {
     }
 
     @Bean
-    fun routerConfig(handler: ShoppingCardHandler) = router {
+    fun shoppingCardRouterConfig(handler: ShoppingCardHandler) = router {
         POST(ADD,handler::add)
         GET(GET,handler::get)
         DELETE(DELETE,handler::delete)

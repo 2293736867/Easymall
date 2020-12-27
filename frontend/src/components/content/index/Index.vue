@@ -5,7 +5,7 @@
 <script>
 import Carousel from "./Carousel.vue";
 export default {
-    name: "IndexContent",
+    name: "Index",
     components: {Carousel}
 }
 </script>

@@ -10,12 +10,11 @@
 </template>
 
 <script>
-import Header from "./header/Header.vue";
-import Carousel from "./content/Carousel.vue";
+import Header from "../header/Header.vue";
 
 export default {
-    name: "Index",
-    components: {Carousel, Header}
+    name: "IndexRouter",
+    components: {Header}
 }
 </script>
 

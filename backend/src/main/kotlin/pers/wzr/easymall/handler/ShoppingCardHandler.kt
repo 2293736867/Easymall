@@ -64,7 +64,7 @@ class ShoppingCardHandler {
             {
                 val username = it.username
                 val password = it.password
-                return@flatMap repository.save(UserBuilder().username(username).password(password).nickname(it.nickname).email(it.email).build()).flatMap {
+                return@flatMap repository.save(UserBuilder().username(username).password(password).email(it.email).build()).flatMap {
                     request.session().flatMap {
                         it.attributes["token"] = JwtUtils.generateJWT(username,password)
                         Response.code(ResponseCode.USER_SIGN_UP_SUCCESS)

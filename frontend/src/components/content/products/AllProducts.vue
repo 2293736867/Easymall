@@ -65,13 +65,13 @@
 </template>
 
 <script>
-import URL from '../../store/gloabl'
+import URL from "../../../js/constant/URL";
 import axios from 'axios'
-import router from "../../js/router";
-import SideBar from "../other/SideBar.vue";
+import router from "../../../js/router/router";
+import SideBar from "../../other/SideBar.vue";
 
 export default {
-    name: "AllProductsContent",
+    name: "AllProducts",
     components: {SideBar},
     data() {
         return {

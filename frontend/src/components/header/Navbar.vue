@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import router from "../../js/router";
+import router from "../../js/router/router";
 export default {
     name: "Navbar",
     data(){

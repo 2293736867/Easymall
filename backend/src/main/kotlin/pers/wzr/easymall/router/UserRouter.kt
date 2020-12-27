@@ -20,7 +20,7 @@ class UserRouter {
     }
 
     @Bean
-    fun routerConfig(handler: UserHandler) = router {
+    fun userRouterConfig(handler: UserHandler) = router {
         POST(SIGN_IN,handler::signIn)
         POST(SIGN_UP,handler::signUp)
         GET(GET_ALL,handler::getAll)

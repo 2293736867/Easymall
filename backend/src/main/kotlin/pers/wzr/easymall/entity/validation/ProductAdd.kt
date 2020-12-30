@@ -11,7 +11,9 @@ class ProductAdd{
     var price = ""
     @NotBlank(message = ValidationMessage.CATEGORY_IS_BLACK)
     var category = ""
-    @Min(1)
+    @Min(0,message = ValidationMessage.NUM_NEGATIVE)
     var num = 0
+    @Min(0,message = ValidationMessage.FREIGHT_NEGATIVE)
+    var freight = 0
     var description = ""
 }

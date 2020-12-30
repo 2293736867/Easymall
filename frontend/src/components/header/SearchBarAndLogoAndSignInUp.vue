@@ -2,7 +2,7 @@
     <el-header>
         <el-row justify="space-between" type="flex">
             <el-col :md="3" :xs="2">
-                <el-image src="/Logo.jpg"></el-image>
+                <el-image src="/Logo.jpg" @click="toIndex"></el-image>
             </el-col>
             <el-col :md="10" :xs="6">
                 <el-input v-model="searchBar" placeholder="请输入内容" suffix-icon="el-icon-search">
@@ -92,6 +92,7 @@ import axios from "axios"
 import URL from "../../js/constant/URL"
 import REG from "../../js/constant/REG"
 import Utils from "../../js/utils/Utils";
+import router from "../../js/router/router";
 
 export default {
     name: "SearchBarAndLogoAndSignInUp",
@@ -234,6 +235,11 @@ export default {
         },
         logout(){
             this.$store.commit('signOut')
+        },
+        toIndex(){
+            router.push({
+                path:'/'
+            })
         }
     }
 }

@@ -49,5 +49,13 @@ class Utils {
             result.detailImagesSize = getDetailImagesNum(p.id)
             return result
         }
+
+        fun productCopy(old:Product,new:Product){
+            old.category = new.category
+            old.description = new.description
+            old.freight = new.freight
+            old.num = new.num
+            old.price = new.price
+        }
     }
 }

@@ -1,11 +1,19 @@
 package pers.wzr.easymall.entity.property
 
+import pers.wzr.easymall.entity.entity.User
+
 class UserProperty {
     companion object{
-        private val originProperties = arrayOf("id","_class","username","password","nickname","email")
+//        private val originProperties = arrayOf("id","_class","username","password","nickname","email")
+        private val originProperties = arrayListOf<String>()
         private var properties = arrayListOf<String>()
 
         init{
+            originProperties.add("_class")
+            for(i in User::class.java.declaredFields)
+            {
+                originProperties.add(i.name)
+            }
             properties.addAll(originProperties)
         }
 

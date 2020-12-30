@@ -24,6 +24,8 @@ class CustomValidator {
                 ValidationMessage.NAME_IS_BLACK -> CommonResponse.code(ResponseCode.VALIDATION_NAME_IS_BLACK)
                 ValidationMessage.CATEGORY_IS_BLACK -> CommonResponse.code(ResponseCode.VALIDATION_CATEGORY_IS_BLACK)
                 ValidationMessage.PRICE_IS_BLACK -> CommonResponse.code(ResponseCode.VALIDATION_PRICE_IS_BLACK)
+                ValidationMessage.NUM_NEGATIVE ->  CommonResponse.code(ResponseCode.VALIDATION_NUM_NEGATIVE)
+                ValidationMessage.FREIGHT_NEGATIVE -> CommonResponse.code(ResponseCode.VALIDATION_FREIGHT_NEGATIVE)
                 else -> CommonResponse.code(ResponseCode.ERROR_VALIDATION_CODE)
             }
         }

@@ -41,6 +41,8 @@ class ResponseCode {
         const val VALIDATION_CATEGORY_IS_BLACK = "3003"
         const val VALIDATION_NAME_IS_BLACK = "3004"
         const val VALIDATION_PRICE_IS_BLACK = "3005"
+        const val VALIDATION_NUM_NEGATIVE = "3006"
+        const val VALIDATION_FREIGHT_NEGATIVE = "3007"
 
         const val ERROR_GET_GATE_CODE = "100000"
         const val ERROR_VALIDATION_CODE = "100001"

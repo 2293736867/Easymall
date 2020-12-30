@@ -108,22 +108,21 @@ export default {
             this.loadProductByCategory(id)
         },
     },
-    mounted(){
+    mounted() {
         this.loadProductByCategory(this.categoryId)
     },
     methods: {
         toProduct(id) {
-            localStorage.setItem('product',JSON.stringify(this.products.find((p,index)=>{
+            localStorage.setItem('product', JSON.stringify(this.products.find(p => {
                 return p.id === id
             })))
-            // localStorage.setItem('product',JSON.stringify(ProductCache.get(id)))
             router.push({
-                path: '/product/'+id
+                path: '/product/' + id
             })
         },
-        loadProductByCategory(id){
+        loadProductByCategory(id) {
             id = parseInt(id)
-            if(id >= 1 && id <= Categories.length) {
+            if (id >= 1 && id <= Categories.length) {
                 var allProducts = (id === 1)
                 axios.get(URL.productGetByCategory + (allProducts ? "" : Categories[id - 1].value)).then(res => {
                     if (res.data === allProducts ? 2012 : 2010) {

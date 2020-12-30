@@ -12,7 +12,6 @@ class ProductResponse{
 
     companion object{
         fun coverImage(id:String,num:String):Mono<ServerResponse>{
-            println("cover image")
             return image(id,num,"cover")
         }
 
@@ -25,7 +24,6 @@ class ProductResponse{
         }
 
         private fun image(id:String,num:String,path:String):Mono<ServerResponse>{
-            println(ClassPathResource("img/$id/$path/$num.jpg"))
             return ServerResponse.ok().body(BodyInserters.fromValue(ClassPathResource("img/$id/$path/$num.jpg")))
         }
 

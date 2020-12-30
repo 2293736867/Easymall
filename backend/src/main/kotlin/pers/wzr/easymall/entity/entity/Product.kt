@@ -10,10 +10,8 @@ open class Product{
     var id = UUID.randomUUID().toString()
     var name = ""
     var price = ""
+    var freight = 0
     var category = ""
     var num = 0
     var description = ""
-
-    override fun toString() = "id:$id,name:$name,price:$price\n" +
-    "category:$category,pnum:$num,description:$description"
 }

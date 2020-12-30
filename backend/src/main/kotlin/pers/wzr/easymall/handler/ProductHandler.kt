@@ -69,7 +69,6 @@ class ProductHandler {
 
     fun getCoverImage(request: ServerRequest):Mono<ServerResponse>
     {
-        println("cover image??????")
         return ProductResponse.coverImage(request.pathVariable("id"),request.pathVariable("num"))
     }
 
@@ -111,18 +110,11 @@ class ProductHandler {
             val p = ProductBuilder().name(name).build()
             val matcher = ExampleMatcher.matching().withMatcher(ProductProperty.name(),exact()).withIgnorePaths(*ProductProperty.other())
             repository.findOne(Example.of(p,matcher)).flatMap { n->
-                p.category = n.category
-                p.num = n.num
-                p.price = n.price
+                Utils.productCopy(p,n)
                 repository.save(p).then(CommonResponse.code(ResponseCode.PRODUCT_UPDATE_SUCCESS))
             }.switchIfEmpty(CommonResponse.code(ResponseCode.PRODUCT_UPDATE_FAILED_NOT_EXISTS))
         }
     }
-
-//    fun image(request: ServerRequest):Mono<ServerResponse>
-//    {
-//        return Response.image(request.pathVariable("id"))
-//    }
 
     fun data(request: ServerRequest):Mono<ServerResponse>
     {

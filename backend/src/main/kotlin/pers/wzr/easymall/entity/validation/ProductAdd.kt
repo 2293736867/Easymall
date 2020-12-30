@@ -7,11 +7,11 @@ import javax.validation.constraints.NotBlank
 class ProductAdd{
     @NotBlank(message = ValidationMessage.NAME_IS_BLACK)
     var name = ""
-    @Min(1)
-    var price = 0.0
+    @NotBlank(message = ValidationMessage.PRICE_IS_BLACK)
+    var price = ""
     @NotBlank(message = ValidationMessage.CATEGORY_IS_BLACK)
     var category = ""
     @Min(1)
-    var pnum = 0
+    var num = 0
     var description = ""
 }

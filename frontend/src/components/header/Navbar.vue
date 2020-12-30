@@ -15,17 +15,31 @@
 
 <script>
 import router from "../../js/router/router";
+import Categories from "../../js/constant/Categories";
 export default {
     name: "Navbar",
     data(){
         return {
             activeIndex:"0",
-            navbarContent:['首页','全部商品','手机数码','电脑平板','家用电器','汽车用品','食品材料','图书杂志','服装服饰','理财产品' ],
-            links:['/','/all']
+            navbarContent:[],
+            links:[],
+        }
+    },
+    mounted(){
+        this.links.push('/')
+        this.navbarContent.push('首页')
+        for(var i=0;i<Categories.length;++i)
+        {
+            this.links.push('/products/'+Categories[i].index)
+            this.navbarContent.push(Categories[i].value)
         }
     },
     methods:{
         handleSelect(key){
+            if(key !== 0)
+            {
+                this.$store.commit('categoryId',key)
+            }
             router.push({
                 path:this.links[key]
             })

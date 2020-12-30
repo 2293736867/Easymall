@@ -4,7 +4,7 @@ import org.springframework.web.reactive.function.server.HandlerFilterFunction
 import org.springframework.web.reactive.function.server.HandlerFunction
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
-import pers.wzr.easymall.util.JwtUtils
+import pers.wzr.easymall.util.JWT
 import reactor.core.publisher.Mono
 
 class TestHandlerFilter:HandlerFilterFunction<ServerResponse,ServerResponse> {
@@ -23,7 +23,7 @@ class TestHandlerFilter:HandlerFilterFunction<ServerResponse,ServerResponse> {
             }
             if(username.get() == "11" && password.get() == "22")
             {
-                val token = JwtUtils.generateJWT(username.get(),password.get())
+                val token = JWT.generate(username.get(),password.get())
                 t.attributes["token"] = token
                 println("create token:$token")
                 return@flatMap next.handle(request)

@@ -9,29 +9,36 @@ import pers.wzr.easymall.handler.ProductHandler
 class ProductRouter {
     companion object {
         private const val PRODUCT = "/product/"
-        private const val GET_ALL = PRODUCT + "get"
-        private const val GET_ONE = PRODUCT + "get/{id}"
+        private const val DATA = PRODUCT + "data/{code}"
+
+        private const val GET_DETAIL_ALL = PRODUCT + "get/detail"
+        private const val GET_DETAIL_ONE = PRODUCT + "get/detail/{id}"
+
+        private const val GET_BY_CATEGORIES = PRODUCT + "get/category"
+        private const val GET_BY_CATEGORY = PRODUCT + "get/category/{category}"
+
+        private const val GET_COVER_IMAGE = PRODUCT + "get/image/{id}/cover/{num}"
+        private const val GET_THUMBNAIL_IMAGE = PRODUCT + "get/image/{id}/thumbnail/{num}"
+        private const val GET_DETAIL_IMAGE = PRODUCT + "get/image/{id}/detail/{num}"
+
         private const val DELETE = PRODUCT + "delete/{id}"
         private const val UPDATE = PRODUCT + "update"
         private const val ADD = PRODUCT + "add"
-        private const val GET_BY_CATEGORY = PRODUCT + "get/category/{category}"
-        private const val GET_IMAGE_URL = PRODUCT + "get/image/url/{id}"
-        private const val GET_IMAGES_URL = PRODUCT + "get/image/url"
-        private const val IMAGE = PRODUCT + "image/{id}"
-        private const val DATA = PRODUCT + "data/{code}"
     }
 
     @Bean
     fun productRouterHandler(productHandler: ProductHandler) = router {
+        GET(DATA,productHandler::data)
+        GET(GET_DETAIL_ONE,productHandler::getDetailOne)
+        GET(GET_DETAIL_ALL,productHandler::getDetailAll)
+        GET(GET_BY_CATEGORIES,productHandler::getByCategories)
+        GET(GET_BY_CATEGORY,productHandler::getByCategory)
+        GET(GET_COVER_IMAGE,productHandler::getCoverImage)
+        GET(GET_THUMBNAIL_IMAGE,productHandler::getThumbnailImage)
+        GET(GET_DETAIL_IMAGE,productHandler::getDetailImage)
+
         DELETE(DELETE,productHandler::delete)
-        GET(GET_ONE,productHandler::getOne)
-        GET(GET_ALL,productHandler::getAll)
         PUT(UPDATE,productHandler::update)
         POST(ADD,productHandler::add)
-        GET(DATA,productHandler::data)
-        GET(GET_BY_CATEGORY,productHandler::getByCategory)
-        GET(GET_IMAGE_URL,productHandler::getImageURL)
-        GET(GET_IMAGES_URL,productHandler::getImagesURL)
-        GET(IMAGE,productHandler::image)
     }
 }

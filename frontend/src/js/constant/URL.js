@@ -9,10 +9,12 @@ const URL = {
     code:base+'verification/code',
     signIn:userBase+'sign/in',
     signUp:userBase+'sign/up',
+    userData:userBase+'data/',
     checkUsername:userBase+'check/username/',
-    product:productBase+'get',
+
+    productGetDetail:productBase+'get/detail/',
+    productGetByCategory:productBase+'get/category/',
     productData:productBase+'data/',
-    productDetail:productBase
 }
 
 export default URL

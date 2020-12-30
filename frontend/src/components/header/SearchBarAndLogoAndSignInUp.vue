@@ -2,18 +2,21 @@
     <el-header>
         <el-row justify="space-between" type="flex">
             <el-col :md="3" :xs="2">
-                <el-image src="logo.jpg"></el-image>
+                <el-image src="/Logo.jpg"></el-image>
             </el-col>
             <el-col :md="10" :xs="6">
                 <el-input v-model="searchBar" placeholder="请输入内容" suffix-icon="el-icon-search">
                 </el-input>
             </el-col>
             <el-col :md="3" :xs="2">
-                <el-button icon="el-icon-user" type="primary" @click="showSignInDrawer">
+                <el-button icon="el-icon-user" type="primary" @click="showSignInDrawer" v-if="!isUserSignIn">
                     登录
                 </el-button>
-                <el-button icon="el-icon-edit" type="primary" @click="showSignUpDrawer">
+                <el-button icon="el-icon-edit" type="primary" @click="showSignUpDrawer" v-if="!isUserSignIn">
                     注册
+                </el-button>
+                <el-button icon="el-icon-edit" type="primary" @click="logout" v-else>
+                    退出
                 </el-button>
             </el-col>
         </el-row>
@@ -98,7 +101,7 @@ export default {
                 callback(new Error('请输入用户名'))
             if (!REG.username.test(value))
                 callback(new Error('用户名非法'))
-            if(this.signUpDrawerShow) {
+            if (this.signUpDrawerShow) {
                 axios.get(URL.checkUsername + this.form.username).then(res => {
                     if (res.data === 1006) {
                         callback(new Error('用户名已存在'))
@@ -106,8 +109,7 @@ export default {
                         callback()
                     }
                 })
-            }
-            else
+            } else
                 callback()
         }
 
@@ -115,7 +117,7 @@ export default {
             if (!value) {
                 callback(new Error('请输入密码'))
             }
-            if(this.signUpDrawerShow) {
+            if (this.signUpDrawerShow) {
                 if (!REG.password.test(value)) {
                     this.$notify({
                         title: '密码最少6位',
@@ -125,8 +127,7 @@ export default {
                     })
                     callback(new Error('密码过于简单'))
                 }
-            }
-            else
+            } else
                 callback()
         }
 
@@ -165,7 +166,10 @@ export default {
             },
         }
     },
-    mounted() {
+    computed: {
+        isUserSignIn(){
+            return this.$store.getters.isUserSignIn
+        }
     },
     methods: {
         showSignInDrawer() {
@@ -186,11 +190,13 @@ export default {
                     }).then(res => {
                         if (res.data === 1000) {
                             this.$message.success('登录成功')
-                            console.log(sessionStorage.getItem('token'))
+                            axios.get(URL.userData + res.data).then(res => {
+                                this.$store.commit('signIn', res.data)
+                            })
                             this.signInDrawerShow = false
                         } else if (res.data === 1001)
                             this.$message.error('登录失败，用户名或密码错误')
-                        else if (res.data === 100001)
+                        else if (res.data === 1002)
                             this.$message.error('验证码错误')
                     })
                 } else {
@@ -201,20 +207,20 @@ export default {
         signUp() {
             this.$refs['form'].validate((valid) => {
                 if (valid) {
-                            axios.post(URL.signUp, {
-                                username: this.form.username,
-                                password: Utils.sha3(this.form.password),
-                                email: this.form.email,
-                                code: this.form.code
-                            }).then(res => {
-                                if (res.data === 1003) {
-                                    this.$message.success('注册成功')
-                                    this.signUpDrawerShow = false
-                                    this.signInDrawerShow = true
-                                } else if (res.data === 100001) {
-                                    this.$message.error('验证码错误')
-                                }
-                            })
+                    axios.post(URL.signUp, {
+                        username: this.form.username,
+                        password: Utils.sha3(this.form.password),
+                        email: this.form.email,
+                        code: this.form.code
+                    }).then(res => {
+                        if (res.data === 1003) {
+                            this.$message.success('注册成功,转到登录页面')
+                            this.signUpDrawerShow = false
+                            this.signInDrawerShow = true
+                        } else if (res.data === 100001) {
+                            this.$message.error('验证码错误')
+                        }
+                    })
                 } else {
                     this.$message.error('请输入合法信息再进行注册')
                 }
@@ -226,6 +232,9 @@ export default {
                 that.verificationCodeImage = 'data:image/png;base64,' + res.data
             })
         },
+        logout(){
+            this.$store.commit('signOut')
+        }
     }
 }
 </script>

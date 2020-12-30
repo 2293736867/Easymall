@@ -5,3 +5,6 @@ spring:
       username: easymall
       password: easymall
       database: easymall
+
+jwt:
+  key: 'cccc'

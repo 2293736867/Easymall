@@ -5,16 +5,15 @@ import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
 
 @Document(collection = "product")
-class Product{
+open class Product{
     @Id
     var id = UUID.randomUUID().toString()
     var name = ""
-    var price = 0.0
+    var price = ""
     var category = ""
-    var pnum = 0
-    var imageUrl = ""
+    var num = 0
     var description = ""
 
     override fun toString() = "id:$id,name:$name,price:$price\n" +
-    "category:$category,pnum:$pnum,imageUrl:$imageUrl,description:$description"
+    "category:$category,pnum:$num,description:$description"
 }

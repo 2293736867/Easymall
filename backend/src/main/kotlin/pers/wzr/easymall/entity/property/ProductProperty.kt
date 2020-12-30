@@ -2,7 +2,7 @@ package pers.wzr.easymall.entity.property
 
 class ProductProperty {
     companion object{
-        private val originProperties = arrayOf("id","_class","name","price","category","description","imageUrl","pnum")
+        private val originProperties = arrayOf("id","_class","name","price","category","description","num")
         private var properties = arrayListOf<String>()
 
         init{
@@ -12,6 +12,13 @@ class ProductProperty {
         fun name():String
         {
             val p = "name"
+            properties.remove(p)
+            return p
+        }
+
+        fun category():String
+        {
+            val p = "category"
             properties.remove(p)
             return p
         }

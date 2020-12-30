@@ -16,7 +16,7 @@ class ProductBuilder {
         return this
     }
 
-    fun price(price:Double): ProductBuilder
+    fun price(price:String): ProductBuilder
     {
         product.price = price
         return this
@@ -30,7 +30,7 @@ class ProductBuilder {
 
     fun pnm(pnum:Int): ProductBuilder
     {
-        product.pnum = pnum
+        product.num = pnum
         return this
     }
 

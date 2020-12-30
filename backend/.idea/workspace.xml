@@ -5,19 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.attach_pid9802" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/ShoppingCardCache.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductReturn.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/CommonResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ProductResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ShoppingCardResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/DefaultProduct.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/picFailed.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/js/constant/Categories.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/ProductQueryCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/ProductCache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserQueryCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserCache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/ProductProperty.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/ProductProperty.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/TestHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/TestHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/VerificationHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/VerificationHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/Response.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/UserResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JwtUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWT.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/03d6527d-ec28-4cc4-a238-ae594fda59e0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/1794d814-9a14-45aa-8fc6-0282f05b9f7c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/7a31319f-fe4d-49af-a509-25a68833492e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/b5658fdf-beda-4f3e-9fbb-4d7a1a871b65.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/c58586af-e8da-4e10-90f7-fb02c52f8f8c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/easymall.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/easymall.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/MessageTest.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/AllProductsContent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/HeaderSearchBarAndLogo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/URL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/store/gloabl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/gloabl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/Banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/Favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/Logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/Carousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/Carousel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/products/AllProducts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/products/Products.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/products/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/products/Product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/SearchBarAndLogoAndSignInUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/SearchBarAndLogoAndSignInUp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/constant/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/constant/URL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/utils/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/utils/Utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/store/gloabl.js" beforeDir="false" afterPath="$PROJECT_DIR$/.attach_pid10545" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +124,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend_multiple_modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
@@ -96,6 +139,8 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/img" />
+      <recent name="$PROJECT_DIR$/src/main/resources/img/ccc" />
       <recent name="$PROJECT_DIR$/src/main/resources/productImg" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -105,15 +150,15 @@
       <recent name="pers.wzr.easymall.validator" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="pers.wzr.easymall.cache" />
+      <recent name="pers.wzr.easymall.response" />
+      <recent name="pers.wzr.easymall.entity.validation" />
       <recent name="pers.wzr.easymall.entity.entity" />
       <recent name="pers.wzr.easymall.dao" />
-      <recent name="pers.wzr.easymall.handler" />
-      <recent name="pers.wzr.easymall.router" />
-      <recent name="pers.wzr.easymall.entity.property" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
-    <configuration name="UserServiceTests.delete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceTests.delete" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -256,7 +301,6 @@
         <item itemvalue="Gradle.UserServiceTests.update" />
         <item itemvalue="Gradle.UserServiceTests.signUp" />
         <item itemvalue="Gradle.UserServiceTests.getAll" />
-        <item itemvalue="Gradle.UserServiceTests.delete" />
       </list>
     </recent_temporary>
   </component>

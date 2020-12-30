@@ -10,5 +10,6 @@ class ValidationMessage {
 
         const val NAME_IS_BLACK = "200"
         const val CATEGORY_IS_BLACK = "201"
+        const val PRICE_IS_BLACK = "202"
     }
 }

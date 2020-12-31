@@ -3,6 +3,7 @@ package pers.wzr.easymall.router
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.server.router
+import pers.wzr.easymall.filter.UserHandlerFilter
 import pers.wzr.easymall.handler.UserHandler
 
 @Configuration
@@ -29,5 +30,5 @@ class UserRouter {
         DELETE(DELETE,handler::delete)
         PUT(UPDATE,handler::update)
         GET(DATA,handler::data)
-    }
+    }.filter(UserHandlerFilter())
 }

@@ -7,10 +7,12 @@ import javax.validation.constraints.NotBlank
 import kotlin.reflect.KClass
 
 class UserUpdate {
-    @NotBlank(message = ValidationMessage.USER_NAME_IS_BLANK)
-    var username = ""
+    @NotBlank(message = ValidationMessage.PASSWORD_IS_BLANK)
+    var password = ""
     @NotBlank(message = ValidationMessage.NICKNAME_IS_BLANK)
     var nickname = ""
     @NotBlank(message = ValidationMessage.EMAIL_IS_BLANK)
     var email = ""
+
+    override fun toString() = "password:$password\tnickname:$nickname\temail:$email"
 }

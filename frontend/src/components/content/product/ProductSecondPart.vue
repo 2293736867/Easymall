@@ -26,21 +26,6 @@ export default {
         {
             if(this.description.hasOwnProperty(i))
             {
-                //array
-                if(typeof (this.description[i]) === "object")
-                {
-                    var array = this.description[i]
-                    for(var s in array)
-                    {
-                        if(array.hasOwnProperty(s))
-                        {
-                            console.log(array[s])
-                            array[s] = array[s] + '<br>' + '\n'
-                        }
-                    }
-                    this.description[i] = '<pre>'+this.description[i]+'</pre>'
-                    console.log('array')
-                }
                 this.tableData.push({
                     'key':i,
                     'value':this.description[i]

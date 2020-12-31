@@ -7,5 +7,5 @@ import reactor.core.publisher.Mono
 class UserCache {
     var monoUser = Mono.empty<User>()
     var fluxUser = Flux.empty<User>()
-    var username = ""
+    var id = ""
 }

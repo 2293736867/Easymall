@@ -1,7 +1,7 @@
 <template>
-    <el-row justify="center" type="flex">
-        <el-col :span="16">
-            <el-image v-for="i in detailImagesSize" :src="product.detailImageBaseUrl+i"></el-image>
+    <el-row justify="center" type="flex" v-for="i in detailImagesSize">
+        <el-col >
+            <el-image :src="product.detailImageBaseUrl+i"></el-image>
         </el-col>
     </el-row>
 </template>

@@ -1,21 +1,24 @@
 <template>
     <el-header>
         <el-row justify="space-between" type="flex">
-            <el-col :md="3" :xs="2">
+            <el-col :span="2">
                 <el-image src="/Logo.jpg" @click="toIndex"></el-image>
             </el-col>
-            <el-col :md="10" :xs="6">
+            <el-col :span="8">
                 <el-input v-model="searchBar" placeholder="请输入内容" suffix-icon="el-icon-search">
                 </el-input>
             </el-col>
-            <el-col :md="3" :xs="2">
+            <el-col :span="3">
                 <el-button icon="el-icon-user" type="primary" @click="showSignInDrawer" v-if="!isUserSignIn">
                     登录
                 </el-button>
                 <el-button icon="el-icon-edit" type="primary" @click="showSignUpDrawer" v-if="!isUserSignIn">
                     注册
                 </el-button>
-                <el-button icon="el-icon-edit" type="primary" @click="logout" v-else>
+                <el-button icon="el-icon-user" type="primary" v-if="isUserSignIn">
+                    个人中心
+                </el-button>
+                <el-button icon="el-icon-edit" type="primary" @click="logout" v-if="isUserSignIn">
                     退出
                 </el-button>
             </el-col>
@@ -192,7 +195,10 @@ export default {
                         if (res.data === 1000) {
                             this.$message.success('登录成功')
                             axios.get(URL.userData + res.data).then(res => {
-                                this.$store.commit('signIn', res.data)
+                                this.$store.commit('signIn', {
+                                    username:this.form.username,
+                                    token:res.data
+                                })
                             })
                             this.signInDrawerShow = false
                         } else if (res.data === 1001)

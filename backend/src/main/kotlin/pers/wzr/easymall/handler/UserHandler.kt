@@ -11,13 +11,15 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import pers.wzr.easymall.cache.UserCache
 import pers.wzr.easymall.dao.UserRepository
 import pers.wzr.easymall.entity.builder.UserBuilder
+import pers.wzr.easymall.entity.entity.User
 import pers.wzr.easymall.entity.property.UserProperty
 import pers.wzr.easymall.entity.validation.UserSignInAndSignUp
 import pers.wzr.easymall.entity.validation.UserUpdate
 import pers.wzr.easymall.response.CommonResponse
 import pers.wzr.easymall.response.ResponseCode
 import pers.wzr.easymall.response.UserResponse
-import pers.wzr.easymall.util.JWT
+import pers.wzr.easymall.util.JWTUtils
+import pers.wzr.easymall.util.Utils
 import pers.wzr.easymall.validator.CustomValidator
 import pers.wzr.easymall.util.VerificationCodeUtils
 import pers.wzr.easymall.validator.ValidationGroup
@@ -63,8 +65,8 @@ class UserHandler {
                     .withMatcher(UserProperty.username(), exact())
                     .withMatcher(UserProperty.password(), exact())
                     .withIgnorePaths(*UserProperty.other())
-                return@flatMap repository.findOne(Example.of(user,matcher)).flatMap {
-                    cache.username = username
+                return@flatMap repository.findOne(Example.of(user,matcher)).flatMap { u->
+                    cache.id = u.id
                     CommonResponse.code(ResponseCode.USER_SIGN_IN_SUCCESS)
                 }.switchIfEmpty(
                     CommonResponse.code(ResponseCode.USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR)
@@ -94,16 +96,18 @@ class UserHandler {
     fun update(request: ServerRequest):Mono<ServerResponse>
     {
         return request.bodyToMono(UserUpdate::class.java).flatMap {
+            println(it)
             if(validator.hasErrors(it))
                 return@flatMap validator.errors()
-            val username = it.username
-            val user = UserBuilder().username(username).build()
-            val matcher = ExampleMatcher.matching().withMatcher(UserProperty.username(), exact())
-                .withIgnorePaths(*UserProperty.other())
-            repository.findOne(Example.of(user,matcher)).flatMap { n ->
-                user.id = n.id
+            val token = request.headers().header("token")[0]
+            val id = JWTUtils.getIdFromToken(token)
+            val user = User()
+            repository.findById(id).flatMap { n->
+                user.id = id
+                user.username = n.username
                 user.email = it.email
                 user.nickname = it.nickname
+                user.password = it.password
                 repository.save(user).then(CommonResponse.code(ResponseCode.USER_UPDATE_SUCCESS))
             }.switchIfEmpty(
                 CommonResponse.code(ResponseCode.USER_UPDATE_FAILED_NOT_FOUND)
@@ -138,12 +142,21 @@ class UserHandler {
         )
     }
 
+    fun getNickname(request: ServerRequest):Mono<ServerResponse>
+    {
+        return repository.findById(Utils.getIdFromServerRequest(request)).flatMap {
+            CommonResponse.code(ResponseCode.USER_GET_NICKNAME_SUCCESS)
+        }.switchIfEmpty(
+            CommonResponse.code(ResponseCode.USER_GET_NICKNAME_FAILED_NOT_FOUND)
+        )
+    }
+
     fun data(request: ServerRequest):Mono<ServerResponse>
     {
         return when(request.pathVariable("code")){
             ResponseCode.USER_GET_ONE_SUCCESS -> UserResponse.mono(cache.monoUser)
             ResponseCode.USER_GET_ALL_SUCCESS -> UserResponse.flux(cache.fluxUser)
-            ResponseCode.USER_SIGN_IN_SUCCESS -> UserResponse.token(JWT.generate(cache.username,key))
+            ResponseCode.USER_SIGN_IN_SUCCESS -> UserResponse.token(JWTUtils.generate(cache.id,key))
             else -> CommonResponse.code(ResponseCode.ERROR_GET_GATE_CODE)
         }
     }

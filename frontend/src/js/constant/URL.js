@@ -10,6 +10,7 @@ const URL = {
     signIn:userBase+'sign/in',
     signUp:userBase+'sign/up',
     userData:userBase+'data/',
+    userUpdate:userBase+'update',
     checkUsername:userBase+'check/username/',
 
     productGetDetail:productBase+'get/detail/',

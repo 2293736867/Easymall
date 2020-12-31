@@ -18,6 +18,10 @@ class ResponseCode {
         const val USER_UPDATE_SUCCESS = "1012"
         const val USER_UPDATE_FAILED_NOT_FOUND = "1013"
 
+        const val USER_NOT_SIGN_IN = "1014"
+        const val USER_GET_NICKNAME_SUCCESS = "1015"
+        const val USER_GET_NICKNAME_FAILED_NOT_FOUND = "1016"
+
         const val PRODUCT_ADD_SUCCESS = "2000"
         const val PRODUCT_ADD_FAILED = "2001"
         const val PRODUCT_GET_ALL_SUCCESS = "2002"
@@ -43,6 +47,7 @@ class ResponseCode {
         const val VALIDATION_PRICE_IS_BLACK = "3005"
         const val VALIDATION_NUM_NEGATIVE = "3006"
         const val VALIDATION_FREIGHT_NEGATIVE = "3007"
+        const val VALIDATION_NICKNAME_IS_BLACK = "3007"
 
         const val ERROR_GET_GATE_CODE = "100000"
         const val ERROR_VALIDATION_CODE = "100001"

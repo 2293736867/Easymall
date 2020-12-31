@@ -2,13 +2,13 @@
     <el-row justify="center" type="flex">
         <el-col>
             <el-carousel :interval="5000" height="400px" v-if="windowWidth < 1400">
-                <el-carousel-item v-for="item in 4" :key="item">
-                    <el-image v-loading="loadingImage" element-loading-text="拼命加载中" src="/Banner.jpg"></el-image>
+                <el-carousel-item v-for="item in 5" :key="item">
+                    <el-image v-loading="loadingImage" element-loading-text="拼命加载中" :src="getBanner(item)"></el-image>
                 </el-carousel-item>
             </el-carousel>
             <el-carousel :interval="5000" height="400px" v-else type="card">
-                <el-carousel-item v-for="item in 4" :key="item">
-                    <el-image v-loading="loadingImage" element-loading-text="拼命加载中" src="/Banner.jpg"></el-image>
+                <el-carousel-item v-for="item in 5" :key="item">
+                    <el-image v-loading="loadingImage" element-loading-text="拼命加载中" :src="getBanner(item)"></el-image>
                 </el-carousel-item>
             </el-carousel>
         </el-col>
@@ -33,6 +33,9 @@ export default {
         }
     },
     methods:{
+        getBanner(i){
+            return "/banner/"+i+".png"
+        }
     }
 }
 </script>

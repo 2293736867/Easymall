@@ -1,9 +1,11 @@
 package pers.wzr.easymall.util
 
+import org.springframework.web.reactive.function.server.ServerRequest
 import pers.wzr.easymall.entity.entity.Product
 import pers.wzr.easymall.entity.validation.ProductReturn
 import java.nio.file.Files
 import java.nio.file.Path
+import java.util.*
 
 class Utils {
     companion object
@@ -56,6 +58,11 @@ class Utils {
             old.freight = new.freight
             old.num = new.num
             old.price = new.price
+        }
+
+        fun getIdFromServerRequest(request: ServerRequest):String
+        {
+            return request.headers().header("userToken")[0]
         }
     }
 }

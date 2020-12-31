@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-aside v-if="isUserSignIn" style="padding-top: 1rem;" width="100px">
+        <el-aside v-if="isUserSignIn" style="padding-top: 1rem;position: absolute;left: 0" width="100px;">
             <side-bar></side-bar>
         </el-aside>
         <el-main>
@@ -78,7 +78,7 @@
 import URL from "../../../js/constant/URL";
 import axios from 'axios'
 import router from "../../../js/router/router";
-import SideBar from "../../other/SideBar.vue";
+import SideBar from "../other/SideBar.vue";
 import Categories from "../../../js/constant/Categories";
 
 export default {

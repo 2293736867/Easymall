@@ -1,16 +1,25 @@
 <template>
     <el-menu :collapse="isCollapse" class="el-menu-vertical-demo side-bar" default-active="1-1-1">
         <el-menu-item index="0">
-            <el-badge :value="cardNum">
-                <i class="el-icon-shopping-cart-1"></i>
-            </el-badge>
+            <el-tooltip content="个人中心" effect="light" placement="right">
+                <i class="el-icon-user"></i>
+            </el-tooltip>
         </el-menu-item>
-        <el-menu-item>
-            <el-badge :value="favoriteNum">
-                <i class="el-icon-star-off"></i>
-            </el-badge>
+        <el-menu-item index="1">
+            <el-tooltip content="购物车" effect="light" placement="right">
+                <el-badge :value="cardNum">
+                    <i class="el-icon-shopping-cart-1"></i>
+                </el-badge>
+            </el-tooltip>
         </el-menu-item>
-        <el-submenu index="1">
+        <el-menu-item index="2">
+            <el-tooltip content="收藏" effect="light" placement="right">
+                <el-badge :value="favoriteNum">
+                    <i class="el-icon-star-off"></i>
+                </el-badge>
+            </el-tooltip>
+        </el-menu-item>
+        <el-submenu index="3">
             <template #title>
                 <i class="el-icon-location"></i>
                 <span>cc</span>
@@ -30,8 +39,8 @@ export default {
     data() {
         return {
             isCollapse: true,
-            cardNum:'12',
-            favoriteNum:'12',
+            cardNum: '12',
+            favoriteNum: '12',
         }
     },
     methods: {}

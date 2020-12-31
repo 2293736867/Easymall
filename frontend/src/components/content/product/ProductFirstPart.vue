@@ -30,7 +30,7 @@
                 <el-table-column label="运费" prop="freight"></el-table-column>
                 <el-table-column label="剩余库存" prop="num"></el-table-column>
             </el-table>
-            <el-tooltip content="购买数量" placement="left">
+            <el-tooltip content="购买数量" placement="left" effect="light">
                 <el-input-number v-model="affordNum" :max="product.num" :min="1">
                 </el-input-number>
             </el-tooltip>

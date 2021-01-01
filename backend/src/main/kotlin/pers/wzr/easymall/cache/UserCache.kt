@@ -8,4 +8,7 @@ class UserCache {
     var monoUser = Mono.empty<User>()
     var fluxUser = Flux.empty<User>()
     var id = ""
+    var user = User()
+    var nickname = ""
+    var email = ""
 }

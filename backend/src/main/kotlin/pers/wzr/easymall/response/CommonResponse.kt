@@ -21,5 +21,9 @@ class CommonResponse{
         {
             return ServerResponse.ok().body(t,c)
         }
+
+        fun str(str:String):Mono<ServerResponse>{
+            return ServerResponse.ok().body(BodyInserters.fromValue(str))
+        }
     }
 }

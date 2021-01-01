@@ -14,7 +14,7 @@ import Header from "../header/Header.vue";
 
 export default {
     name: "IndexRouter",
-    components: {Header}
+    components: {Header},
 }
 </script>
 

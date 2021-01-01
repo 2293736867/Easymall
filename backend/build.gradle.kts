@@ -38,10 +38,13 @@ dependencies {
 
     //customize
     implementation("com.auth0:java-jwt:3.12.0")
-    implementation("cn.hutool:hutool-all:5.5.4")
+    implementation("cn.hutool:hutool-all:5.5.6")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("com.google.guava:guava:30.1-jre")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.68")
+    implementation("org.yaml:snakeyaml:1.27")
+
 }
 
 tasks.withType<KotlinCompile> {

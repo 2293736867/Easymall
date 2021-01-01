@@ -1,5 +1,6 @@
 package pers.wzr.easymall.handler
 
+import com.auth0.jwt.JWT
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.data.domain.Example
@@ -31,9 +32,6 @@ class UserHandler {
     lateinit var repository: UserRepository
     @Autowired
     lateinit var validator: CustomValidator
-
-    @Value("jwt.key")
-    lateinit var key:String
 
     private var cache = UserCache()
 
@@ -96,13 +94,11 @@ class UserHandler {
     fun update(request: ServerRequest):Mono<ServerResponse>
     {
         return request.bodyToMono(UserUpdate::class.java).flatMap {
-            println(it)
             if(validator.hasErrors(it))
                 return@flatMap validator.errors()
-            val token = request.headers().header("token")[0]
-            val id = JWTUtils.getIdFromToken(token)
+            val id = JWTUtils.getIdFromServerRequest(request)
             val user = User()
-            repository.findById(id).flatMap { n->
+            return@flatMap repository.findById(id).flatMap { n->
                 user.id = id
                 user.username = n.username
                 user.email = it.email
@@ -144,11 +140,38 @@ class UserHandler {
 
     fun getNickname(request: ServerRequest):Mono<ServerResponse>
     {
-        return repository.findById(Utils.getIdFromServerRequest(request)).flatMap {
+        val id = JWTUtils.getIdFromServerRequest(request)
+        return if(cache.id != id) {
+            cache.id = id
+            repository.findById(id).flatMap {
+                cache.user = it
+                cache.nickname = it.nickname
+                CommonResponse.code(ResponseCode.USER_GET_NICKNAME_SUCCESS)
+            }.switchIfEmpty(
+                CommonResponse.code(ResponseCode.USER_GET_NICKNAME_FAILED_NOT_FOUND)
+            )
+        } else {
+            cache.nickname = cache.user.nickname
             CommonResponse.code(ResponseCode.USER_GET_NICKNAME_SUCCESS)
-        }.switchIfEmpty(
-            CommonResponse.code(ResponseCode.USER_GET_NICKNAME_FAILED_NOT_FOUND)
-        )
+        }
+    }
+
+    fun getEmail(request: ServerRequest):Mono<ServerResponse>
+    {
+        val id = JWTUtils.getIdFromServerRequest(request)
+        return if(cache.id != id) {
+            cache.id = id
+            repository.findById(id).flatMap {
+                cache.user = it
+                cache.email = it.email
+                CommonResponse.code(ResponseCode.USER_GET_EMAIL_SUCCESS)
+            }.switchIfEmpty(
+                CommonResponse.code(ResponseCode.USER_GET_EMAIL_FAILED_NOT_FOUND)
+            )
+        } else {
+            cache.email = cache.user.email
+            CommonResponse.code(ResponseCode.USER_GET_EMAIL_SUCCESS)
+        }
     }
 
     fun data(request: ServerRequest):Mono<ServerResponse>
@@ -156,7 +179,9 @@ class UserHandler {
         return when(request.pathVariable("code")){
             ResponseCode.USER_GET_ONE_SUCCESS -> UserResponse.mono(cache.monoUser)
             ResponseCode.USER_GET_ALL_SUCCESS -> UserResponse.flux(cache.fluxUser)
-            ResponseCode.USER_SIGN_IN_SUCCESS -> UserResponse.token(JWTUtils.generate(cache.id,key))
+            ResponseCode.USER_SIGN_IN_SUCCESS -> UserResponse.token(JWTUtils.generate(cache.id))
+            ResponseCode.USER_GET_EMAIL_SUCCESS -> CommonResponse.str(cache.email)
+            ResponseCode.USER_GET_NICKNAME_SUCCESS -> CommonResponse.str(cache.nickname)
             else -> CommonResponse.code(ResponseCode.ERROR_GET_GATE_CODE)
         }
     }

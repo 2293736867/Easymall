@@ -6,6 +6,7 @@ import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import pers.wzr.easymall.response.CommonResponse
 import pers.wzr.easymall.response.ResponseCode
+import pers.wzr.easymall.util.Utils
 import reactor.core.publisher.Mono
 
 class UserHandlerFilter:HandlerFilterFunction<ServerResponse,ServerResponse> {
@@ -13,7 +14,7 @@ class UserHandlerFilter:HandlerFilterFunction<ServerResponse,ServerResponse> {
         val path = request.path()
         if(path == "/user/update")
         {
-            val s = request.headers().header("userToken")
+            val s = Utils.getUserTokenFromServerRequest(request)
             if(s.isEmpty())
             {
                 return CommonResponse.code(ResponseCode.USER_NOT_SIGN_IN)

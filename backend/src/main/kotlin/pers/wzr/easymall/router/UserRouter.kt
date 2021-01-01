@@ -15,20 +15,25 @@ class UserRouter {
         private const val DELETE = USER + "delete/{id}"
         private const val UPDATE = USER + "update"
         private const val GET_ALL = USER + "get"
-        private const val GET_BY_ID = USER + "get/{id}"
+//        private const val GET_BY_ID = USER + "get/{id}"
+        private const val GET_EMAIL = USER + "get/email"
+        private const val GET_NICKNAME = USER + "get/nickname"
         private const val CHECK_USERNAME_EXISTS = USER + "check/username/{username}"
         private const val DATA = USER + "data/{code}"
     }
 
     @Bean
     fun userRouterConfig(handler: UserHandler) = router {
+        GET(DATA,handler::data)
+        GET(GET_ALL,handler::getAll)
+//        GET(GET_BY_ID,handler::getById)
+        GET(GET_EMAIL,handler::getEmail)
+        GET(GET_NICKNAME,handler::getNickname)
+        GET(CHECK_USERNAME_EXISTS,handler::checkUsernameExists)
+
         POST(SIGN_IN,handler::signIn)
         POST(SIGN_UP,handler::signUp)
-        GET(GET_ALL,handler::getAll)
-        GET(GET_BY_ID,handler::getById)
-        GET(CHECK_USERNAME_EXISTS,handler::checkUsernameExists)
         DELETE(DELETE,handler::delete)
         PUT(UPDATE,handler::update)
-        GET(DATA,handler::data)
     }.filter(UserHandlerFilter())
 }

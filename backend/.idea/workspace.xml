@@ -5,35 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/banner/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/banner/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/banner/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/banner/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/banner/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/other/SideBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/user/Personal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.attach_pid10545" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.attach_pid9802" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/newprivate.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/private.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/public.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/TokenTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/SignInDrawer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserCache.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserUpdate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserUpdate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/CommonResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/CommonResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWT.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/public/Banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/Carousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/Carousel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductThirdPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductThirdPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/SearchBarAndLogoAndSignInUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/header/SearchBarAndLogoAndSignInUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/other/SideBar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/Favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/logo/Favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/Logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/logo/Logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/picFailed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/user/Personal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/router/header/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/content/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/SearchBarAndLogoAndSignInUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/SignUpDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/indexrouter/IndexRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/router/index/IndexRouter.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/js/constant/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/constant/URL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/store.js" afterDir="false" />
@@ -98,9 +98,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/ecdsa" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
   </component>
   <component name="ReactorSettings">
@@ -108,11 +109,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/ecdsa" />
       <recent name="$PROJECT_DIR$/src/main/resources/img" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/img" />
@@ -133,7 +134,41 @@
       <recent name="pers.wzr.easymall.entity.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="Gradle.TokenTests.test">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokenTests.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.TokenTests.test&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="UserServiceTests.delete" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -155,68 +190,21 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserServiceTests.getAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.getAll&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <module name="easymall.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="UserServiceTests.signUp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.signUp&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="UserServiceTests.update" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.userservice.UserServiceTests.update&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="Scratchss" type="Java Scratch" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <module name="easymall.main" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/Scratch.java" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="build.gradle.kts" type="KotlinStandaloneScriptRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="easymall.test" />
@@ -252,6 +240,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="scratch.kts" type="KotlinStandaloneScriptRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="easymall.test" />
+      <option name="filePath" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.kts" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.kts" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="easymall.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.wzr.easymall.EasymallApplication" />
@@ -265,18 +287,20 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.UserServiceTests.delete" />
-      <item itemvalue="Gradle.UserServiceTests.getAll" />
-      <item itemvalue="Gradle.UserServiceTests.signUp" />
-      <item itemvalue="Gradle.UserServiceTests.update" />
+      <item itemvalue="Java Scratch.Scratch" />
+      <item itemvalue="Java Scratch.Scratchss" />
       <item itemvalue="Application.build.gradle.kts" />
+      <item itemvalue="Application.scratch.kts" />
       <item itemvalue="Spring Boot.Main" />
+      <item itemvalue="Gradle.TokenTests.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TokenTests.test" />
+        <item itemvalue="Java Scratch.Scratchss" />
+        <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="Application.scratch.kts" />
         <item itemvalue="Application.build.gradle.kts" />
-        <item itemvalue="Gradle.UserServiceTests.update" />
-        <item itemvalue="Gradle.UserServiceTests.signUp" />
-        <item itemvalue="Gradle.UserServiceTests.getAll" />
       </list>
     </recent_temporary>
   </component>

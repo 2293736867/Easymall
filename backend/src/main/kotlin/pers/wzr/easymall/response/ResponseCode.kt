@@ -21,6 +21,8 @@ class ResponseCode {
         const val USER_NOT_SIGN_IN = "1014"
         const val USER_GET_NICKNAME_SUCCESS = "1015"
         const val USER_GET_NICKNAME_FAILED_NOT_FOUND = "1016"
+        const val USER_GET_EMAIL_SUCCESS = "1017"
+        const val USER_GET_EMAIL_FAILED_NOT_FOUND = "1018"
 
         const val PRODUCT_ADD_SUCCESS = "2000"
         const val PRODUCT_ADD_FAILED = "2001"

@@ -7,11 +7,14 @@ const productBase = base + 'product/'
 
 const URL = {
     code:base+'verification/code',
-    signIn:userBase+'sign/in',
-    signUp:userBase+'sign/up',
+
+    userSignIn:userBase+'sign/in',
+    userSignUp:userBase+'sign/up',
     userData:userBase+'data/',
     userUpdate:userBase+'update',
-    checkUsername:userBase+'check/username/',
+    userGetEmail:userBase+'get/email',
+    userGetNickname:userBase+'get/nickname',
+    userCheckUsername:userBase+'check/username/',
 
     productGetDetail:productBase+'get/detail/',
     productGetByCategory:productBase+'get/category/',

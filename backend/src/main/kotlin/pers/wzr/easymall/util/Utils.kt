@@ -60,9 +60,11 @@ class Utils {
             old.price = new.price
         }
 
-        fun getIdFromServerRequest(request: ServerRequest):String
+        fun getUserTokenFromServerRequest(request: ServerRequest):String
         {
             return request.headers().header("userToken")[0]
         }
+
+        fun removeFilePrefix(str:String) = str.substring(str.indexOf(":")+1)
     }
 }

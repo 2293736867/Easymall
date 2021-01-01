@@ -14,6 +14,10 @@ const store = createStore({
                 v:v.username
             })
             store.commit('set',{
+                k:'password',
+                v:v.password
+            })
+            store.commit('set',{
                 k:'userToken',
                 v:v.token
             })

@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import router from "../../js/router/router";
-import Categories from "../../js/constant/Categories";
+import router from "../../../../js/router/router";
+import Categories from "../../../../js/constant/Categories";
 export default {
     name: "Navbar",
     data(){

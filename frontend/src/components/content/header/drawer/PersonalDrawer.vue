@@ -1,19 +1,19 @@
 <template>
     <el-drawer direction="rtl" size="20%" title="个人中心">
-        <el-form ref="personal" :model="user" status-icon style="margin-left: 2rem;margin-right: 2rem">
+        <el-form ref="personal" :rules="rules" :model="user" status-icon style="margin-left: 2rem;margin-right: 2rem">
             <el-form-item label="用户名">
                 <el-input :model-value="getUsername" clearable disabled prefix-icon="el-icon-s-custom">
                 </el-input>
             </el-form-item>
-            <el-form-item label="昵称">
+            <el-form-item label="昵称" prop="nickname">
                 <el-input v-model="user.nickname" :disabled="notModifying" clearable
                           prefix-icon="el-icon-coin"></el-input>
             </el-form-item>
-            <el-form-item label="邮箱">
+            <el-form-item label="邮箱" prop="email">
                 <el-input v-model="user.email" :disabled="notModifying" clearable
                           prefix-icon="el-icon-message"></el-input>
             </el-form-item>
-            <el-form-item label="密码">
+            <el-form-item label="密码" prop="password">
                 <el-input v-model="user.password" :disabled="notModifying" clearable prefix-icon="el-icon-s-cooperation"
                           type="password"></el-input>
             </el-form-item>
@@ -28,50 +28,54 @@
                     <i class="el-icon-back"></i>
                     取消修改
                 </el-button>
-                <el-button type="primary" @click="commit">
+                <el-button :disabled="notModifying" type="primary" @click="commit">
                     <i class="el-icon-top"></i>
                     提交
                 </el-button>
             </el-col>
         </el-row>
     </el-drawer>
-
-    <!--    <el-form ref="form" :model="form" :rules="rules" status-icon style="margin-left: 2rem;margin-right: 2rem;">-->
-    <!--        <el-form-item label="用户名" prop="username">-->
-    <!--            <el-input v-model="form.username" clearable prefix-icon="el-icon-s-custom">-->
-    <!--            </el-input>-->
-    <!--        </el-form-item>-->
-    <!--        <el-form-item label="电子邮箱" prop="email">-->
-    <!--            <el-input v-model="form.email" clearable prefix-icon="el-icon-message"></el-input>-->
-    <!--        </el-form-item>-->
-    <!--        <el-form-item label="密码" prop="password">-->
-    <!--            <el-input v-model="form.password" clearable prefix-icon="el-icon-s-cooperation" show-password-->
-    <!--                      type="password"></el-input>-->
-    <!--        </el-form-item>-->
-    <!--        <el-form-item label="验证码" prop="code">-->
-    <!--            <br>-->
-    <!--            <el-row>-->
-    <!--                <el-col :span="10">-->
-    <!--                    <el-input v-model="form.code" clearable prefix-icon="el-icon-aim">-->
-    <!--                    </el-input>-->
-    <!--                </el-col>-->
-    <!--                <el-col :span="14">-->
-    <!--                    <el-image :src="verificationCodeImage" style="margin-top: 0.3rem"-->
-    <!--                              @click="getVerificationCode"></el-image>-->
-    <!--                </el-col>-->
-    <!--            </el-row>-->
-    <!--        </el-form-item>-->
-    <!--    </el-form>-->
 </template>
 
 <script>
 import axios from "axios";
 import URL from "../../../../js/constant/URL";
 import Utils from "../../../../js/utils/Utils";
+import REG from "../../../../js/constant/REG";
 
 export default {
     name: "PersonalDrawer",
     data() {
+        var nicknameCheck = (rule, value, callback) => {
+            if (!value)
+                callback(new Error('请输入昵称'))
+            callback()
+        }
+
+        var passwordCheck = (rule, value, callback) => {
+            if (!value) {
+                callback(new Error('请输入密码'))
+            }
+            if (!REG.password.test(value)) {
+                this.$notify({
+                    title: '密码最少6位',
+                    message: '最少1数字+1特殊字符+1大写+1小写',
+                    type: 'warning',
+                    position: 'top-left'
+                })
+                callback(new Error('密码过于简单'))
+            }
+            callback()
+        }
+
+        var emailCheck = (rule, value, callback) => {
+            if (!value)
+                callback(new Error('请输入邮箱'))
+            if (!REG.email.test(value))
+                callback(new Error('请输入合法的邮箱'))
+            callback()
+        }
+
         return {
             user: {
                 nickname: '',
@@ -79,6 +83,11 @@ export default {
                 password: ''
             },
             notModifying: true,
+            rules: {
+                nickname: [{validator: nicknameCheck, trigger: 'blur'}],
+                password: [{validator: passwordCheck, trigger: 'blur'}],
+                email: [{validator: emailCheck, trigger: 'blur'}],
+            },
         }
     },
     computed: {
@@ -103,7 +112,7 @@ export default {
                     if (res.data === 1012) {
                         this.$message.success('修改成功')
                     } else if (res.data === 1014) {
-                        this.$message.error('请重新登录')
+                        this.$messae.error('请重新登录')
                     }
                     this.notModifying = true
                     this.$emit('success')
@@ -131,8 +140,9 @@ export default {
                     {
                         axios.all([axios.get(URL.userData+res[0].data),axios.get(URL.userData+res[1].data)])
                         .then(res=>{
+                            console.log(res)
                             this.user.email = res[0].data
-                            this.user.nickname = res[0].data
+                            this.user.nickname = res[1].data
                         })
                     }
                 }

@@ -53,7 +53,7 @@
                                 <div>加载中...</div>
                             </template>
                             <template #error>
-                                <el-image src="/DefaultProduct.png"></el-image>
+                                <el-image src="/default/Product.png"></el-image>
                                 <div>加载失败</div>
                             </template>
                         </el-image>
@@ -67,7 +67,7 @@
             </el-row>
             <el-row>
                 <el-col v-show="none">
-                    <el-image src="/DefaultProduct.png"></el-image>
+                    <el-image src="/default/Product.png"></el-image>
                 </el-col>
             </el-row>
         </el-main>

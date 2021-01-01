@@ -23,7 +23,7 @@ class TestHandlerFilter:HandlerFilterFunction<ServerResponse,ServerResponse> {
             }
             if(username.get() == "11" && password.get() == "22")
             {
-                val token = JWTUtils.generate(username.get(),password.get())
+                val token = JWTUtils.generate(username.get())
                 t.attributes["token"] = token
                 println("create token:$token")
                 return@flatMap next.handle(request)

@@ -65,6 +65,7 @@ class UserHandler {
                     .withIgnorePaths(*UserProperty.other())
                 return@flatMap repository.findOne(Example.of(user,matcher)).flatMap { u->
                     cache.id = u.id
+                    cache.user = u
                     CommonResponse.code(ResponseCode.USER_SIGN_IN_SUCCESS)
                 }.switchIfEmpty(
                     CommonResponse.code(ResponseCode.USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR)

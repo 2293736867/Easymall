@@ -5,7 +5,7 @@
                 <el-carousel-item v-for="item in product.coverImagesSize" :key="item">
                     <el-image :src="product.coverImageBaseUrl+item" v-loading="loadingCoverImage">
                         <template #error>
-                            <el-image src="/DefaultProduct.png"></el-image>
+                            <el-image src="/default/Product.png"></el-image>
                         </template>
                     </el-image>
                 </el-carousel-item>
@@ -43,6 +43,10 @@
                 购买
             </el-button>
             <el-divider></el-divider>
+            <el-tooltip effect="light" content="用户评分" placement="bottom">
+                <el-rate v-model="rating" disabled show-score text-color="#ff9900" style="margin-top: 1rem">
+                </el-rate>
+            </el-tooltip>
         </el-col>
     </el-row>
 </template>
@@ -62,6 +66,7 @@ export default {
             loadingThumbnailImage: false,
             showBorder: [],
             affordNum: 1,
+            rating:3.7,
         }
     },
     created() {

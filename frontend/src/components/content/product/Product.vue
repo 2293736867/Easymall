@@ -1,14 +1,22 @@
 <template>
-    <ProductFirstPart></ProductFirstPart>
-    <ProductSecondPart style="margin-top: 3rem"></ProductSecondPart>
-    <ProductThirdPart style="margin-top: 3rem"></ProductThirdPart>
+        <div>
+            <ProductFirstPart></ProductFirstPart>
+        </div>
+        <div style="margin-top: 3rem">
+            <el-divider></el-divider>
+            <ProductSecondPart></ProductSecondPart>
+        </div>
+        <div style="margin-top: 3rem">
+            <el-divider></el-divider>
+            <ProductThirdPart></ProductThirdPart>
+        </div>
 </template>
 
 <script>
-
 import ProductFirstPart from "./ProductFirstPart.vue";
 import ProductSecondPart from "./ProductSecondPart.vue";
 import ProductThirdPart from "./ProductThirdPart.vue";
+
 export default {
     name: "Product",
     components: {ProductThirdPart, ProductSecondPart, ProductFirstPart},

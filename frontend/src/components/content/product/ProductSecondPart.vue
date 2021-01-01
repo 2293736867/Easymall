@@ -1,11 +1,14 @@
 <template>
     <el-row justify="center" type="flex">
         <el-col :span="16">
-            <el-table :data="tableData">
-                <el-table-column prop="key" label="文字">
-                </el-table-column>
-                <el-table-column prop="value" label="描述"></el-table-column>
-            </el-table>
+            <el-row v-for="i in tableData">
+                <el-col>
+                    <el-card shadow="hover">
+                        <el-tag>{{ i.k }}</el-tag>
+                        <span style="color:#606266;margin-left: 0.5rem">{{ i.v }}</span>
+                    </el-card>
+                </el-col>
+            </el-row>
         </el-col>
     </el-row>
 </template>
@@ -16,19 +19,17 @@ export default {
         return {
             product: '',
             description: '',
-            tableData:[],
+            tableData: [],
         }
     },
     mounted() {
         this.product = JSON.parse(localStorage.getItem('product'))
         this.description = JSON.parse(this.product.description)
-        for(var i in this.description)
-        {
-            if(this.description.hasOwnProperty(i))
-            {
+        for (var i in this.description) {
+            if (this.description.hasOwnProperty(i)) {
                 this.tableData.push({
-                    'key':i,
-                    'value':this.description[i]
+                    'k': i,
+                    'v': this.description[i]
                 })
             }
         }

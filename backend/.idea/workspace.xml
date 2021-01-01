@@ -5,38 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/newprivate.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/private.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ecdsa/public.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/TokenTests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/SignInDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/default/SideBarUser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/default/User.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/default/User.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/FavouriteDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/ShoppingCardDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/other/AvatarDrawer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserCache.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/CommonResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/CommonResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/TokenTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/TokenTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/public/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/public/Favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/logo/Favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/public/Logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/logo/Logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/public/picFailed.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/user/Personal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/router/header/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/content/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/header/SearchBarAndLogoAndSignInUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/SignUpDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/indexrouter/IndexRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/router/index/IndexRouter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/constant/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/constant/URL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/DefaultProduct.png" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/default/Product.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/other/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/other/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/Product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +69,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1lSqrY0Y64w0vZ3VySnqZCNtbbv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -102,7 +100,7 @@
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/ecdsa" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -134,41 +132,7 @@
       <recent name="pers.wzr.easymall.entity.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TokenTests.test">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TokenTests.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;pers.wzr.easymall.TokenTests.test&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="UserServiceTests.delete" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -189,22 +153,6 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
-    </configuration>
-    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <module name="easymall.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scratchss" type="Java Scratch" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <module name="easymall.main" />
-      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/Scratch.java" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="build.gradle.kts" type="KotlinStandaloneScriptRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="easymall.test" />
@@ -287,18 +235,12 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.UserServiceTests.delete" />
-      <item itemvalue="Java Scratch.Scratch" />
-      <item itemvalue="Java Scratch.Scratchss" />
       <item itemvalue="Application.build.gradle.kts" />
       <item itemvalue="Application.scratch.kts" />
       <item itemvalue="Spring Boot.Main" />
-      <item itemvalue="Gradle.TokenTests.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TokenTests.test" />
-        <item itemvalue="Java Scratch.Scratchss" />
-        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.scratch.kts" />
         <item itemvalue="Application.build.gradle.kts" />
       </list>

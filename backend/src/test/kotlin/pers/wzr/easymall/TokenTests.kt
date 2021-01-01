@@ -7,8 +7,8 @@ class TokenTests {
     @Test
     fun test()
     {
-        val token1 = JWTUtils.newGenerate("111")
-        val token2 = JWTUtils.newGenerate("111")
+        val token1 = JWTUtils.generate("111")
+        val token2 = JWTUtils.generate("111")
         println(token1)
         println(token2)
         println(token1 == token2)

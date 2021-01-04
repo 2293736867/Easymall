@@ -13,18 +13,19 @@
 
 后端库：
 
-- `Kotlin`
 - `Spring Boot WebFlux`
-- `Mongodb`
+- `Reactive Mongodb`
 - `Docker`
 - `JWT`
 - `guava`
-
+- `hutool`
+- `bouncycastle`
+- `snakeyaml`
 
 # 2 项目目录说明
 
-- `backend`：后端项目目录，使用`IDEA`进行开发
-- `frontend`：前端项目目录，使用`WebStorm`进行开发
+- `backend`：后端目录
+- `frontend`：前端目录
 
 # 3 目前已完成
 
@@ -32,14 +33,20 @@
 - 用户登录/注册
 - 商品展示
 - 商品详情
+- 购物车
+- 
 
 # 4 Todo
 
-- ``Session`
-- 商品展示完善
-- 购物车
+- 购物车完善
+- 订单业务逻辑
+- 物流信息地图
+- 订单报表
 
 # 5 更新日志
+# 1/2/2021
+- V3.2.alpha
+
 # 1/1/2021
 
 - V3.1.2

@@ -3,13 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.4.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
-    kotlin("jvm") version "1.4.21"
-    kotlin("plugin.spring") version "1.4.21"
-    kotlin("plugin.serialization") version "1.4.21"
+    kotlin("jvm") version "1.4.30-M1"
+    kotlin("plugin.spring") version "1.4.30-M1"
 }
 
 group = "pers.wzr"
-version = "2.1"
+version = "3.2.alpha"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 configurations {
@@ -39,7 +38,6 @@ dependencies {
     //customize
     implementation("com.auth0:java-jwt:3.12.0")
     implementation("cn.hutool:hutool-all:5.5.6")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("com.google.guava:guava:30.1-jre")
     implementation("org.bouncycastle:bcprov-jdk15on:1.68")

@@ -39,9 +39,9 @@
 
 <script>
 import axios from "axios";
-import URL from "../../../../js/constant/URL";
-import Utils from "../../../../js/utils/Utils";
-import REG from "../../../../js/constant/REG";
+import URL from "../../../../../js/constant/URL";
+import Utils from "../../../../../js/utils/Utils";
+import REG from "../../../../../js/constant/REG";
 
 export default {
     name: "PersonalDrawer",
@@ -112,7 +112,7 @@ export default {
                     if (res.data === 1012) {
                         this.$message.success('修改成功')
                     } else if (res.data === 1014) {
-                        this.$messae.error('请重新登录')
+                        this.$message.error('请重新登录')
                     }
                     this.notModifying = true
                     this.$emit('success')
@@ -125,7 +125,7 @@ export default {
         undoModify() {
             this.notModifying = true
         },
-        showDrawer() {
+        init() {
             axios.all([axios.get(URL.userGetEmail, {
                 headers: {
                     userToken: localStorage.getItem('userToken')

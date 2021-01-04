@@ -5,28 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/public/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/default/SideBarUser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/default/User.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/default/User.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/FavouriteDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/ShoppingCardDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/other/AvatarDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/IndexTopBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/OrdersDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/ShoppingCardDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductIndex.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/user/UserIndex.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/user/header/UserTopBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/user/tabpane/BaseTabPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/content/user/tabpane/OverviewTabPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/router/UserRouter.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/TestHandlerFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/TokenTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/TokenTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/public/DefaultProduct.png" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/public/default/Product.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/other/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/other/SideBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/content/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/IndexNavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/content/TopBar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/FavouriteDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/FavouriteDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/PersonalDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/PersonalDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/ShoppingCardDrawer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/SignInDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/SignInDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/header/drawer/SignUpDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/SignUpDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/Carousel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/content/index/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/other/AvatarDrawer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/other/SideBar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Products.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/router/header/Header.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/router/index/IndexRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/router/IndexRouter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,19 +105,19 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/ecdsa" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/http2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/http2" />
       <recent name="$PROJECT_DIR$/src/main/resources/ecdsa" />
       <recent name="$PROJECT_DIR$/src/main/resources/img" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/img" />

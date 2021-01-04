@@ -36,9 +36,9 @@
 
 <script>
 import axios from "axios";
-import URL from "../../../../js/constant/URL";
-import Utils from "../../../../js/utils/Utils";
-import REG from "../../../../js/constant/REG";
+import URL from "../../../../../js/constant/URL";
+import Utils from "../../../../../js/utils/Utils";
+import REG from "../../../../../js/constant/REG";
 
 export default {
     name: "SignUpDrawer",
@@ -139,7 +139,7 @@ export default {
                 that.verificationCodeImage = 'data:image/png;base64,' + res.data
             })
         },
-        showDrawer() {
+        init() {
             this.getVerificationCode()
         },
     },

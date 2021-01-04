@@ -32,8 +32,8 @@
 
 <script>
 import axios from "axios";
-import URL from "../../../../js/constant/URL";
-import Utils from "../../../../js/utils/Utils";
+import URL from "../../../../../js/constant/URL";
+import Utils from "../../../../../js/utils/Utils";
 
 export default {
     name: "SignInDrawer",
@@ -107,10 +107,10 @@ export default {
         getVerificationCode() {
             const that = this
             axios.get(URL.code).then(function (res) {
-                that.verificationCodeImage = 'data:image/png;base64,' + res.data
+                that.veificationCodeImage = 'data:image/png;base64,' + res.data
             })
         },
-        showDrawer(){
+        init(){
             this.getVerificationCode()
         }
     },

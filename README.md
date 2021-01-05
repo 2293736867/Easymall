@@ -6,10 +6,12 @@
 
 - `ElementPlus`
 - `Vue3`
+- `Vuex`
 - `axios`
-- `vue-router`
-- `vite`
-- `jssha`
+- `Vue-router`
+- `Vite`
+- `jsSHA`
+- `Echarts`
 
 后端库：
 
@@ -17,9 +19,9 @@
 - `Reactive Mongodb`
 - `Docker`
 - `JWT`
-- `guava`
+- `Guava`
 - `hutool`
-- `bouncycastle`
+- `Bouncycastle`
 - `snakeyaml`
 
 # 2 项目目录说明
@@ -34,7 +36,6 @@
 - 商品展示
 - 商品详情
 - 购物车
-- 
 
 # 4 Todo
 
@@ -44,6 +45,12 @@
 - 订单报表
 
 # 5 更新日志
+# 1/5/2021
+- 引入图表库`Echarts`
+- 完善个人中心
+- 添加订单分类
+- 初步引入后台管理模块
+
 # 1/4/2021
 - V3.2.beta
 

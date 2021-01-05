@@ -39,20 +39,20 @@
 
 <script>
 import axios from "axios";
-import URL from "../../../../../js/constant/URL";
-import Utils from "../../../../../js/utils/Utils";
-import REG from "../../../../../js/constant/REG";
+import URL from "../../../../../../js/constant/URL";
+import Utils from "../../../../../../js/utils/Utils";
+import REG from "../../../../../../js/constant/REG";
 
 export default {
     name: "PersonalDrawer",
     data() {
-        var nicknameCheck = (rule, value, callback) => {
+        let nicknameCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入昵称'))
             callback()
         }
 
-        var passwordCheck = (rule, value, callback) => {
+        let passwordCheck = (rule, value, callback) => {
             if (!value) {
                 callback(new Error('请输入密码'))
             }
@@ -68,7 +68,7 @@ export default {
             callback()
         }
 
-        var emailCheck = (rule, value, callback) => {
+        let emailCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入邮箱'))
             if (!REG.email.test(value))

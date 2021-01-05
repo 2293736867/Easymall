@@ -68,10 +68,10 @@
 </template>
 
 <script>
-import URL from "../../../js/constant/URL";
+import URL from "../../../../js/constant/URL";
 import axios from 'axios'
-import router from "../../../js/router/router";
-import Categories from "../../../js/constant/Categories";
+import router from "../../../../js/router/router";
+import Categories from "../../../../js/constant/Categories";
 
 export default {
     name: "ProductIndex",
@@ -114,7 +114,7 @@ export default {
         loadProductByCategory(id) {
             id = parseInt(id)
             if (id >= 1 && id <= Categories.length) {
-                var allProducts = (id === 1)
+                let allProducts = (id === 1)
                 axios.get(URL.productGetByCategory + (allProducts ? "" : Categories[id - 1].value)).then(res => {
                     if (res.data === allProducts ? 2012 : 2010) {
                         axios.get(URL.productData + res.data).then(res => {

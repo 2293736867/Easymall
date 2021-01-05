@@ -74,7 +74,7 @@ export default {
         this.tableData[0].price = this.product.price
         this.tableData[0].freight = this.product.freight
         this.tableData[0].num = this.product.num
-        for (var i = 0; i < this.product.coverImagesSize; ++i) {
+        for (let i = 0; i < this.product.coverImagesSize; ++i) {
             this.showBorder.push(false)
         }
     },
@@ -86,7 +86,7 @@ export default {
         removeBorderOnLeave(i) {
             this.showBorder[i] = false
         },
-    }
+    },
 }
 </script>
 

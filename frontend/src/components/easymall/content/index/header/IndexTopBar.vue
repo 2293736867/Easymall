@@ -16,8 +16,11 @@
             </el-button>
         </el-col>
         <el-col v-if="isUserSignIn" :span="4">
-            <el-badge>
-                <el-tooltip content="我的订单" effect="light" placement="bottom" style="margin-right: 1rem">
+            <el-tooltip content="个人中心" effect="light" placement="bottom" style="margin-right: 1rem">
+                <el-button circle icon="el-icon-user" plain type="primary" @click="toPersonal"></el-button>
+            </el-tooltip>
+            <el-badge style="margin-right: 1rem">
+                <el-tooltip content="我的订单" effect="light" placement="bottom">
                     <el-button circle icon="el-icon-s-order" plain type="primary"></el-button>
                 </el-tooltip>
             </el-badge>
@@ -33,9 +36,6 @@
                                @click="showFavouriteDrawer"></el-button>
                 </el-tooltip>
             </el-badge>
-            <el-tooltip content="个人中心" effect="light" placement="bottom">
-                <el-button circle icon="el-icon-user" plain type="primary" @click="toPersonal"></el-button>
-            </el-tooltip>
             <el-tooltip content="退出" effect="light" placement="bottom">
                 <el-button circle icon="el-icon-arrow-right" plain type="primary" @click="logout"></el-button>
             </el-tooltip>
@@ -47,21 +47,21 @@
     <PersonalDrawer ref="personal" v-model="personalDrawer" @success="personalDrawer = false"></PersonalDrawer>
     <ShoppingCardDrawer ref="shoppingCard" v-model="shoppingCardDrawer" @checkout="checkout"></ShoppingCardDrawer>
     <FavouriteDrawer ref="favourite" v-model="favouriteDrawer"></FavouriteDrawer>
-    <OrdersDrawer ref="orders" v-model="ordersDrawer"></OrdersDrawer>
+    <OrdersIndexDrawer ref="orders" v-model="ordersDrawer"></OrdersIndexDrawer>
 </template>
 
 <script>
-import router from "../../../../js/router/router";
+import router from "../../../../../js/router/router";
 import SignUpDrawer from "./drawer/SignUpDrawer.vue";
 import SignInDrawer from "./drawer/SignInDrawer.vue";
 import PersonalDrawer from "./drawer/PersonalDrawer.vue";
 import ShoppingCardDrawer from "./drawer/ShoppingCardDrawer.vue";
 import FavouriteDrawer from "./drawer/FavouriteDrawer.vue";
-import OrdersDrawer from "./drawer/OrdersDrawer.vue";
+import OrdersIndexDrawer from "./drawer/orders/OrdersIndexDrawer.vue";
 
 export default {
     name: "IndexTopBar",
-    components: {OrdersDrawer, FavouriteDrawer, ShoppingCardDrawer, PersonalDrawer, SignInDrawer, SignUpDrawer},
+    components: {OrdersIndexDrawer, FavouriteDrawer, ShoppingCardDrawer, PersonalDrawer, SignInDrawer, SignUpDrawer},
     data() {
         return {
             searchBar: '',

@@ -36,14 +36,14 @@
 
 <script>
 import axios from "axios";
-import URL from "../../../../../js/constant/URL";
-import Utils from "../../../../../js/utils/Utils";
-import REG from "../../../../../js/constant/REG";
+import URL from "../../../../../../js/constant/URL";
+import Utils from "../../../../../../js/utils/Utils";
+import REG from "../../../../../../js/constant/REG";
 
 export default {
     name: "SignUpDrawer",
     data() {
-        var usernameCheck = (rule, value, callback) => {
+        let usernameCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入用户名'))
             if (!REG.username.test(value))
@@ -57,7 +57,7 @@ export default {
             })
         }
 
-        var passwordCheck = (rule, value, callback) => {
+        let passwordCheck = (rule, value, callback) => {
             if (!value) {
                 callback(new Error('请输入密码'))
             }
@@ -73,7 +73,7 @@ export default {
             callback()
         }
 
-        var emailCheck = (rule, value, callback) => {
+        let emailCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入邮箱'))
             if (!REG.email.test(value))
@@ -81,7 +81,7 @@ export default {
             callback()
         }
 
-        var codeCheck = (rule, value, callback) => {
+        let codeCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入验证码'))
             if (value.length !== 4)

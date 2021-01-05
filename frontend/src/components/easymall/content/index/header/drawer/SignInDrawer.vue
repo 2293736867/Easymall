@@ -32,26 +32,26 @@
 
 <script>
 import axios from "axios";
-import URL from "../../../../../js/constant/URL";
-import Utils from "../../../../../js/utils/Utils";
+import URL from "../../../../../../js/constant/URL";
+import Utils from "../../../../../../js/utils/Utils";
 
 export default {
     name: "SignInDrawer",
     data() {
-        var usernameCheck = (rule, value, callback) => {
+        let usernameCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入用户名'))
             callback()
         }
 
-        var passwordCheck = (rule, value, callback) => {
+        let passwordCheck = (rule, value, callback) => {
             if (!value) {
                 callback(new Error('请输入密码'))
             }
             callback()
         }
 
-        var codeCheck = (rule, value, callback) => {
+        let codeCheck = (rule, value, callback) => {
             if (!value)
                 callback(new Error('请输入验证码'))
             if (value.length !== 4)

@@ -25,7 +25,7 @@ export default {
     mounted() {
         this.product = JSON.parse(localStorage.getItem('product'))
         this.description = JSON.parse(this.product.description)
-        for (var i in this.description) {
+        for (let i in this.description) {
             if (this.description.hasOwnProperty(i)) {
                 this.tableData.push({
                     'k': i,

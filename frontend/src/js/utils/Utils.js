@@ -6,6 +6,13 @@ const Utils = {
         encrypt.update(text)
         return encrypt.getHash('HEX')
     },
+    getCharts(id, width, height)
+    {
+        let element = document.getElementById(id)
+        Object.defineProperty(element,'clientWidth',{get:function(){return width;}})
+        Object.defineProperty(element,'clientHeight',{get:function(){return height;}})
+        return element
+    },
 }
 
 export default Utils

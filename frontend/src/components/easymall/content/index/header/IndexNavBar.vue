@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import router from "../../../../js/router/router";
-import Categories from "../../../../js/constant/Categories";
+import router from "../../../../../js/router/router";
+import Categories from "../../../../../js/constant/Categories";
 export default {
     name: "IndexNavBar",
     data(){
@@ -28,7 +28,7 @@ export default {
     mounted(){
         this.links.push('/')
         this.navbarContent.push('首页')
-        for(var i=0;i<Categories.length;++i)
+        for(let i=0;i<Categories.length;++i)
         {
             this.links.push('/products/'+Categories[i].index)
             this.navbarContent.push(Categories[i].value)

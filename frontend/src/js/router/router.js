@@ -1,10 +1,10 @@
 import {createWebHistory,createRouter} from 'vue-router'
-import IndexRouter from "../../components/router/IndexRouter.vue";
-import ProductIndex from "../../components/content/product/ProductIndex.vue";
-import Index from "../../components/content/index/Index.vue";
-import Product from "../../components/content/product/Product.vue";
-import UserRouter from "../../components/router/UserRouter.vue";
-import UserIndex from "../../components/content/user/UserIndex.vue";
+import IndexRouter from "../../components/easymall/router/IndexRouter.vue";
+import ProductIndex from "../../components/easymall/content/product/ProductIndex.vue";
+import Index from "../../components/easymall/content/index/Index.vue";
+import Product from "../../components/easymall/content/product/Product.vue";
+import UserRouter from "../../components/easymall/router/UserRouter.vue";
+import UserIndex from "../../components/easymall/content/user/UserIndex.vue";
 
 const routerHistory = createWebHistory()
 

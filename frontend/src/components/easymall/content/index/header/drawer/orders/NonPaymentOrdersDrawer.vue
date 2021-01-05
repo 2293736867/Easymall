@@ -1,6 +1,7 @@
 <template>
-    <el-drawer direction="rtl" size="50%" title="订单">
-        <el-row type="flex" justify="center" style="color: #606266">
+    <el-drawer>
+        <el-divider></el-divider>
+        <el-row justify="space-between" style="color: #606266" type="flex">
             <el-col :span="4">
                 商品名字
             </el-col>
@@ -19,13 +20,13 @@
         </el-row>
         <el-divider></el-divider>
         <div>
-            <el-row type="flex" justify="center">
+            <el-row justify="space-between" type="flex">
                 <el-col :span="4" style="margin-top: 0.8rem">
                     ccc
                 </el-col>
                 <el-col :span="4">
                     <el-badge :value="num">
-                        <el-image fit="contain" :src="getSrc" :preview-src-list="getThumbnailList" style="width: 50px">
+                        <el-image :preview-src-list="getThumbnailList" :src="getSrc" fit="contain" style="width: 50px">
                             <template #placeholder>
                                 <div>加载中...</div>
                             </template>
@@ -44,33 +45,42 @@
                 </el-col>
                 <el-col :span="4">
                     <el-popconfirm
-                        confirmButtonText='是'
                         cancelButtonText='否'
+                        confirmButtonText='是'
                         icon="el-icon-info"
                         iconColor="red"
                         title="从订单中移除？"
                     >
                         <template #reference>
-                            <el-button icon="el-icon-delete" type="danger" circle></el-button>
+                            <el-button circle icon="el-icon-delete" type="danger"></el-button>
                         </template>
                     </el-popconfirm>
                 </el-col>
             </el-row>
             <el-divider></el-divider>
         </div>
-        <el-row type="flex" justify="end">
+        <el-row justify="end" type="flex">
             <el-col :span="2" style="margin-right: 0.2rem">
-                <el-button type="danger">取消</el-button>
+                <el-popconfirm
+                    cancel-button-text="否"
+                    confirm-button-text="是"
+                    icon="el-icon-error"
+                    icon-color="#F56C6C"
+                    title="取消的订单将归入未付款订单"
+                >
+                    <template #reference>
+                        <el-button type="danger">取消</el-button>
+                    </template>
+                </el-popconfirm>
             </el-col>
             <el-col :span="2" style="margin-right: 3rem">
                 <el-popconfirm
-                    confirm-button-text="是"
                     cancel-button-text="否"
+                    confirm-button-text="是"
                     icon="el-icon-success"
                     icon-color="#409EFF"
                     title="确认付款？"
-                    >
-<!--                    icon-color=""-->
+                >
                     <template #reference>
                         <el-button type="primary">付款</el-button>
                     </template>
@@ -82,19 +92,18 @@
 
 <script>
 export default {
-    name: "OrdersDrawer",
-    data(){
-        return{
-            getSrc:'/1.jpg',
-            getThumbnailList:[
-                '/default/Product.png','/default/Product.png'
-            ]
+    name: "NonPaymentOrdersDrawer",
+    data() {
+        return {
+            getSrc: '/1.jpg',
+            getThumbnailList: [
+                '/default/Product.png', '/default/Product.png'
+            ],
+            num: 13
         }
     },
     methods:{
-        init(){
 
-        }
     }
 }
 </script>

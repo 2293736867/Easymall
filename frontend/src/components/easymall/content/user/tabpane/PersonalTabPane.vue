@@ -13,7 +13,7 @@
             <el-form ref="personal" :model="user" :rules="rules" status-icon
                      style="margin-left: 2rem;margin-right: 2rem">
                 <el-form-item label="用户名">
-                    <el-input :model-value="getUsername" clearable disabled prefix-icon="el-icon-s-custom">
+                    <el-input :model-value="username" clearable disabled prefix-icon="el-icon-s-custom">
                     </el-input>
                 </el-form-item>
                 <el-form-item label="昵称" prop="nickname">
@@ -102,12 +102,15 @@ export default {
                 email: [{validator: emailCheck, trigger: 'blur'}],
             },
             ifUpload: false,
+            username:'',
         }
     },
-    computed: {
-        getUsername() {
-            return localStorage.getItem('username')
-        }
+    mounted() {
+        let u = JSON.parse(localStorage.getItem('user'))
+        this.username = u.username
+        this.user.email = u.email
+        this.user.nickname = u.nickname
+        this.user.password = u.password
     },
     methods: {
         commit() {
@@ -115,6 +118,7 @@ export default {
                 this.$message.warning('请确保修改了信息')
             } else {
                 axios.put(URL.userUpdate, {
+                    username:this.username,
                     nickname: this.user.nickname,
                     password: Utils.sha3(this.user.password),
                     email: this.user.email
@@ -123,9 +127,10 @@ export default {
                         userToken: localStorage.getItem('userToken')
                     }
                 }).then(res => {
-                    if (res.data === 1012) {
+                    console.log(res)
+                    if (parseInt(res.data.code) === 100200) {
                         this.$message.success('修改成功')
-                    } else if (res.data === 1014) {
+                    } else if (parseInt(res.data.code) === 100400) {
                         this.$message.error('请重新登录')
                     }
                     this.notModifying = true
@@ -139,29 +144,13 @@ export default {
         undoModify() {
             this.notModifying = true
         },
-        init() {
-            axios.all([axios.get(URL.userGetEmail, {
-                headers: {
-                    userToken: localStorage.getItem('userToken')
-                }
-            }), axios.get(URL.userGetNickname, {
-                headers: {
-                    userToken: localStorage.getItem('userToken')
-                }
-            })]).then(res => {
-                {
-                    if (res[0].data === 1017 && res[1].data === 1015) {
-                        axios.all([axios.get(URL.userData + res[0].data), axios.get(URL.userData + res[1].data)])
-                            .then(res => {
-                                console.log(res)
-                                this.user.email = res[0].data
-                                this.user.nickname = res[1].data
-                            })
-                    }
-                }
-            })
-            this.user.password = localStorage.getItem('password')
-        },
+        // init() {
+        //     let u = JSON.parse(localStorage.getItem('user'))
+        //     console.log(u)
+        //     this.user.email = u.email
+        //     this.user.nickname = u.nickname
+        //     this.user.password = u.password
+        // },
         uploadAvatar(){
             console.log('upload')
         }

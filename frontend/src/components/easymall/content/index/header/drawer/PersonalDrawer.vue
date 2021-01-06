@@ -101,6 +101,7 @@ export default {
                 this.$message.warning('请确保修改了信息')
             } else {
                 axios.put(URL.userUpdate, {
+                    username: this.user.username,
                     nickname: this.user.nickname,
                     password: Utils.sha3(this.user.password),
                     email: this.user.email
@@ -109,9 +110,9 @@ export default {
                         userToken: localStorage.getItem('userToken')
                     }
                 }).then(res => {
-                    if (res.data === 1012) {
+                    if (parseInt(res.data.code) === 100200) {
                         this.$message.success('修改成功')
-                    } else if (res.data === 1014) {
+                    } else if (parseInt(res.data.code) === 100400) {
                         this.$message.error('请重新登录')
                     }
                     this.notModifying = true
@@ -126,28 +127,10 @@ export default {
             this.notModifying = true
         },
         init() {
-            axios.all([axios.get(URL.userGetEmail, {
-                headers: {
-                    userToken: localStorage.getItem('userToken')
-                }
-            }), axios.get(URL.userGetNickname, {
-                headers: {
-                    userToken: localStorage.getItem('userToken')
-                }
-            })]).then(res => {
-                {
-                    if(res[0].data === 1017 && res[1].data === 1015)
-                    {
-                        axios.all([axios.get(URL.userData+res[0].data),axios.get(URL.userData+res[1].data)])
-                        .then(res=>{
-                            console.log(res)
-                            this.user.email = res[0].data
-                            this.user.nickname = res[1].data
-                        })
-                    }
-                }
-            })
-            this.user.password = localStorage.getItem('password')
+            let u = JSON.parse(localStorage.getItem('user'))
+            this.user.email = u.email
+            this.user.nickname = u.nickname
+            this.user.password = u.password
         }
     },
     emits: ['success']

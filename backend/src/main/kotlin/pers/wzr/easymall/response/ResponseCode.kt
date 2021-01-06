@@ -2,56 +2,105 @@ package pers.wzr.easymall.response
 
 class ResponseCode {
     companion object{
-        const val USER_SIGN_IN_SUCCESS = "1000"
-        const val USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR = "1001"
-        const val USER_SIGN_IN_FAILED_VERIFICATION_CODE_ERROR = "1002"
-        const val USER_SIGN_UP_SUCCESS = "1003"
-        const val USER_SIGN_UP_FAILED_VERIFICATION_CODE_ERROR = "1004"
+        //********************User********************
 
-        const val USER_USERNAME_NOT_EXISTS = "1005"
-        const val USER_USERNAME_EXISTS = "1006"
-        const val USER_DELETE_SUCCESS = "1007"
-        const val USER_DELETE_FAILED_NOT_FOUND = "1008"
-        const val USER_GET_ALL_SUCCESS = "1009"
-        const val USER_GET_ONE_SUCCESS = "1010"
-        const val USER_GET_ONE_FAILED_NOT_FOUND = "1011"
-        const val USER_UPDATE_SUCCESS = "1012"
-        const val USER_UPDATE_FAILED_NOT_FOUND = "1013"
+        //User Create
+        const val USER_SIGN_UP_SUCCESS = "100000"
+        const val USER_SIGN_UP_FAILED_VERIFICATION_CODE_ERROR = "100001"
 
-        const val USER_NOT_SIGN_IN = "1014"
-        const val USER_GET_NICKNAME_SUCCESS = "1015"
-        const val USER_GET_NICKNAME_FAILED_NOT_FOUND = "1016"
-        const val USER_GET_EMAIL_SUCCESS = "1017"
-        const val USER_GET_EMAIL_FAILED_NOT_FOUND = "1018"
+        //User Retrieve
+        const val USER_SIGN_IN_SUCCESS = "100100"
+        const val USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR = "100101"
+        const val USER_SIGN_IN_FAILED_VERIFICATION_CODE_ERROR = "100102"
 
-        const val PRODUCT_ADD_SUCCESS = "2000"
-        const val PRODUCT_ADD_FAILED = "2001"
-        const val PRODUCT_GET_ALL_SUCCESS = "2002"
-        const val PRODUCT_GET_ALL_FAILED_EMPTY = "2003"
-        const val PRODUCT_GET_ONE_SUCCESS = "2004"
-        const val PRODUCT_GET_ONE_FAILED_NOT_FOUND = "2005"
+        const val USER_USERNAME_NOT_EXISTS = "100103"
+        const val USER_USERNAME_EXISTS = "100104"
 
-        const val PRODUCT_DELETE_SUCCESS = "2006"
-        const val PRODUCT_DELETE_FAILED_NOT_FOUND = "2007"
-        const val PRODUCT_UPDATE_SUCCESS = "2008"
-        const val PRODUCT_UPDATE_FAILED_NOT_EXISTS = "2009"
+        const val USER_GET_ALL_SUCCESS = "100105"
+        const val USER_GET_ALL_FAILED_EMPTY = "100106"
 
-        const val PRODUCT_GET_BY_CATEGORY_SUCCESS = "2010"
-        const val PRODUCT_GET_BY_CATEGORY_FAILED_NOT_FOUND = "2011"
-        const val PRODUCT_GET_BY_CATEGORIES_SUCCESS = "2012"
-        const val PRODUCT_GET_BY_CATEGORIES_FAILED_EMPTY = "2013"
+        //User Update
+        const val USER_UPDATE_SUCCESS = "100200"
+        const val USER_UPDATE_FAILED_NOT_FOUND = "100201"
 
-        const val VALIDATION_USERNAME_IS_BLACK = "3000"
-        const val VALIDATION_PASSWORD_IS_BLACK = "3001"
-        const val VALIDATION_CODE_IS_BLACK = "3002"
-        const val VALIDATION_CATEGORY_IS_BLACK = "3003"
-        const val VALIDATION_NAME_IS_BLACK = "3004"
-        const val VALIDATION_PRICE_IS_BLACK = "3005"
-        const val VALIDATION_NUM_NEGATIVE = "3006"
-        const val VALIDATION_FREIGHT_NEGATIVE = "3007"
-        const val VALIDATION_NICKNAME_IS_BLACK = "3007"
+        //User Delete
+        const val USER_DELETE_SUCCESS = "100300"
+        const val USER_DELETE_FAILED_NOT_FOUND = "100301"
 
-        const val ERROR_GET_GATE_CODE = "100000"
-        const val ERROR_VALIDATION_CODE = "100001"
+        //User Other
+        const val USER_NOT_SIGN_IN = "100400"
+
+        //********************Product********************
+        //Product Create
+        const val PRODUCT_ADD_SUCCESS = "110000"
+        const val PRODUCT_ADD_FAILED = "110001"
+
+        //Product Retrieve
+        const val PRODUCT_GET_ALL_SUCCESS = "110100"
+        const val PRODUCT_GET_ALL_FAILED_EMPTY = "110101"
+
+        const val PRODUCT_GET_ONE_SUCCESS = "110102"
+        const val PRODUCT_GET_ONE_FAILED_NOT_FOUND = "110103"
+
+        const val PRODUCT_GET_BY_CATEGORY_SUCCESS = "110104"
+        const val PRODUCT_GET_BY_CATEGORY_FAILED_NOT_FOUND = "110105"
+
+        const val PRODUCT_GET_BY_CATEGORIES_SUCCESS = "110106"
+        const val PRODUCT_GET_BY_CATEGORIES_FAILED_EMPTY = "110107"
+
+        //Product Update
+        const val PRODUCT_UPDATE_SUCCESS = "110200"
+        const val PRODUCT_UPDATE_FAILED_NOT_EXISTS = "110201"
+
+        //Product Delete
+        const val PRODUCT_DELETE_SUCCESS = "110300"
+        const val PRODUCT_DELETE_FAILED_NOT_FOUND = "110301"
+
+        //Product Other
+
+        //ShoppingCard Create
+        const val SHOPPING_CARD_ADD_SUCCESS = "120000"
+        const val SHOPPING_CARD_ADD_FAILED = "120001"
+
+        //ShoppingCard Retrieve
+        const val SHOPPING_CARD_GET_BY_USER_ID_SUCCESS = "120100"
+        const val SHOPPING_CARD_GET_BY_USER_ID_FAILED_EMPTY = "120101"
+
+        //ShoppingCard Update
+        const val SHOPPING_CARD_UPDATE_SUCCESS = "120200"
+        const val SHOPPING_CARD_UPDATE_FAILED_NOT_EXIST = "120201"
+
+        //ShoppingCard Delete
+        const val SHOPPING_CARD_DELETE_SUCCESS = "120300"
+        const val SHOPPING_CARD_DELETE_FAILED_NOT_FOUND = "120301"
+
+
+        //********************Validation********************
+
+        //Validation USER
+        const val VALIDATION_USERNAME_IS_BLANK = "500000"
+        const val VALIDATION_PASSWORD_IS_BLANK = "500001"
+        const val VALIDATION_NICKNAME_IS_BLANK = "500002"
+        const val VALIDATION_EMAIL_IS_BLANK = "500003"
+        const val VALIDATION_CODE_IS_BLANK = "500004"
+
+        //Validation Product
+        const val VALIDATION_CATEGORY_IS_BLANK = "500100"
+        const val VALIDATION_NAME_IS_BLANK = "500101"
+        const val VALIDATION_PRICE_FRACTION_INVALID = "500102"
+        const val VALIDATION_PRICE_NEGATIVE = "500103"
+        const val VALIDATION_NUM_NEGATIVE = "500104"
+        const val VALIDATION_FREIGHT_FRACTION_INVALID = "500105"
+        const val VALIDATION_FREIGHT_NEGATIVE = "500106"
+        const val VALIDATION_RATING_FRACTION_INVALID = "500107"
+        const val VALIDATION_RATING_NEGATIVE = "500108"
+        const val VALIDATION_RATING_TOO_LARGE = "500109"
+
+        const val VALIDATION_USER_ID_IS_BLANK = "500200"
+        const val VALIDATION_PRODUCT_ID_IS_BLANK = "500201"
+
+        //Error Code
+        const val ERROR_GET_GATE_CODE = "510000"
+        const val ERROR_VALIDATION_CODE = "510001"
     }
 }

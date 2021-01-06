@@ -10,16 +10,12 @@ const store = createStore({
     mutations: {
         signIn(state,v){
             store.commit('set',{
-                k:'username',
-                v:v.username
-            })
-            store.commit('set',{
-                k:'password',
-                v:v.password
+                k:'user',
+                v:JSON.stringify(v.user)
             })
             store.commit('set',{
                 k:'userToken',
-                v:v.token
+                v:v.userToken
             })
         },
         categoryId(state, v){

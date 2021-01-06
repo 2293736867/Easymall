@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.client.WebClient
-import pers.wzr.easymall.entity.builder.UserBuilder
 import pers.wzr.easymall.entity.entity.User
 
 @SpringBootTest
@@ -41,8 +40,8 @@ class UserServiceTests {
     fun update()
     {
         println(
-            client.put().uri("update").bodyValue(UserBuilder().email("serewr").username("3434").password("ccccc").build()).retrieve()
-                .bodyToMono(String::class.java).block()
+//            client.put().uri("update").bodyValue(UserBuilder().email("serewr").username("3434").password("ccccc").build()).retrieve()
+//                .bodyToMono(String::class.java).block()
         )
     }
 

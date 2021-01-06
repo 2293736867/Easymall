@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.4.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.4.30-M1"
     kotlin("jvm") version "1.4.30-M1"
     kotlin("plugin.spring") version "1.4.30-M1"
 }
@@ -19,6 +20,7 @@ configurations {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -42,7 +44,7 @@ dependencies {
     implementation("com.google.guava:guava:30.1-jre")
     implementation("org.bouncycastle:bcprov-jdk15on:1.68")
     implementation("org.yaml:snakeyaml:1.27")
-
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
 }
 
 tasks.withType<KotlinCompile> {

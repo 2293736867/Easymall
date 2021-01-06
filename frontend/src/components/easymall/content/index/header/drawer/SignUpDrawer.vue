@@ -49,7 +49,7 @@ export default {
             if (!REG.username.test(value))
                 callback(new Error('用户名非法'))
             axios.get(URL.userCheckUsername + this.form.username).then(res => {
-                if (res.data === 1006) {
+                if (parseInt(res.data.code) === 100104) {
                     callback(new Error('用户名已存在'))
                 } else {
                     callback()
@@ -115,7 +115,7 @@ export default {
                         email: this.form.email,
                         code: this.form.code
                     }).then(res => {
-                        if (res.data === 1003) {
+                        if (parseInt(res.data.code) === 100000) {
                             this.$notify({
                                 title: '注册成功',
                                 message: '即将跳转到登录',
@@ -135,8 +135,8 @@ export default {
         },
         getVerificationCode() {
             const that = this
-            axios.get(URL.code).then(function (res) {
-                that.verificationCodeImage = 'data:image/png;base64,' + res.data
+            axios.get(URL.code).then(res=>{
+                that.verificationCodeImage = 'data:image/png;base64,' + res.data.data
             })
         },
         init() {

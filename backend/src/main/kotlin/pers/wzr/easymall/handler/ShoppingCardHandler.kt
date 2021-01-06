@@ -1,49 +1,92 @@
 package pers.wzr.easymall.handler
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Example
+import org.springframework.data.domain.ExampleMatcher
+import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.exact
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
-import pers.wzr.easymall.cache.ShoppingCardCache
 import pers.wzr.easymall.dao.ShoppingCardRepository
-import pers.wzr.easymall.response.CommonResponse
+import pers.wzr.easymall.entity.entity.Product
+import pers.wzr.easymall.entity.entity.ShoppingCard
+import pers.wzr.easymall.entity.property.ProductProperty
+import pers.wzr.easymall.entity.property.ShoppingCardProperty
+import pers.wzr.easymall.entity.util.UserUtils
+import pers.wzr.easymall.response.JSONResponse
 import pers.wzr.easymall.response.ResponseCode
-import pers.wzr.easymall.response.ShoppingCardResponse
+import pers.wzr.easymall.util.JWTUtils
 import pers.wzr.easymall.validator.CustomValidator
+import pers.wzr.easymall.validator.ValidationGroup
 import reactor.core.publisher.Mono
 
-//TODO
 @Component
 class ShoppingCardHandler {
     @Autowired
     lateinit var repository: ShoppingCardRepository
+
     @Autowired
     lateinit var validator: CustomValidator
 
-    private val cache = ShoppingCardCache()
+    fun get(request: ServerRequest) = repository.findAll(
+        Example.of(
+            ShoppingCard(userId = JWTUtils.getUserIdFromServerRequest(request)),
+            ExampleMatcher.matching().withMatcher(
+                ShoppingCardProperty.userId(),
+                exact()
+            ).withIgnorePaths(*ShoppingCardProperty.other())
+        )
+    ).collectList().flatMap {
+        JSONResponse.codeAndData(ResponseCode.SHOPPING_CARD_GET_BY_USER_ID_SUCCESS, it)
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.SHOPPING_CARD_GET_BY_USER_ID_FAILED_EMPTY)
+    )
 
-    fun delete(request: ServerRequest):Mono<ServerResponse>
-    {
-        return repository.findById(request.pathVariable("id"))
-        .flatMap {
-            repository.delete(it).then(CommonResponse.code(ResponseCode.USER_DELETE_SUCCESS))
-        }.switchIfEmpty(
-            CommonResponse.code(ResponseCode.USER_DELETE_FAILED_NOT_FOUND)
+    fun add(request: ServerRequest) = request.bodyToMono(ShoppingCard::class.java).flatMap {
+        it.userId = JWTUtils.getUserIdFromServerRequest(request)
+        if (validator.hasErrors(it))
+            return@flatMap validator.errors()
+        repository.save(it).then(
+            JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_SUCCESS)
+        ).switchIfEmpty(
+            JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_FAILED)
         )
     }
 
-    fun get(request: ServerRequest):Mono<ServerResponse>
-    {
-        cache.fluxShoppingCard = repository.findAll()
-        return CommonResponse.code(ResponseCode.USER_GET_ALL_SUCCESS)
-    }
+    fun delete(request: ServerRequest) = repository.findAll(
+        Example.of(
+            ShoppingCard(userId = JWTUtils.getUserIdFromServerRequest(request),productId = request.pathVariable("productId")),
+            ExampleMatcher.matching()
+            .withMatcher(ShoppingCardProperty.userId(),exact())
+            .withMatcher(ShoppingCardProperty.productId(),exact())
+            .withIgnorePaths(*ShoppingCardProperty.other())
+        )
+    ).collectList().filter {
+        it.size > 0
+    }.flatMap {
+        repository.deleteById(it[0].id).then(JSONResponse.code(ResponseCode.SHOPPING_CARD_DELETE_SUCCESS))
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.SHOPPING_CARD_DELETE_FAILED_NOT_FOUND)
+    )
 
-    fun data(request: ServerRequest):Mono<ServerResponse>
-    {
-        return when(request.pathVariable("code")){
-            ResponseCode.USER_GET_ONE_SUCCESS -> ShoppingCardResponse.mono(cache.monoShoppingCard)
-            ResponseCode.USER_GET_ALL_SUCCESS -> ShoppingCardResponse.flux(cache.fluxShoppingCard)
-            else -> CommonResponse.code(ResponseCode.ERROR_GET_GATE_CODE)
-        }
+    fun update(request: ServerRequest) = request.bodyToMono(ShoppingCard::class.java).flatMap {
+        if(validator.hasErrors(it))
+            return@flatMap validator.errors()
+        it.userId = JWTUtils.getUserIdFromServerRequest(request)
+        return@flatMap repository.findAll(
+            Example.of(
+            ShoppingCard(userId = it.userId,productId = it.productId),
+            ExampleMatcher.matching()
+            .withMatcher(ShoppingCardProperty.userId(),exact())
+            .withMatcher(ShoppingCardProperty.productId(),exact())
+            .withIgnorePaths(*ShoppingCardProperty.other())
+        )).collectList().filter{ list->
+            list.size > 0
+        }.flatMap{ l ->
+            it.id = l[0].id
+            repository.save(it).then(JSONResponse.code(ResponseCode.SHOPPING_CARD_UPDATE_SUCCESS))
+        }.switchIfEmpty(
+            JSONResponse.code(ResponseCode.SHOPPING_CARD_UPDATE_FAILED_NOT_EXIST)
+        )
     }
 }

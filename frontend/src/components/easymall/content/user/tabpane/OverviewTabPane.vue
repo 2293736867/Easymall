@@ -21,17 +21,32 @@
             </el-card>
         </el-col>
     </el-row>
+
+    <el-row style="margin-top: 3rem">
+        <el-col>
+            <GoogleMap
+                api-key="AIzaSyDfu-PKZ1zO8POkdlrSWG36pLZEtbH5cz8"
+                style="width: 100%; height: 500px"
+                :center="center"
+                :zoom="15"
+            >
+                <Marker :options="{ position: center }" />
+            </GoogleMap>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
 import * as echarts from 'echarts'
 import Utils from "../../../../../js/utils/Utils";
+import { GoogleMap, Marker } from 'vue3-google-map'
 
 export default {
     name: "OverviewTabPane",
     data() {
         return {}
     },
+    components: { GoogleMap, Marker },
     mounted() {
         let category = echarts.init(Utils.getCharts('category',500,400))
         category.setOption(
@@ -77,7 +92,11 @@ export default {
             }],
         })
     },
-    methods: {}
+    methods: {},
+    setup(){
+        const center = { lat: 23.146736, lng: 113.028458 }
+        return { center }
+    }
 }
 </script>
 

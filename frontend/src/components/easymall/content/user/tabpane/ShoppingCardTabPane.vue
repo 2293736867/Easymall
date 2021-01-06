@@ -3,8 +3,22 @@
 </template>
 
 <script>
+
+
 export default {
-name: "ShoppingCardTabPane"
+    name: "ShoppingCardTabPane",
+
+    data(){
+        return{
+
+        }
+    },
+    setup() {
+
+    },
+    methods:{
+
+    }
 }
 </script>
 

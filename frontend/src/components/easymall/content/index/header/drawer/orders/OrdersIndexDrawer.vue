@@ -17,7 +17,6 @@ export default {
     },
     methods:{
         init(){
-            console.log('init')
             let ordersDetailCharts = echarts.init(Utils.getCharts('ordersDetail',600,600))
             ordersDetailCharts.setOption({
                 name: '订单分类',
@@ -38,8 +37,6 @@ export default {
                     }
                 }
             })
-            console.log('finish')
-            console.log(ordersDetailCharts)
         }
     }
 }

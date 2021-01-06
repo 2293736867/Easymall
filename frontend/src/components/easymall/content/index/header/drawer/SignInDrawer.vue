@@ -73,8 +73,6 @@ export default {
             },
         }
     },
-    computed:{
-    },
     methods: {
         signIn() {
             this.$refs['form'].validate((valid) => {
@@ -84,19 +82,22 @@ export default {
                         password: Utils.sha3(this.form.password),
                         code: this.form.code
                     }).then(res => {
-                        if (res.data === 1000) {
+                        if (parseInt(res.data.code) === 100100) {
                             this.$message.success('登录成功')
-                            axios.get(URL.userData + res.data).then(res => {
-                                this.$store.commit('signIn', {
-                                    username:this.form.username,
-                                    password:this.form.password,
-                                    token:res.data
-                                })
+                            let user = {
+                                username:this.form.username,
+                                password:this.form.password,
+                                email:res.data.data.email,
+                                nickname:res.data.data.nickname,
+                            }
+                            this.$store.commit('signIn',{
+                                user:user,
+                                userToken:res.data.data.token
                             })
                             this.$emit('success')
-                        } else if (res.data === 1001)
+                        } else if (parseInt(res.data.code) === 100101)
                             this.$message.error('登录失败，用户名或密码错误')
-                        else if (res.data === 1002)
+                        else if (parseInt(res.data.code) === 100102)
                             this.$message.error('验证码错误')
                     })
                 } else {
@@ -106,8 +107,8 @@ export default {
         },
         getVerificationCode() {
             const that = this
-            axios.get(URL.code).then(function (res) {
-                that.veificationCodeImage = 'data:image/png;base64,' + res.data
+            axios.get(URL.code).then(res=>{
+                that.verificationCodeImage = 'data:image/png;base64,' + res.data.data
             })
         },
         init(){

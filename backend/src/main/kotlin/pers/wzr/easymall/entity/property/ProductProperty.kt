@@ -4,7 +4,6 @@ import pers.wzr.easymall.entity.entity.Product
 
 class ProductProperty {
     companion object{
-//        private val originProperties = arrayOf("id","_class","name","price","category","description","num")
         private val originProperties = arrayListOf<String>()
         private var properties = arrayListOf<String>()
 

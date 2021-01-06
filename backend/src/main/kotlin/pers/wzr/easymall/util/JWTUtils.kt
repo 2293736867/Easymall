@@ -6,6 +6,8 @@ import org.bouncycastle.util.io.pem.PemReader
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.yaml.snakeyaml.Yaml
+import pers.wzr.easymall.entity.util.ProductUtils
+import pers.wzr.easymall.entity.util.UserUtils
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -39,8 +41,13 @@ class JWTUtils {
             return builder.withAudience(id).sign(algorithm)
         }
 
-        fun getIdFromServerRequest(request: ServerRequest): String {
-            val token = Utils.getUserTokenFromServerRequest(request)
+        fun getUserIdFromServerRequest(request: ServerRequest): String {
+            val token = UserUtils.getUserTokenFromServerRequest(request)
+            return JWT.decode(token).audience[0]
+        }
+
+        fun getProductIdFromServerRequest(request: ServerRequest):String{
+            val token = ProductUtils.getProductTokenFromServerRequest(request)
             return JWT.decode(token).audience[0]
         }
 

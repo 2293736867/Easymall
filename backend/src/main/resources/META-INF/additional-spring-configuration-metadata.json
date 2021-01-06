@@ -4,6 +4,6 @@
             "name": "jwt.key",
             "type": "java.lang.String",
             "description": "Server jwt secret key."
-        },
+        }
     ]
 }

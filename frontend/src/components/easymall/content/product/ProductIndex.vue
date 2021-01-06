@@ -116,17 +116,14 @@ export default {
             if (id >= 1 && id <= Categories.length) {
                 let allProducts = (id === 1)
                 axios.get(URL.productGetByCategory + (allProducts ? "" : Categories[id - 1].value)).then(res => {
-                    if (res.data === allProducts ? 2012 : 2010) {
-                        axios.get(URL.productData + res.data).then(res => {
-                            this.products = res.data
-                            if (this.products.length === 0) {
-                                this.$message.warning('商品列表为空')
-                                this.none = true
-                            } else {
-                                this.none = false
-                                this.loading = false
-                            }
-                        })
+                    this.products = res.data.data
+                    console.log(res.data.code)
+                    if (parseInt(res.data.code) === 110104 || parseInt(res.data.code) === 110106) {
+                        this.none = false
+                        this.loading = false
+                    } else if (parseInt(res.data.code) === 110105 || parseInt(res.data.code) === 110107) {
+                        this.none = true
+                        this.$message.warning('商品列表为空')
                     } else {
                         this.none = true
                         this.$message.warning('未知原因加载商品失败')

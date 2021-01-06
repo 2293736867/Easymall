@@ -9,17 +9,17 @@ import pers.wzr.easymall.handler.ShoppingCardHandler
 class ShoppingCardRouter {
     companion object{
         private const val SHOPPING_CARD = "/shopping/card/"
-        private const val DELETE = SHOPPING_CARD + "delete/{id}"
-//        private const val UPDATE = SHOPPING_CARD + "update"
         private const val GET = SHOPPING_CARD + "get"
-//        private const val ADD = SHOPPING_CARD + "add"
-        private const val DATA = SHOPPING_CARD + "data/{code}"
+        private const val ADD = SHOPPING_CARD + "add"
+        private const val UPDATE = SHOPPING_CARD + "update"
+        private const val DELETE = SHOPPING_CARD + "delete"
     }
 
     @Bean
     fun shoppingCardRouterConfig(handler: ShoppingCardHandler) = router {
         GET(GET,handler::get)
+        POST(ADD,handler::add)
+        PUT(UPDATE,handler::update)
         DELETE(DELETE,handler::delete)
-        GET(DATA,handler::data)
     }
 }

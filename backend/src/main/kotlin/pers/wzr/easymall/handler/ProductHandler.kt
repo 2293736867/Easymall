@@ -6,124 +6,89 @@ import org.springframework.data.domain.ExampleMatcher
 import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.exact
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
-import org.springframework.web.reactive.function.server.ServerResponse
-import pers.wzr.easymall.cache.ProductCache
 import pers.wzr.easymall.dao.ProductRepository
-import pers.wzr.easymall.entity.builder.ProductBuilder
+import pers.wzr.easymall.entity.entity.Product
 import pers.wzr.easymall.entity.property.ProductProperty
-import pers.wzr.easymall.entity.validation.ProductAdd
-import pers.wzr.easymall.response.CommonResponse
+import pers.wzr.easymall.entity.util.ProductUtils
+import pers.wzr.easymall.response.JSONResponse
 import pers.wzr.easymall.response.ProductResponse
 import pers.wzr.easymall.response.ResponseCode
-import pers.wzr.easymall.util.Utils
 import pers.wzr.easymall.validator.CustomValidator
-import reactor.core.publisher.Flux
-import reactor.core.publisher.Mono
+import pers.wzr.easymall.validator.ValidationGroup
 import java.util.*
 
 @Component
 class ProductHandler {
     @Autowired
     lateinit var repository: ProductRepository
+
     @Autowired
-    lateinit var validator:CustomValidator
+    lateinit var validator: CustomValidator
 
-    private var cache = ProductCache()
+    fun getDetailAll(request: ServerRequest) = repository.findAll().collectList().flatMap {
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_ALL_SUCCESS, it)
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.PRODUCT_GET_ALL_FAILED_EMPTY)
+    )
 
-    fun getDetailAll(request: ServerRequest):Mono<ServerResponse>
-    {
-        cache.fluxProduct = repository.findAll().flatMap { Flux.just(Utils.productResultFromProduct(it)) }
-        return CommonResponse.code(ResponseCode.PRODUCT_GET_ALL_SUCCESS)
-    }
+    fun getDetailOne(request: ServerRequest) = repository.findById(request.pathVariable("id")).flatMap {
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_ONE_SUCCESS, it)
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.PRODUCT_GET_ONE_FAILED_NOT_FOUND)
+    )
 
-    fun getDetailOne(request: ServerRequest): Mono<ServerResponse>
-    {
-        val u = repository.findById(request.pathVariable("id"))
-        return u.flatMap{
-            cache.monoProduct = Mono.just(Utils.productResultFromProduct(it))
-            CommonResponse.code(ResponseCode.PRODUCT_GET_ONE_SUCCESS)
-        }.switchIfEmpty(
-            CommonResponse.code(ResponseCode.PRODUCT_GET_ONE_FAILED_NOT_FOUND)
+    fun getByCategories(request: ServerRequest) = repository.findAll().map {
+        ProductUtils.productResultFromProduct(it)
+    }.collectList().flatMap{
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORIES_SUCCESS,it)
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORIES_FAILED_EMPTY)
+    )
+
+    fun getByCategory(request: ServerRequest) = repository.findAll(
+        Example.of(
+            Product(category = request.pathVariable("category")),
+            ExampleMatcher.matching().withMatcher(ProductProperty.category(), exact()).withIgnorePaths(*ProductProperty.other())
+        )
+    ).map {
+        ProductUtils.productResultFromProduct(it)
+    }.collectList().flatMap {
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORY_SUCCESS,it)
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORY_FAILED_NOT_FOUND)
+    )
+
+    fun getCoverImage(request: ServerRequest) = ProductResponse.coverImage(request)
+
+    fun getThumbnailImage(request: ServerRequest) = ProductResponse.thumbnailImage(request)
+
+    fun getDetailImage(request: ServerRequest) = ProductResponse.detailImage(request)
+
+    fun add(request: ServerRequest) = request.bodyToMono(Product::class.java).flatMap {
+        if (validator.hasErrors(it, ValidationGroup.ProductAdd::class.java))
+            return@flatMap validator.errors()
+        repository.save(it).then(
+            JSONResponse.code(ResponseCode.PRODUCT_ADD_SUCCESS)
+        ).switchIfEmpty(
+            JSONResponse.code(ResponseCode.PRODUCT_ADD_FAILED)
         )
     }
 
-    fun getByCategories(request: ServerRequest):Mono<ServerResponse>
-    {
-        cache.fluxProduct = repository.findAll().flatMap {
-            return@flatMap Flux.just(Utils.productResultFromProduct(it))
-        }
-        return CommonResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORIES_SUCCESS)
-    }
+    fun delete(request: ServerRequest) = repository.findById(request.pathVariable("id")).flatMap {
+        repository.deleteById(request.pathVariable("id")).then(JSONResponse.code(ResponseCode.PRODUCT_DELETE_SUCCESS))
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.PRODUCT_DELETE_FAILED_NOT_FOUND)
+    )
 
-    fun getByCategory(request: ServerRequest):Mono<ServerResponse>
-    {
-        val category = request.pathVariable("category")
-        val product = ProductBuilder().category(category).build()
-        val matcher = ExampleMatcher.matching()
-            .withMatcher(ProductProperty.category(), exact())
-            .withIgnorePaths(*ProductProperty.other())
-        val p = repository.findAll(Example.of(product,matcher))
-        cache.fluxProduct = p.flatMap { Flux.just(Utils.productResultFromProduct(it)) }
-        return CommonResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORY_SUCCESS)
-    }
-
-    fun getCoverImage(request: ServerRequest):Mono<ServerResponse>
-    {
-        return ProductResponse.coverImage(request.pathVariable("id"),request.pathVariable("num"))
-    }
-
-    fun getThumbnailImage(request: ServerRequest):Mono<ServerResponse>
-    {
-        return ProductResponse.thumbnailImage(request.pathVariable("id"),request.pathVariable("num"))
-    }
-
-    fun getDetailImage(request: ServerRequest):Mono<ServerResponse>
-    {
-        return ProductResponse.detailImage(request.pathVariable("id"),request.pathVariable("num"))
-    }
-
-    fun add(request:ServerRequest): Mono<ServerResponse>
-    {
-        return request.bodyToMono(ProductAdd::class.java).flatMap {
-            if(validator.hasErrors(it))
-                return@flatMap validator.errors()
-            val product = ProductBuilder().category(it.category).name(it.name).pnm(it.num).price(it.price).description(it.description).build()
-            repository.save(product).then(CommonResponse.code(ResponseCode.PRODUCT_ADD_SUCCESS))
-        }
-    }
-
-    fun delete(request: ServerRequest):Mono<ServerResponse>
-    {
-        return repository.findById(request.pathVariable("id")).flatMap {
-            repository.delete(it).then(CommonResponse.code(ResponseCode.PRODUCT_DELETE_SUCCESS))
+    fun update(request: ServerRequest) = request.bodyToMono(Product::class.java).flatMap {
+        if (validator.hasErrors(it,ValidationGroup.ProductUpdate::class.java))
+            return@flatMap validator.errors()
+        val id = request.pathVariable("id")
+        return@flatMap repository.findById(id).flatMap { _ ->
+            it.id = id
+            repository.save(it).then(JSONResponse.code(ResponseCode.PRODUCT_UPDATE_SUCCESS))
         }.switchIfEmpty(
-            CommonResponse.code(ResponseCode.PRODUCT_DELETE_FAILED_NOT_FOUND)
+            JSONResponse.code(ResponseCode.PRODUCT_UPDATE_FAILED_NOT_EXISTS)
         )
-    }
-
-    fun update(request: ServerRequest):Mono<ServerResponse>
-    {
-        return request.bodyToMono(ProductAdd::class.java).flatMap {
-            if(validator.hasErrors(it))
-                return@flatMap validator.errors()
-            val name = it.name
-            val p = ProductBuilder().name(name).build()
-            val matcher = ExampleMatcher.matching().withMatcher(ProductProperty.name(),exact()).withIgnorePaths(*ProductProperty.other())
-            repository.findOne(Example.of(p,matcher)).flatMap { n->
-                Utils.productCopy(p,n)
-                repository.save(p).then(CommonResponse.code(ResponseCode.PRODUCT_UPDATE_SUCCESS))
-            }.switchIfEmpty(CommonResponse.code(ResponseCode.PRODUCT_UPDATE_FAILED_NOT_EXISTS))
-        }
-    }
-
-    fun data(request: ServerRequest):Mono<ServerResponse>
-    {
-        return when(request.pathVariable("code")) {
-            ResponseCode.PRODUCT_GET_ONE_SUCCESS -> ProductResponse.mono(cache.monoProduct)
-            ResponseCode.PRODUCT_GET_BY_CATEGORIES_SUCCESS,
-            ResponseCode.PRODUCT_GET_BY_CATEGORY_SUCCESS,
-            ResponseCode.PRODUCT_GET_ALL_SUCCESS -> ProductResponse.flux(cache.fluxProduct)
-            else -> CommonResponse.code(ResponseCode.ERROR_GET_GATE_CODE)
-        }
     }
 }

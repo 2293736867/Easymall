@@ -5,50 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/admin/AdminRouter.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/DeliveredOrdersDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/FinishedOrdersDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/NonReviewsOrdersDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/OrdersIndexDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/PaidOrdersDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/UserIndex.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/header/UserTopBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/FinishedOrdersTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/NonPaymentOrdersTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/NonReviewsOrdersTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/OrdersIndexTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/PaidOrdersTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/PersonalTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/FavouriteRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/OrdersRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Favourite.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Orders.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/ShoppingCardProperty.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/response/UserSignInResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/util/FavouriteUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/util/ProductUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/util/ShoppingCardUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/util/UserUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/ProductHandlerFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/FavouriteHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/OrdersHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/JSONResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/FavouriteRouter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/OrdersRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/ProductCache.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/ShoppingCardCache.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/cache/UserCache.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ProductRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ShoppingCardRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/ShoppingCardRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/dao/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/ProductBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/builder/UserBuilder.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/ShoppingCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/ShoppingCard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/ProductProperty.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/ProductProperty.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/UserProperty.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/property/UserProperty.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductAdd.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/ProductReturn.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserSignInAndSignUp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/validation/UserUpdate.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/exception/TestException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/exception/TestException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/TestHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/TestHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/VerificationHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/handler/VerificationHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/CommonResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ProductResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ProductResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/ShoppingCardResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/response/UserResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/ShoppingCardRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/TestRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/TestRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/JWTUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/VerificationCodeUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/util/VerificationCodeUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/validator/ValidationMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/userservice/UserServiceTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pers/wzr/easymall/userservice/UserServiceTests.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/IndexNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/IndexNavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/IndexTopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/IndexTopBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/FavouriteDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/FavouriteDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/OrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/NonPaymentOrdersDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/PersonalDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/PersonalDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/ShoppingCardDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/ShoppingCardDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/SignInDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/SignInDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/index/header/drawer/SignUpDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/SignUpDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductFirstPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/ProductFirstPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/ProductIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductSecondPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/ProductSecondPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/product/ProductThirdPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/ProductThirdPart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/user/ShoppingCard.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/user/UserIndex.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/user/header/UserTopBar.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/content/user/tabpane/OverviewTabPane.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/router/IndexRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/router/IndexRouter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/router/UserRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/router/UserRouter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/router/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/js/utils/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/js/utils/Utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/PersonalDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/PersonalDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/SignInDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/SignInDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/SignUpDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/SignUpDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/OrdersIndexDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/OrdersIndexDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/ProductIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/ProductIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/header/UserTopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/header/UserTopBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/PersonalTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/PersonalTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,8 +150,9 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
     <property name="database.data.extractors.current.export.id" value="HTML-JavaScript.html.js" />
     <property name="database.data.extractors.current.id" value="HTML-JavaScript.html.js" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/http2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/untitled" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -141,20 +171,32 @@
       <recent name="$PROJECT_DIR$/src/main/resources/productImg" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="pers.wzr.easymall.entity.util" />
+      <recent name="pers.wzr.easymall.entity.response" />
       <recent name="pers.wzr.easymall.entity.validation" />
       <recent name="pers.wzr.easymall.entity.entity" />
       <recent name="pers.wzr.easymall.entity.builder" />
-      <recent name="pers.wzr.easymall.validator" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="pers.wzr.easymall.router" />
+      <recent name="pers.wzr.easymall.handler" />
+      <recent name="pers.wzr.easymall.dao" />
+      <recent name="pers.wzr.easymall.entity.property" />
       <recent name="pers.wzr.easymall.filter" />
-      <recent name="pers.wzr.easymall.cache" />
-      <recent name="pers.wzr.easymall.response" />
-      <recent name="pers.wzr.easymall.entity.validation" />
-      <recent name="pers.wzr.easymall.entity.entity" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTests.delete" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />

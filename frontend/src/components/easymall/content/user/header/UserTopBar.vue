@@ -63,6 +63,7 @@ export default {
     methods: {
         logout() {
             this.$store.commit('signOut')
+            this.toIndex()
         },
         toIndex() {
             router.push({

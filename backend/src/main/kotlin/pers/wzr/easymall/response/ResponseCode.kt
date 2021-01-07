@@ -48,6 +48,9 @@ class ResponseCode {
         const val PRODUCT_GET_BY_CATEGORIES_SUCCESS = "110106"
         const val PRODUCT_GET_BY_CATEGORIES_FAILED_EMPTY = "110107"
 
+        const val PRODUCT_GET_DETAILS_SUCCESS = "110108"
+        const val PRODUCT_GET_DETAILS_NOT_FOUND = "110109"
+
         //Product Update
         const val PRODUCT_UPDATE_SUCCESS = "110200"
         const val PRODUCT_UPDATE_FAILED_NOT_EXISTS = "110201"
@@ -102,5 +105,6 @@ class ResponseCode {
         //Error Code
         const val ERROR_GET_GATE_CODE = "510000"
         const val ERROR_VALIDATION_CODE = "510001"
+        const val ERROR_NULL_BODY = "510002"
     }
 }

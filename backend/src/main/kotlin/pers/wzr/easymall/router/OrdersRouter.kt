@@ -13,7 +13,7 @@ class OrdersRouter {
     }
 
     @Bean
-    fun favouriteRouterConfig(handler: OrdersHandler) = router {
+    fun ordersRouterConfig(handler: OrdersHandler) = router {
         GET(GET,handler::get)
     }
 }

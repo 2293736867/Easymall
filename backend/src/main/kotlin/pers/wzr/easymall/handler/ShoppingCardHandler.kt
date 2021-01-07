@@ -46,20 +46,37 @@ class ShoppingCardHandler {
         it.userId = JWTUtils.getUserIdFromServerRequest(request)
         if (validator.hasErrors(it))
             return@flatMap validator.errors()
-        repository.save(it).then(
-            JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_SUCCESS)
-        ).switchIfEmpty(
-            JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_FAILED)
+        return@flatMap repository.findAll(
+            Example.of(
+                ShoppingCard(userId = it.userId, productId = it.productId),
+                ExampleMatcher.matching()
+                    .withMatcher(ShoppingCardProperty.userId(), exact())
+                    .withMatcher(ShoppingCardProperty.productId(), exact())
+                    .withIgnorePaths(*ShoppingCardProperty.other())
+            )
+        ).collectList().flatMap { old ->
+            it.id = old[0].id
+            it.num += old[0].num
+            repository.save(it).then(JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_SUCCESS))
+        }.switchIfEmpty(
+            repository.save(it).then(
+                JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_SUCCESS)
+            ).switchIfEmpty(
+                JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_FAILED)
+            )
         )
     }
 
     fun delete(request: ServerRequest) = repository.findAll(
         Example.of(
-            ShoppingCard(userId = JWTUtils.getUserIdFromServerRequest(request),productId = request.pathVariable("productId")),
+            ShoppingCard(
+                userId = JWTUtils.getUserIdFromServerRequest(request),
+                productId = request.pathVariable("productId")
+            ),
             ExampleMatcher.matching()
-            .withMatcher(ShoppingCardProperty.userId(),exact())
-            .withMatcher(ShoppingCardProperty.productId(),exact())
-            .withIgnorePaths(*ShoppingCardProperty.other())
+                .withMatcher(ShoppingCardProperty.userId(), exact())
+                .withMatcher(ShoppingCardProperty.productId(), exact())
+                .withIgnorePaths(*ShoppingCardProperty.other())
         )
     ).collectList().filter {
         it.size > 0
@@ -70,19 +87,20 @@ class ShoppingCardHandler {
     )
 
     fun update(request: ServerRequest) = request.bodyToMono(ShoppingCard::class.java).flatMap {
-        if(validator.hasErrors(it))
+        if (validator.hasErrors(it))
             return@flatMap validator.errors()
         it.userId = JWTUtils.getUserIdFromServerRequest(request)
         return@flatMap repository.findAll(
             Example.of(
-            ShoppingCard(userId = it.userId,productId = it.productId),
-            ExampleMatcher.matching()
-            .withMatcher(ShoppingCardProperty.userId(),exact())
-            .withMatcher(ShoppingCardProperty.productId(),exact())
-            .withIgnorePaths(*ShoppingCardProperty.other())
-        )).collectList().filter{ list->
+                ShoppingCard(userId = it.userId, productId = it.productId),
+                ExampleMatcher.matching()
+                    .withMatcher(ShoppingCardProperty.userId(), exact())
+                    .withMatcher(ShoppingCardProperty.productId(), exact())
+                    .withIgnorePaths(*ShoppingCardProperty.other())
+            )
+        ).collectList().filter { list ->
             list.size > 0
-        }.flatMap{ l ->
+        }.flatMap { l ->
             it.id = l[0].id
             repository.save(it).then(JSONResponse.code(ResponseCode.SHOPPING_CARD_UPDATE_SUCCESS))
         }.switchIfEmpty(

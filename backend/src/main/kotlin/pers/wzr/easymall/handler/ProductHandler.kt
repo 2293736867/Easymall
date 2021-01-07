@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.server.ServerRequest
 import pers.wzr.easymall.dao.ProductRepository
 import pers.wzr.easymall.entity.entity.Product
 import pers.wzr.easymall.entity.property.ProductProperty
+import pers.wzr.easymall.entity.request.ProductIds
 import pers.wzr.easymall.entity.util.ProductUtils
 import pers.wzr.easymall.response.JSONResponse
 import pers.wzr.easymall.response.ProductResponse
@@ -24,6 +25,19 @@ class ProductHandler {
 
     @Autowired
     lateinit var validator: CustomValidator
+
+    fun getDetails(request: ServerRequest) = request.bodyToMono(ProductIds::class.java).flatMap {
+//        println(it)
+        it.id.forEach { _ -> println()}
+//        for (i in it.split(","))
+//            println(i)
+        repository.findById(it.id[0])
+    }.flatMap {
+//        println(it.size)
+        return@flatMap JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_DETAILS_SUCCESS,it)
+    }.switchIfEmpty(
+        JSONResponse.code(ResponseCode.PRODUCT_GET_DETAILS_NOT_FOUND)
+    )
 
     fun getDetailAll(request: ServerRequest) = repository.findAll().collectList().flatMap {
         JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_ALL_SUCCESS, it)
@@ -52,7 +66,9 @@ class ProductHandler {
         )
     ).map {
         ProductUtils.productResultFromProduct(it)
-    }.collectList().flatMap {
+    }.collectList().filter{
+        it.size > 0
+    }.flatMap {
         JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORY_SUCCESS,it)
     }.switchIfEmpty(
         JSONResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORY_FAILED_NOT_FOUND)

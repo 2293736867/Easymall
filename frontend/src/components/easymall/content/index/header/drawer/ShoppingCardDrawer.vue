@@ -75,6 +75,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import URL from "../../../../../../js/constant/URL";
+
 export default {
     name: "ShoppingCardDrawer",
     data() {
@@ -85,11 +88,20 @@ export default {
             getThumbnailList:[
                 '/default/Product.png','/default/Product.png'
             ],
+            productIds:[],
+            products:[],
         }
     },
     methods: {
         init() {
-
+            this.productIds = this.$store.getters.shoppingCardProductIds
+            this.productIds.push('23423432')
+            axios.post(URL.productGetDetails,{
+                id:this.productIds
+            }).then(res=>{
+                console.log(res)
+                this.products = res.data.data
+            })
         },
         checkout(){
             this.$emit('checkout')

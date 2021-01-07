@@ -1,5 +1,5 @@
 <template>
-    <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
+    <el-menu ref="menu" :default-active="activeIndex" mode="horizontal" @select="handleSelect">
         <el-menu-item index="0">首页</el-menu-item>
         <el-menu-item index="1">全部商品</el-menu-item>
         <el-menu-item index="2">手机数码</el-menu-item>

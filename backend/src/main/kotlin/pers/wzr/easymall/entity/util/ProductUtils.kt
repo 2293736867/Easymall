@@ -12,8 +12,8 @@ class ProductUtils {
 
         fun productResultFromProduct(p: Product):Product {
             p.coverImageBaseUrl = BASE_IMAGE_URL + p.id + "/cover/"
-            p.thumbnailImageBaseUrl = BASE_IMAGE_URL + p.id + "/thumbnail"
-            p.detailImageBaseUrl = BASE_IMAGE_URL + p.id + "/detail"
+            p.thumbnailImageBaseUrl = BASE_IMAGE_URL + p.id + "/thumbnail/"
+            p.detailImageBaseUrl = BASE_IMAGE_URL + p.id + "/detail/"
             return p
         }
 

@@ -35,7 +35,7 @@
                 </el-input-number>
             </el-tooltip>
             <el-divider direction="vertical"></el-divider>
-            <el-button icon="el-icon-shopping-cart-1" type="primary">
+            <el-button icon="el-icon-shopping-cart-1" type="primary" @click="addToShoppingCard">
                 加入购物车
             </el-button>
             <el-divider direction="vertical"></el-divider>
@@ -44,7 +44,7 @@
             </el-button>
             <el-divider></el-divider>
             <el-tooltip effect="light" content="用户评分" placement="bottom">
-                <el-rate v-model="rating" disabled show-score text-color="#ff9900" style="margin-top: 1rem">
+                <el-rate v-model="product.rating" disabled show-score text-color="#ff9900" style="margin-top: 1rem">
                 </el-rate>
             </el-tooltip>
         </el-col>
@@ -52,6 +52,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import URL from "../../../../js/constant/URL";
+
 export default {
     name: "ProductFirstPart",
     data() {
@@ -66,7 +69,6 @@ export default {
             loadingThumbnailImage: false,
             showBorder: [],
             affordNum: 1,
-            rating:3.7,
         }
     },
     created() {
@@ -86,6 +88,21 @@ export default {
         removeBorderOnLeave(i) {
             this.showBorder[i] = false
         },
+        addToShoppingCard(){
+            axios.post(URL.shoppingCardAdd,{
+                productId:this.product.id,
+                num:this.affordNum
+            },{
+                headers:{
+                    userToken:localStorage.getItem('userToken')
+                }
+            }).then(res=>{
+                if(parseInt(res.data.code) === 120000){
+                    this.$message.success('添加到购物车成功')
+                    this.$store.commit('addShoppingCardNum',this.product.id)
+                }
+            })
+        }
     },
 }
 </script>

@@ -4,13 +4,13 @@ const host = 'localhost'
 const base = protocol+'://'+host+':'+port+'/'
 const userBase = base + 'user/'
 const productBase = base + 'product/'
+const shoppingCardBase = base + 'shopping/card/'
 
 const URL = {
     code:base+'verification/code',
 
     userSignIn:userBase+'sign/in',
     userSignUp:userBase+'sign/up',
-    userData:userBase+'data/',
     userUpdate:userBase+'update',
     userGetEmail:userBase+'get/email',
     userGetNickname:userBase+'get/nickname',
@@ -18,7 +18,10 @@ const URL = {
 
     productGetDetail:productBase+'get/detail/',
     productGetByCategory:productBase+'get/category/',
-    productData:productBase+'data/',
+    productGetDetails:productBase+'get/details/',
+
+    shoppingCardAdd:shoppingCardBase+'add',
+    shoppingCardGet:shoppingCardBase+'get'
 }
 
 export default URL

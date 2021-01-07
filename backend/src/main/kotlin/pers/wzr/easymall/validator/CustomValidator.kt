@@ -14,7 +14,12 @@ class CustomValidator {
     lateinit var validator: Validator
     private var response = Mono.empty<ServerResponse>()
 
-    fun <T> hasErrors(obj: T, vararg group: Class<*>): Boolean {
+    fun <T> hasErrors(obj: T?, vararg group: Class<*>): Boolean {
+        if(obj == null)
+        {
+            response = JSONResponse.code(ResponseCode.ERROR_NULL_BODY)
+            return true
+        }
         val e = if (group.isEmpty()) validator.validate(obj) else validator.validate(obj, group[0])
         e.forEach{
             response = when(it.message) {

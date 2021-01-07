@@ -5,9 +5,20 @@ const store = createStore({
         return {
             userToken:'',
             categoryId:'',
+            shoppingCardProductIds:[],
         }
     },
     mutations: {
+        addShoppingCardNum(state,v){
+            if(state.shoppingCardProductIds.length === 0)
+            {
+                state.shoppingCardProductIds.push(v)
+            }
+            else if(!state.shoppingCardProductIds.find(v.productId))
+            {
+                state.shoppingCardProductIds.push(v.productId)
+            }
+        },
         signIn(state,v){
             store.commit('set',{
                 k:'user',
@@ -48,6 +59,12 @@ const store = createStore({
         categoryId(state){
             return state.categoryId
         },
+        shoppingCardNum(state){
+            return state.shoppingCardProductIds.length
+        },
+        shoppingCardProductIds(state){
+            return state.shoppingCardProductIds
+        }
     }
 })
 

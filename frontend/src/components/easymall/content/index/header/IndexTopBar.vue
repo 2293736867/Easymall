@@ -24,13 +24,13 @@
                     <el-button circle icon="el-icon-s-order" plain type="primary"></el-button>
                 </el-tooltip>
             </el-badge>
-            <el-badge style="margin-right: 1rem" value="13">
+            <el-badge style="margin-right: 1rem" :value="shoppingCardNum">
                 <el-tooltip content="购物车" effect="light" placement="bottom">
                     <el-button circle icon="el-icon-shopping-cart-full" plain
                                type="primary" @click="showShoppingCardDrawer"></el-button>
                 </el-tooltip>
             </el-badge>
-            <el-badge style="margin-right: 1rem" value="13">
+            <el-badge style="margin-right: 1rem" :value="favouriteNum">
                 <el-tooltip content="收藏夹" effect="light" placement="bottom">
                     <el-button circle icon="el-icon-star-off" plain type="primary"
                                @click="showFavouriteDrawer"></el-button>
@@ -42,7 +42,7 @@
         </el-col>
     </el-row>
 
-    <SignInDrawer ref="signIn" v-model="signInDrawer" @success="signInDrawer = false"></SignInDrawer>
+    <SignInDrawer ref="signIn" v-model="signInDrawer" @success="signInSuccess"></SignInDrawer>
     <SignUpDrawer ref="signUp" v-model="signUpDrawer" @success="signUpSuccess"></SignUpDrawer>
     <PersonalDrawer ref="personal" v-model="personalDrawer" @success="personalDrawer = false"></PersonalDrawer>
     <ShoppingCardDrawer ref="shoppingCard" v-model="shoppingCardDrawer" @checkout="checkout"></ShoppingCardDrawer>
@@ -58,6 +58,8 @@ import PersonalDrawer from "./drawer/PersonalDrawer.vue";
 import ShoppingCardDrawer from "./drawer/ShoppingCardDrawer.vue";
 import FavouriteDrawer from "./drawer/FavouriteDrawer.vue";
 import OrdersIndexDrawer from "./drawer/orders/OrdersIndexDrawer.vue";
+import axios from "axios";
+import URL from "../../../../../js/constant/URL";
 
 export default {
     name: "IndexTopBar",
@@ -71,12 +73,17 @@ export default {
             shoppingCardDrawer: false,
             favouriteDrawer: false,
             ordersDrawer: false,
+
+            favouriteNum:0,
         }
     },
     computed: {
         isUserSignIn() {
             return this.$store.getters.isUserSignIn
-        }
+        },
+        shoppingCardNum(){
+            return this.$store.getters.shoppingCardNum
+        },
     },
     methods: {
         logout() {
@@ -118,6 +125,20 @@ export default {
         signUpSuccess() {
             this.signUpDrawer = false;
             this.showSignInDrawer()
+        },
+        signInSuccess(){
+            this.signInDrawer = false
+            axios.get(URL.shoppingCardGet,{
+                headers:{
+                    userToken:localStorage.getItem('userToken')
+                }
+            }).then(res=>{
+                if(parseInt(res.data.code) === 120100) {
+                    for (let i = 0; i < res.data.data.length; i++) {
+                        this.$store.commit('addShoppingCardNum',res.data.data[i].productId)
+                    }
+                }
+            })
         },
         toPersonal() {
             router.push('/user')

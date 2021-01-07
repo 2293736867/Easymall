@@ -13,6 +13,7 @@ class ProductRouter {
 
         private const val GET_DETAIL_ALL = PRODUCT + "get/detail"
         private const val GET_DETAIL_ONE = PRODUCT + "get/detail/{id}"
+        private const val GET_DETAILS = PRODUCT + "get/details"
 
         private const val GET_BY_CATEGORIES = PRODUCT + "get/category"
         private const val GET_BY_CATEGORY = PRODUCT + "get/category/{category}"
@@ -35,6 +36,7 @@ class ProductRouter {
         GET(GET_COVER_IMAGE,productHandler::getCoverImage)
         GET(GET_THUMBNAIL_IMAGE,productHandler::getThumbnailImage)
         GET(GET_DETAIL_IMAGE,productHandler::getDetailImage)
+        POST(GET_DETAILS,productHandler::getDetails)
 
         DELETE(DELETE,productHandler::delete)
         PUT(UPDATE,productHandler::update)

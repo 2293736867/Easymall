@@ -62,7 +62,7 @@
     </el-row>
     <el-row>
         <el-col v-show="none">
-            <el-image src="/default/Product.png"></el-image>
+            <el-empty :image-size="300" description="商品列表为空"></el-empty>
         </el-col>
     </el-row>
 </template>
@@ -111,13 +111,18 @@ export default {
                 path: '/product/' + id
             })
         },
+        toIndex(){
+            router.push({
+                path:'/'
+            })
+        },
         loadProductByCategory(id) {
             id = parseInt(id)
             if (id >= 1 && id <= Categories.length) {
                 let allProducts = (id === 1)
                 axios.get(URL.productGetByCategory + (allProducts ? "" : Categories[id - 1].value)).then(res => {
                     this.products = res.data.data
-                    console.log(res.data.code)
+                    console.log(res)
                     if (parseInt(res.data.code) === 110104 || parseInt(res.data.code) === 110106) {
                         this.none = false
                         this.loading = false

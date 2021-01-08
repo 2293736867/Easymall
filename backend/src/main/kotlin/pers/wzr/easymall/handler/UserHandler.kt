@@ -60,6 +60,14 @@ class UserHandler {
         }
     }
 
+    fun add(request: ServerRequest) = request.bodyToMono(User::class.java).flatMap{
+        return@flatMap repository.save(it).flatMap{ u ->
+            JSONResponse.codeAndData(ResponseCode.USER_ADD_SUCCESS,u.id)
+        }.switchIfEmpty(
+            JSONResponse.code(ResponseCode.USER_ADD_FAILED)
+        )
+    }
+
     fun signUp(request:ServerRequest): Mono<ServerResponse>
     {
         return request.bodyToMono(User::class.java).flatMap {
@@ -80,9 +88,8 @@ class UserHandler {
         return request.bodyToMono(User::class.java).flatMap {
             if(validator.hasErrors(it,ValidationGroup.UserUpdate::class.java))
                 return@flatMap validator.errors()
-            val id = JWTUtils.getUserIdFromServerRequest(request)
-            return@flatMap repository.findById(id).flatMap { _ ->
-                it.id = id
+            return@flatMap repository.findById(it.id).flatMap { old ->
+                it.password = old.password
                 repository.save(it).then(JSONResponse.code(ResponseCode.USER_UPDATE_SUCCESS))
             }.switchIfEmpty(
                 JSONResponse.code(ResponseCode.USER_UPDATE_FAILED_NOT_FOUND)
@@ -92,7 +99,7 @@ class UserHandler {
 
     fun delete(request: ServerRequest):Mono<ServerResponse>
     {
-        val id = JWTUtils.getUserIdFromServerRequest(request)
+        val id = request.pathVariable("id")
         return repository.findById(id).flatMap {
             repository.deleteById(id).then(JSONResponse.code(ResponseCode.USER_DELETE_SUCCESS))
         }.switchIfEmpty(

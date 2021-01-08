@@ -5,35 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2deb51d2-bb2b-45f0-8050-eecf467a2f4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/.attach_pid8449" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/.attach_pid8532" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/request/ProductIds.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/content/AdminIndex.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/content/header/AdminHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminHomeTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminProductManagementTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserManagementTabPane.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserModifyDrawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/admin/router/AdminRouter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductAddDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductModifyDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserAddDrawer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/util/ProductUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/util/ProductUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/entity/entity/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/ProductHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/ShoppingCardHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/handler/UserHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/response/ResponseCode.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/OrdersRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/OrdersRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/ProductRouter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/validator/CustomValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/router/UserRouter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminRouter.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/IndexNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/IndexNavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/AdminIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/AdminIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/header/AdminHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/header/AdminHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminProductManagementTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductManagementTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserManagementTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserManagementTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserModifyDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserModifyDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/IndexTopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/IndexTopBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/ShoppingCardDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/ShoppingCardDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/SignInDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/SignInDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/SignUpDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/SignUpDrawer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/easymall/content/product/ProductFirstPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/product/ProductFirstPart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/easymall/content/product/ProductIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/product/ProductIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/header/UserTopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/header/UserTopBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/PersonalTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/PersonalTabPane.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/constant/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/constant/URL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/router/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,28 +74,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement" />
+      <recent name="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement" />
       <recent name="$PROJECT_DIR$/src/js" />
       <recent name="$PROJECT_DIR$/src/components/content/user/header" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement" />
       <recent name="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement" />
       <recent name="$PROJECT_DIR$/src/components/admin/router" />
       <recent name="$PROJECT_DIR$/src/components/easymall" />
       <recent name="$PROJECT_DIR$/src/components/content/index/header/drawer/orders" />
-      <recent name="$PROJECT_DIR$/src/components/router" />
     </key>
   </component>
   <component name="RunManager">
@@ -175,7 +173,8 @@
       <workItem from="1609990966161" duration="3332000" />
       <workItem from="1609995872464" duration="24907000" />
       <workItem from="1610028121450" duration="3371000" />
-      <workItem from="1610036652635" duration="1200000" />
+      <workItem from="1610036652635" duration="1799000" />
+      <workItem from="1610077644507" duration="15574000" />
     </task>
     <servers />
   </component>

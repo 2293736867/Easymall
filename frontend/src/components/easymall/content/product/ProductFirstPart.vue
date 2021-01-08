@@ -109,7 +109,7 @@ export default {
 
 <style scoped>
 .thumbnail-mouse-hover {
-    border: 1px solid black;
+    border: 1px solid #909399;
 }
 
 .thumbnail-mouse-leave {

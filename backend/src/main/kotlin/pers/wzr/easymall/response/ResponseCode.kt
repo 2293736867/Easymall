@@ -8,6 +8,9 @@ class ResponseCode {
         const val USER_SIGN_UP_SUCCESS = "100000"
         const val USER_SIGN_UP_FAILED_VERIFICATION_CODE_ERROR = "100001"
 
+        const val USER_ADD_SUCCESS = "100002"
+        const val USER_ADD_FAILED = "100003"
+
         //User Retrieve
         const val USER_SIGN_IN_SUCCESS = "100100"
         const val USER_SIGN_IN_FAILED_USERNAME_OR_PASSWORD_ERROR = "100101"

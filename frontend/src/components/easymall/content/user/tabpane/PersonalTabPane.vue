@@ -127,7 +127,6 @@ export default {
                         userToken: localStorage.getItem('userToken')
                     }
                 }).then(res => {
-                    console.log(res)
                     if (parseInt(res.data.code) === 100200) {
                         this.$message.success('修改成功')
                     } else if (parseInt(res.data.code) === 100400) {
@@ -152,7 +151,6 @@ export default {
         //     this.user.password = u.password
         // },
         uploadAvatar(){
-            console.log('upload')
         }
     },
     emits: ['success']

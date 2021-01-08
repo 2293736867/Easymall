@@ -124,7 +124,7 @@ export default {
                             })
                             this.$emit('success')
                             this.$refs.drawer.handleClose()
-                        } else if (res.data === 100001) {
+                        } else if (parseInt(res.data.code) === 100001) {
                             this.$message.error('验证码错误')
                         }
                     })

@@ -40,6 +40,7 @@
             </el-form>
         </el-col>
     </el-row>
+    <el-divider></el-divider>
     <el-row v-show="!none" justify="center" type="flex">
         <el-col v-for="p in products" :span="4">
             <el-card v-loading="loading" element-loading-text="拼命加载中" shadow="hover">
@@ -49,7 +50,6 @@
                     </template>
                     <template #error>
                         <el-image src="/default/Product.png"></el-image>
-                        <div>加载失败</div>
                     </template>
                 </el-image>
                 <div style="padding:2rem;">
@@ -122,7 +122,6 @@ export default {
                 let allProducts = (id === 1)
                 axios.get(URL.productGetByCategory + (allProducts ? "" : Categories[id - 1].value)).then(res => {
                     this.products = res.data.data
-                    console.log(res)
                     if (parseInt(res.data.code) === 110104 || parseInt(res.data.code) === 110106) {
                         this.none = false
                         this.loading = false

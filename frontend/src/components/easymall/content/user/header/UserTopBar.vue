@@ -3,7 +3,7 @@
         <el-col :span="2">
             <el-image src="/logo/Logo.jpg" @click="toIndex" style="padding-top: 0.4rem"></el-image>
         </el-col>
-        <el-col v-if="isUserSignIn" :span="4">
+        <el-col v-if="isUserSignIn" :span="6">
             <el-tooltip content="返回首页" effect="light" placement="bottom" style="margin-right: 1rem">
                 <el-button circle plain type="primary" icon="el-icon-s-home" @click="toIndex"></el-button>
             </el-tooltip>
@@ -65,6 +65,7 @@ export default {
             this.$store.commit('signOut')
             this.toIndex()
         },
+
         toIndex() {
             router.push({
                 path: '/'

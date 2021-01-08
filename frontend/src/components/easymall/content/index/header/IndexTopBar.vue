@@ -15,7 +15,10 @@
                 注册
             </el-button>
         </el-col>
-        <el-col v-if="isUserSignIn" :span="4">
+        <el-col v-if="isUserSignIn" :span="5">
+            <el-tooltip content="管理面板" effect="light" placement="bottom" style="margin-right: 0.2rem">
+                <el-button circle plain type="primary" icon="el-icon-odometer" @click="toAdmin"></el-button>
+            </el-tooltip>
             <el-tooltip content="个人中心" effect="light" placement="bottom" style="margin-right: 1rem">
                 <el-button circle icon="el-icon-user" plain type="primary" @click="toPersonal"></el-button>
             </el-tooltip>
@@ -94,6 +97,11 @@ export default {
                 path: '/'
             })
         },
+        toAdmin(){
+            router.push({
+                path:'/admin'
+            })
+        },
         showSignInDrawer() {
             this.$refs.signIn.init()
             this.signInDrawer = true
@@ -134,6 +142,7 @@ export default {
                 }
             }).then(res=>{
                 if(parseInt(res.data.code) === 120100) {
+                    console.log(res)
                     for (let i = 0; i < res.data.data.length; i++) {
                         this.$store.commit('addShoppingCardNum',res.data.data[i].productId)
                     }

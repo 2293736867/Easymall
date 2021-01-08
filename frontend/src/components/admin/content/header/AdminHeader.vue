@@ -4,7 +4,9 @@
             <el-image src="/logo/Logo.jpg" @click="toIndex" style="margin-top: 0.3rem"></el-image>
         </el-col>
         <el-col :span="1">
-            <el-button circle type="primary" icon="el-icon-right"></el-button>
+            <el-tooltip content="返回首页" effect="light" placement="bottom">
+                <el-button circle type="primary" icon="el-icon-right" @click="toIndex"></el-button>
+            </el-tooltip>
         </el-col>
     </el-row>
 </template>

@@ -28,7 +28,7 @@
 <script>
 import AdminHomeTabPane from "./tabpane/AdminHomeTabPane.vue";
 import AdminUserManagementTabPane from "./tabpane/usermanagement/AdminUserManagementTabPane.vue";
-import AdminProductManagementTabPane from "./tabpane/AdminProductManagementTabPane.vue";
+import AdminProductManagementTabPane from "./tabpane/productManagement/AdminProductManagementTabPane.vue";
 export default {
     name: "AdminIndex",
     components: {AdminProductManagementTabPane, AdminUserManagementTabPane, AdminHomeTabPane},

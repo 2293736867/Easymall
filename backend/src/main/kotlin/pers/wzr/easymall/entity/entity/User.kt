@@ -29,7 +29,7 @@ class User(
 
     @NotBlank(
         message = ValidationMessage.PASSWORD_IS_BLANK,
-        groups = [ValidationGroup.UserSignIn::class, ValidationGroup.UserSignUp::class,ValidationGroup.UserUpdate::class]
+        groups = [ValidationGroup.UserSignIn::class, ValidationGroup.UserSignUp::class]
     )
     var password = password
 

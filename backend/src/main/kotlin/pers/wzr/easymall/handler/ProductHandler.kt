@@ -6,6 +6,7 @@ import org.springframework.data.domain.ExampleMatcher
 import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.exact
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
+import org.springframework.web.reactive.function.server.ServerResponse
 import pers.wzr.easymall.dao.ProductRepository
 import pers.wzr.easymall.entity.entity.Product
 import pers.wzr.easymall.entity.property.ProductProperty
@@ -16,6 +17,7 @@ import pers.wzr.easymall.response.ProductResponse
 import pers.wzr.easymall.response.ResponseCode
 import pers.wzr.easymall.validator.CustomValidator
 import pers.wzr.easymall.validator.ValidationGroup
+import reactor.core.publisher.Mono
 import java.util.*
 
 @Component
@@ -26,18 +28,21 @@ class ProductHandler {
     @Autowired
     lateinit var validator: CustomValidator
 
-    fun getDetails(request: ServerRequest) = request.bodyToMono(ProductIds::class.java).flatMap {
-//        println(it)
-        it.id.forEach { _ -> println()}
-//        for (i in it.split(","))
-//            println(i)
-        repository.findById(it.id[0])
+    fun getAll(request: ServerRequest) = repository.findAll().collectList().filter {
+        it.size > 0
     }.flatMap {
-//        println(it.size)
-        return@flatMap JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_DETAILS_SUCCESS,it)
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_ALL_SUCCESS, it)
     }.switchIfEmpty(
-        JSONResponse.code(ResponseCode.PRODUCT_GET_DETAILS_NOT_FOUND)
+        JSONResponse.code(ResponseCode.PRODUCT_GET_ALL_FAILED_EMPTY)
     )
+
+    fun getDetails(request: ServerRequest):Mono<ServerResponse> = request.bodyToMono(ProductIds::class.java).flatMap {
+        return@flatMap repository.findAllById(it.id.asIterable()).collectList().flatMap{p->
+            JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_DETAILS_SUCCESS, p)
+        }.switchIfEmpty(
+            JSONResponse.code(ResponseCode.PRODUCT_GET_DETAILS_NOT_FOUND)
+        )
+    }
 
     fun getDetailAll(request: ServerRequest) = repository.findAll().collectList().flatMap {
         JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_ALL_SUCCESS, it)
@@ -53,8 +58,8 @@ class ProductHandler {
 
     fun getByCategories(request: ServerRequest) = repository.findAll().map {
         ProductUtils.productResultFromProduct(it)
-    }.collectList().flatMap{
-        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORIES_SUCCESS,it)
+    }.collectList().flatMap {
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORIES_SUCCESS, it)
     }.switchIfEmpty(
         JSONResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORIES_FAILED_EMPTY)
     )
@@ -62,14 +67,15 @@ class ProductHandler {
     fun getByCategory(request: ServerRequest) = repository.findAll(
         Example.of(
             Product(category = request.pathVariable("category")),
-            ExampleMatcher.matching().withMatcher(ProductProperty.category(), exact()).withIgnorePaths(*ProductProperty.other())
+            ExampleMatcher.matching().withMatcher(ProductProperty.category(), exact())
+                .withIgnorePaths(*ProductProperty.other())
         )
     ).map {
         ProductUtils.productResultFromProduct(it)
-    }.collectList().filter{
+    }.collectList().filter {
         it.size > 0
     }.flatMap {
-        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORY_SUCCESS,it)
+        JSONResponse.codeAndData(ResponseCode.PRODUCT_GET_BY_CATEGORY_SUCCESS, it)
     }.switchIfEmpty(
         JSONResponse.code(ResponseCode.PRODUCT_GET_BY_CATEGORY_FAILED_NOT_FOUND)
     )
@@ -83,9 +89,9 @@ class ProductHandler {
     fun add(request: ServerRequest) = request.bodyToMono(Product::class.java).flatMap {
         if (validator.hasErrors(it, ValidationGroup.ProductAdd::class.java))
             return@flatMap validator.errors()
-        repository.save(it).then(
-            JSONResponse.code(ResponseCode.PRODUCT_ADD_SUCCESS)
-        ).switchIfEmpty(
+        return@flatMap repository.save(it).flatMap { p ->
+            JSONResponse.codeAndData(ResponseCode.PRODUCT_ADD_SUCCESS, p.id)
+        }.switchIfEmpty(
             JSONResponse.code(ResponseCode.PRODUCT_ADD_FAILED)
         )
     }
@@ -97,11 +103,13 @@ class ProductHandler {
     )
 
     fun update(request: ServerRequest) = request.bodyToMono(Product::class.java).flatMap {
-        if (validator.hasErrors(it,ValidationGroup.ProductUpdate::class.java))
+        if (validator.hasErrors(it, ValidationGroup.ProductUpdate::class.java))
             return@flatMap validator.errors()
         val id = request.pathVariable("id")
-        return@flatMap repository.findById(id).flatMap { _ ->
+        return@flatMap repository.findById(id).flatMap { old ->
             it.id = id
+            it.coverImagesSize = old.coverImagesSize
+            it.detailImagesSize = old.detailImagesSize
             repository.save(it).then(JSONResponse.code(ResponseCode.PRODUCT_UPDATE_SUCCESS))
         }.switchIfEmpty(
             JSONResponse.code(ResponseCode.PRODUCT_UPDATE_FAILED_NOT_EXISTS)

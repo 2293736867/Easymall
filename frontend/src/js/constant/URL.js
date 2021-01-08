@@ -12,13 +12,18 @@ const URL = {
     userSignIn:userBase+'sign/in',
     userSignUp:userBase+'sign/up',
     userUpdate:userBase+'update',
-    userGetEmail:userBase+'get/email',
-    userGetNickname:userBase+'get/nickname',
+    userDelete:userBase+'delete/',
+    userGetAll:userBase+'get',
+    userAdd:userBase+'add',
     userCheckUsername:userBase+'check/username/',
 
     productGetDetail:productBase+'get/detail/',
     productGetByCategory:productBase+'get/category/',
     productGetDetails:productBase+'get/details/',
+    productUpdate:productBase+'update/',
+    productGetAll:productBase+'get',
+    productAdd:productBase+'add',
+    productDelete:productBase+'delete/',
 
     shoppingCardAdd:shoppingCardBase+'add',
     shoppingCardGet:shoppingCardBase+'get'

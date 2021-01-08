@@ -10,6 +10,7 @@ import pers.wzr.easymall.handler.UserHandler
 class UserRouter {
     companion object{
         private const val USER = "/user/"
+        private const val ADD = USER + "add"
         private const val SIGN_IN = USER + "sign/in"
         private const val SIGN_UP = USER + "sign/up"
         private const val DELETE = USER + "delete/{id}"
@@ -22,6 +23,7 @@ class UserRouter {
     fun userRouterConfig(handler: UserHandler) = router {
         GET(GET_ALL,handler::getAll)
         GET(CHECK_USERNAME_EXISTS,handler::checkUsernameExists)
+        POST(ADD,handler::add)
         POST(SIGN_IN,handler::signIn)
         POST(SIGN_UP,handler::signUp)
         DELETE(DELETE,handler::delete)

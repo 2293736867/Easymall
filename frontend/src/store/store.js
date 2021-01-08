@@ -14,7 +14,7 @@ const store = createStore({
             {
                 state.shoppingCardProductIds.push(v)
             }
-            else if(!state.shoppingCardProductIds.find(v.productId))
+            else if(!state.shoppingCardProductIds.some(item=>{item === v.productId}))
             {
                 state.shoppingCardProductIds.push(v.productId)
             }

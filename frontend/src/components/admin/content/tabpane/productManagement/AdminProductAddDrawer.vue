@@ -124,7 +124,7 @@ export default {
                     this.$message.warning('请输入合法信息')
                 }
             })
-        }
+        },
     },
     emits:['success']
 }

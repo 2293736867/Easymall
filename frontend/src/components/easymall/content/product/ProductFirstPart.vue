@@ -1,7 +1,7 @@
 <template>
     <el-row justify="center" type="flex">
         <el-col :span="6">
-            <el-carousel ref="productDetailCarousel" :autoplay="false" height="430px">
+            <el-carousel ref="productDetailCarousel" :autoplay="false" height="400px">
                 <el-carousel-item v-for="item in product.coverImagesSize" :key="item">
                     <el-image :src="product.coverImageBaseUrl+item" v-loading="loadingCoverImage">
                         <template #error>
@@ -99,7 +99,7 @@ export default {
             }).then(res=>{
                 if(parseInt(res.data.code) === 120000){
                     this.$message.success('添加到购物车成功')
-                    this.$store.commit('addShoppingCardNum',this.product.id)
+                    this.$store.commit('addShoppingCardNum',1)
                 }
             })
         }

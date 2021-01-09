@@ -76,7 +76,6 @@ export default {
             shoppingCardDrawer: false,
             favouriteDrawer: false,
             ordersDrawer: false,
-
             favouriteNum:0,
         }
     },
@@ -86,7 +85,7 @@ export default {
         },
         shoppingCardNum(){
             return this.$store.getters.shoppingCardNum
-        },
+        }
     },
     methods: {
         logout() {
@@ -142,10 +141,7 @@ export default {
                 }
             }).then(res=>{
                 if(parseInt(res.data.code) === 120100) {
-                    console.log(res)
-                    for (let i = 0; i < res.data.data.length; i++) {
-                        this.$store.commit('addShoppingCardNum',res.data.data[i].productId)
-                    }
+                    this.$store.commit('addShoppingCardNum',res.data.data.length)
                 }
             })
         },

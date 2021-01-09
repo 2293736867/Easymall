@@ -6,18 +6,20 @@ const store = createStore({
             userToken:'',
             categoryId:'',
             shoppingCardProductIds:[],
+            shoppingCardNum:0,
         }
     },
     mutations: {
         addShoppingCardNum(state,v){
-            if(state.shoppingCardProductIds.length === 0)
-            {
-                state.shoppingCardProductIds.push(v)
-            }
-            else if(!state.shoppingCardProductIds.some(item=>{item === v.productId}))
-            {
-                state.shoppingCardProductIds.push(v.productId)
-            }
+            state.shoppingCardNum += v
+            // if(state.shoppingCardProductIds.length === 0)
+            // {
+            //     state.shoppingCardProductIds.push(v)
+            // }
+            // else if(!state.shoppingCardProductIds.some(item=>{item === v.productId}))
+            // {
+            //     state.shoppingCardProductIds.push(v.productId)
+            // }
         },
         signIn(state,v){
             store.commit('set',{
@@ -60,7 +62,7 @@ const store = createStore({
             return state.categoryId
         },
         shoppingCardNum(state){
-            return state.shoppingCardProductIds.length
+            return state.shoppingCardNum
         },
         shoppingCardProductIds(state){
             return state.shoppingCardProductIds

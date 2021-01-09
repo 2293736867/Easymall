@@ -1,5 +1,5 @@
 <template>
-    <el-drawer direction="rtl" size="40%" title="用户登录">
+    <el-drawer direction="rtl" size="20%" title="用户登录">
         <el-form ref="form" :model="form" :rules="rules" status-icon style="margin-left: 2rem;margin-right: 2rem;">
             <el-form-item label="用户名" prop="username">
                 <el-input v-model="form.username" clearable prefix-icon="el-icon-s-custom"></el-input>

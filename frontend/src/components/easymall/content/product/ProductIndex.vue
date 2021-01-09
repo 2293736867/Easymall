@@ -40,8 +40,8 @@
             </el-form>
         </el-col>
     </el-row>
-    <el-divider></el-divider>
     <el-row v-show="!none" justify="center" type="flex">
+        <el-divider></el-divider>
         <el-col v-for="p in products" :span="4">
             <el-card v-loading="loading" element-loading-text="拼命加载中" shadow="hover">
                 <el-image :src="p.coverImageBaseUrl+1" fit="contain">

@@ -7,11 +7,13 @@ import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.ex
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
+import pers.wzr.easymall.dao.ProductRepository
 import pers.wzr.easymall.dao.ShoppingCardRepository
 import pers.wzr.easymall.entity.entity.Product
 import pers.wzr.easymall.entity.entity.ShoppingCard
 import pers.wzr.easymall.entity.property.ProductProperty
 import pers.wzr.easymall.entity.property.ShoppingCardProperty
+import pers.wzr.easymall.entity.util.ProductUtils
 import pers.wzr.easymall.entity.util.UserUtils
 import pers.wzr.easymall.response.JSONResponse
 import pers.wzr.easymall.response.ResponseCode
@@ -19,11 +21,15 @@ import pers.wzr.easymall.util.JWTUtils
 import pers.wzr.easymall.validator.CustomValidator
 import pers.wzr.easymall.validator.ValidationGroup
 import reactor.core.publisher.Mono
+import java.util.stream.Collectors
 
 @Component
 class ShoppingCardHandler {
     @Autowired
     lateinit var repository: ShoppingCardRepository
+
+    @Autowired
+    lateinit var productRepository: ProductRepository
 
     @Autowired
     lateinit var validator: CustomValidator
@@ -36,8 +42,16 @@ class ShoppingCardHandler {
                 exact()
             ).withIgnorePaths(*ShoppingCardProperty.other())
         )
-    ).collectList().flatMap {
-        JSONResponse.codeAndData(ResponseCode.SHOPPING_CARD_GET_BY_USER_ID_SUCCESS, it)
+    ).collectList().filter {
+        it.size > 0
+    }.flatMap {
+        productRepository.findAllById(it.stream().map { sc -> sc.productId }.collect(Collectors.toList()).asIterable()).map { p ->
+            ProductUtils.productResultFromProduct(p)
+        }.collectList().filter { p ->
+            p.size > 0
+        }.flatMap { p ->
+            JSONResponse.codeAndData(ResponseCode.SHOPPING_CARD_GET_BY_USER_ID_SUCCESS, p)
+        }
     }.switchIfEmpty(
         JSONResponse.code(ResponseCode.SHOPPING_CARD_GET_BY_USER_ID_FAILED_EMPTY)
     )
@@ -54,7 +68,9 @@ class ShoppingCardHandler {
                     .withMatcher(ShoppingCardProperty.productId(), exact())
                     .withIgnorePaths(*ShoppingCardProperty.other())
             )
-        ).collectList().flatMap { old ->
+        ).collectList().filter { old ->
+            old.size > 0
+        }.flatMap { old ->
             it.id = old[0].id
             it.num += old[0].num
             repository.save(it).then(JSONResponse.code(ResponseCode.SHOPPING_CARD_ADD_SUCCESS))

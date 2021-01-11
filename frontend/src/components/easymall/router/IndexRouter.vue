@@ -13,11 +13,12 @@
 <script>
 import IndexTopBar from "../content/index/header/IndexTopBar.vue";
 import IndexNavBar from "../content/index/header/IndexNavBar.vue";
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
     name: "IndexRouter",
     components: {IndexNavBar, IndexTopBar}
-}
+})
 </script>
 
 <style scoped>

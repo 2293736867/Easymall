@@ -16,11 +16,12 @@
 import ProductFirstPart from "./ProductFirstPart.vue";
 import ProductSecondPart from "./ProductSecondPart.vue";
 import ProductThirdPart from "./ProductThirdPart.vue";
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
     name: "Product",
     components: {ProductThirdPart, ProductSecondPart, ProductFirstPart},
-}
+})
 </script>
 
 <style scoped>

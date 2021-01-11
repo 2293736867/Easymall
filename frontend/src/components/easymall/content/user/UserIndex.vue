@@ -74,24 +74,27 @@ import FinishedOrdersTabPane from "./tabpane/FinishedOrdersTabPane.vue";
 import NonReviewsOrdersTabPane from "./tabpane/NonReviewsOrdersTabPane.vue";
 import ShoppingCardTabPane from "./tabpane/ShoppingCardTabPane.vue";
 import FavouriteTabPane from "./tabpane/FavouriteTabPane.vue";
+import {defineComponent,ref} from 'vue'
 
-export default {
+export default defineComponent({
     name: "UserIndex",
     components: {
-        FavouriteTabPane,
-        ShoppingCardTabPane,
-        NonReviewsOrdersTabPane,
-        FinishedOrdersTabPane,
-        DeliveredOrdersTabPane,
-        PaidOrdersTabPane, NonPaymentOrdersTabPane, OrdersIndexTabPane, PersonalTabPane, OverviewTabPane},
-    mounted() {
+        FavouriteTabPane, ShoppingCardTabPane, NonReviewsOrdersTabPane,
+        FinishedOrdersTabPane, DeliveredOrdersTabPane, PaidOrdersTabPane,
+        NonPaymentOrdersTabPane, OrdersIndexTabPane, PersonalTabPane, OverviewTabPane
     },
-    methods:{
-        toOrders(index){
-            this.$refs.tabs.currentName = 5 + index + ""
+    setup(){
+        const tabs = ref(null)
+
+        function toOrders(index){
+            tabs.value.currentName = 5 + index + ""
         }
-    }
-}
+
+        return{
+            toOrders,tabs
+        }
+    },
+})
 </script>
 
 <style scoped>

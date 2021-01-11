@@ -3,9 +3,10 @@
 </template>
 
 <script>
-export default {
+import {defineComponent} from 'vue'
+export default ({
     name: "DeliveredOrdersTabPane"
-}
+})
 </script>
 
 <style scoped>

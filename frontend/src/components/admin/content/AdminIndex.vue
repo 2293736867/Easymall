@@ -29,16 +29,12 @@
 import AdminHomeTabPane from "./tabpane/AdminHomeTabPane.vue";
 import AdminUserManagementTabPane from "./tabpane/usermanagement/AdminUserManagementTabPane.vue";
 import AdminProductManagementTabPane from "./tabpane/productManagement/AdminProductManagementTabPane.vue";
-export default {
+import {defineComponent} from 'vue'
+
+export default defineComponent({
     name: "AdminIndex",
     components: {AdminProductManagementTabPane, AdminUserManagementTabPane, AdminHomeTabPane},
-    data(){
-        return {
-        }
-    },
-    methods:{
-    }
-}
+})
 </script>
 
 <style scoped>

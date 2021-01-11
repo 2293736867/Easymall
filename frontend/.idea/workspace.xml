@@ -5,9 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2deb51d2-bb2b-45f0-8050-eecf467a2f4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/js/constant/Config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/IndexNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/IndexNavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/AdminIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/AdminIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/header/AdminHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/header/AdminHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminHomeTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminHomeTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/router/AdminRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/router/AdminRouter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/FavouriteDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/FavouriteDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/DeliveredOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/DeliveredOrdersDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/FinishedOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/FinishedOrdersDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/NonReviewsOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/NonReviewsOrdersDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/PaidOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/PaidOrdersDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/product/Product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/UserIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/UserIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/FinishedOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/FinishedOrdersTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/NonPaymentOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/NonPaymentOrdersTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/NonReviewsOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/NonReviewsOrdersTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/PaidOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/PaidOrdersTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/router/IndexRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/router/IndexRouter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/router/UserRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/router/UserRouter.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +40,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="package.json" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -53,7 +75,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -154,7 +176,10 @@
       <workItem from="1610164253672" duration="4792000" />
       <workItem from="1610172828594" duration="9343000" />
       <workItem from="1610192716142" duration="2874000" />
-      <workItem from="1610206856320" duration="1675000" />
+      <workItem from="1610206856320" duration="2156000" />
+      <workItem from="1610214928870" duration="1705000" />
+      <workItem from="1610248097104" duration="1946000" />
+      <workItem from="1610326838747" duration="4337000" />
     </task>
     <servers />
   </component>

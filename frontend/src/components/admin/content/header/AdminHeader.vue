@@ -13,16 +13,22 @@
 
 <script>
 import router from "../../../../js/router/router";
-export default {
+import {defineComponent} from 'vue'
+
+export default defineComponent({
     name: "AdminHeader",
-    methods:{
-        toIndex(){
+    setup(){
+        function toIndex(){
             router.push({
                 path:'/'
             })
         }
-    }
-}
+
+        return {
+            toIndex
+        }
+    },
+})
 </script>
 
 <style scoped>

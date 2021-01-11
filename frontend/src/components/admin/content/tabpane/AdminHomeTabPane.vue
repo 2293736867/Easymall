@@ -9,26 +9,30 @@
 </template>
 
 <script>
-export default {
+import {defineComponent,ref} from 'vue'
+
+export default defineComponent({
     name: "AdminHomeTabPane",
-    data(){
-        return{
-            active:0,
-            buttonDisabled:false,
-            buttonText:'继续'
-        }
-    },
-    methods:{
-        next(){
-            if(++this.active === 4)
+    setup(){
+        const active = ref(0)
+        const buttonDisabled = ref(false)
+        const buttonText = ref('继续')
+
+        function next(){
+            if(++active.value === 4)
             {
-                this.buttonDisabled = true
+                buttonDisabled.value = true
             }
-            else if(this.active === 3)
-                this.buttonText = '完成'
+            else if(active.value === 3)
+                buttonText.value = '完成'
+        }
+
+        return {
+            active, buttonDisabled, buttonText,
+            next
         }
     }
-}
+})
 </script>
 
 <style scoped>

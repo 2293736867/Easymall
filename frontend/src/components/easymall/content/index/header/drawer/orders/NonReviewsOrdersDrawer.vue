@@ -3,9 +3,11 @@
 </template>
 
 <script>
-export default {
-name: "NonReviewsOrdersDrawer"
-}
+import {defineComponent} from 'vue'
+
+export default defineComponent({
+    name: "NonReviewsOrdersDrawer"
+})
 </script>
 
 <style scoped>

@@ -10,11 +10,13 @@
 </template>
 
 <script>
+import {defineComponent} from 'vue'
 import AdminHeader from "../content/header/AdminHeader.vue";
-export default {
+
+export default defineComponent({
     name: "AdminRouter",
     components: {AdminHeader}
-}
+})
 </script>
 
 <style scoped>

@@ -5,19 +5,19 @@
 </template>
 
 <script>
-export default {
+import {defineComponent} from 'vue'
+export default defineComponent({
     name: "FavouriteDrawer",
-    data(){
-        return{
+    setup(){
+        function init(){
 
+        }
+
+        return{
+            init
         }
     },
-    methods:{
-        init(){
-
-        }
-    }
-}
+})
 </script>
 
 <style scoped>

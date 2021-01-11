@@ -3,9 +3,11 @@
 </template>
 
 <script>
-export default {
-name: "FavouriteTabPane"
-}
+import {defineComponent} from 'vue'
+
+export default ({
+    name: "FavouriteTabPane"
+})
 </script>
 
 <style scoped>

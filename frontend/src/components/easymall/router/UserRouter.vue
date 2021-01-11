@@ -11,10 +11,11 @@
 
 <script>
 import UserTopBar from "../content/user/header/UserTopBar.vue";
-export default {
+import {defineComponent} from 'vue'
+export default defineComponent({
     name: "UserRouter",
     components: {UserTopBar}
-}
+})
 </script>
 
 <style scoped>

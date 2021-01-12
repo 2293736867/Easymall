@@ -69,7 +69,7 @@ open class Product(
         groups = [ValidationGroup.ProductAdd::class,ValidationGroup.ProductUpdate::class]
     )
     @DecimalMax(
-        10.00.toString(),
+        5.00.toString(),
         message = ValidationMessage.RATING_TOO_LARGE,
         groups = [ValidationGroup.ProductAdd::class,ValidationGroup.ProductUpdate::class]
     )

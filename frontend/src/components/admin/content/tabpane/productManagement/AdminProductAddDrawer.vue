@@ -1,133 +1,80 @@
 <template>
-    <el-drawer ref="drawer" direction="rtl" size="25%" title="商品添加">
-        <el-form ref="form" :model="form" :rules="rules" status-icon style="margin-left: 2.5rem;margin-right: 2.5rem;">
-            <el-form-item label="名称" prop="name">
-                <el-input v-model="form.name" clearable prefix-icon="el-icon-connection"></el-input>
-            </el-form-item>
-            <el-form-item label="价格" prop="price">
-                <el-input v-model="form.price" clearable prefix-icon="el-icon-price-tag"></el-input>
-            </el-form-item>
-            <el-form-item label="评分" prop="rating">
-                <el-input v-model="form.rating" clearable prefix-icon="el-icon-medal"></el-input>
-            </el-form-item>
-            <el-form-item label="运费" prop="freight">
-                <el-input v-model="form.freight" clearable prefix-icon="el-icon-mobile"></el-input>
-            </el-form-item>
-            <el-form-item label="分类" prop="category">
-                <el-input v-model="form.category" clearable prefix-icon="el-icon-reading"></el-input>
-            </el-form-item>
-            <el-form-item label="库存" prop="num">
-                <el-input v-model="form.num" clearable prefix-icon="el-icon-reading"></el-input>
-            </el-form-item>
-            <el-form-item label="描述" prop="description">
-                <el-input v-model="form.description" clearable prefix-icon="el-icon-collection-tag"></el-input>
-            </el-form-item>
-        </el-form>
-        <el-button type="primary" @click="commit" style="margin-top: 2rem">
-            <i class="el-icon-arrow-right"></i>
-            添加
-            <i class="el-icon-arrow-left"></i>
+    <el-drawer ref="drawer" destroy-on-close direction="rtl" size="25%" title="添加商品">
+        <Form ref="form" style="margin-left: 2.5rem;margin-right: 2.5rem">
+            <FormItem label="名称" prefix-icon="el-icon-connection"></FormItem>
+            <FormItem label="价格" prefix-icon="el-icon-price-tag" num-check>
+                <template #append>元</template>
+            </FormItem>
+            <FormItem label="评分" prefix-icon="el-icon-medal" max-num="5.0">
+                <template #append>0.0-5.0</template>
+            </FormItem>
+            <FormItem label="运费" prefix-icon="el-icon-mobile" num-check>
+                <template #append>元</template>
+            </FormItem>
+            <FormItem label="分类" prefix-icon="el-icon-reading"></FormItem>
+            <FormItem label="库存" prefix-icon="el-icon-files" num-check></FormItem>
+            <FormItem label="描述" prefix-icon="el-icon-collection-tag" no-check></FormItem>
+        </Form>
+        <el-button style="margin-top: 2rem" type="primary" @click="commit">
+            <i class="el-icon-arrow-right"></i>添加<i class="el-icon-arrow-left"></i>
         </el-button>
     </el-drawer>
 </template>
 
 <script>
-import REG from "../../../../../js/constant/REG";
 import axios from "axios"
 import URL from "../../../../../js/constant/URL";
+import {defineComponent, ref} from 'vue'
+import FormItem from "../../../../utils/FormItem.vue";
+import Form from "../../../../utils/Form.vue";
 
-export default {
+export default defineComponent({
     name: "AdminProductAddDrawer",
-    data(){
-        let nameCheck = (rule, value, callback) => {
-            if (!value)
-                callback(new Error('请输入名称'))
-            callback()
-        }
+    components: {Form, FormItem},
+    setup() {
+        const drawer = ref(null)
+        const form = ref(null)
 
-        let priceCheck = (rule, value, callback) => {
-            if (!value) {
-                callback(new Error('请输入价格'))
-            }
-            callback()
-        }
-
-        let ratingCheck = (rule, value, callback) => {
-            if (!value)
-                callback(new Error('请输入评分'))
-            callback()
-        }
-
-        let freightCheck = (rule,value,callback) => {
-            if(!value)
-                callback(new Error('请输入运费'))
-            callback()
-        }
-
-        let categoryCheck = (rule,value,callback) => {
-            if(!value)
-                callback(new Error('请输入分类'))
-            callback()
-        }
-
-        let numCheck = (rule,value,callback) => {
-            if(!value)
-                callback(new Error('请输入库存'))
-            callback()
-        }
-
-        return{
-            form:{
-                id:'',
-                name:'',
-                price:'',
-                rating:'',
-                freight:'',
-                category:'',
-                num:'',
-                description:''
-            },
-            user:'',
-            rules: {
-                name: [{validator: nameCheck, trigger: 'blur'}],
-                price: [{validator: priceCheck, trigger: 'blur'}],
-                rating:[{validator:ratingCheck,trigger:'blur'}],
-                freight: [{validator: freightCheck, trigger: 'blur'}],
-                num:[{validator:numCheck,trigger:'blur'}],
-                category: [{validator: categoryCheck, trigger: 'blur'}],
-            },
-        }
-    },
-    methods:{
-        commit(){
-            this.$refs['form'].validate((valid) => {
+        const commit = _ => {
+            form.value.valid(valid=>{
                 if(valid){
-                    axios.post(URL.productAdd,{
-                        name:this.form.name,
-                        price:this.form.price,
-                        rating:this.form.rating,
-                        freight:this.form.freight,
-                        category:this.form.category,
-                        num:this.form.num,
-                        description:this.form.description
-                    }).then(res=>{
-                        if(parseInt(res.data.code) === 110000){
-                            this.$message.success('添加成功')
-                            this.form.id = res.data.data
-                            this.$emit('success',this.form)
-                            this.$refs.drawer.handleClose()
-                        }else{
-                            this.$message.error('未知原因添加失败')
-                        }
-                    })
-                }else{
-                    this.$message.warning('请输入合法信息')
+                    console.log(form.value.get())
                 }
             })
-        },
+            // elForm.value.validate((valid) => {
+            //     if(valid){
+            //         axios.post(URL.productAdd,{
+            //             name:form.value.name,
+            //             price:form.value.price,
+            //             rating:form.value.rating,
+            //             freight:form.value.freight,
+            //             category:form.value.category,
+            //             num:form.value.num,
+            //             description:form.value.description
+            //         }).then(res=>{
+            //             if(parseInt(res.data.code) === 110000){
+            //                 ElMessage.success('添加成功')
+            //                 form.value.id = res.data.data
+            //                 context.emit('success',form.value)
+            //                 elDrawer.value.handleClose()
+            //             }else{
+            //                 ElMessage.error('未知原因添加失败')
+            //             }
+            //         })
+            //     }else{
+            //         ElMessage.warning('请输入合法信息')
+            //     }
+            // })
+        }
+
+        return {
+            form, drawer,
+
+            commit,
+        }
     },
-    emits:['success']
-}
+    emits: ['success']
+})
 </script>
 
 <style scoped>

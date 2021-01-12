@@ -56,8 +56,9 @@ import AdminProductModifyDrawer from "./AdminProductModifyDrawer.vue";
 import axios from "axios";
 import URL from "../../../../../js/constant/URL";
 import AdminProductAddDrawer from "./AdminProductAddDrawer.vue";
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
     name: "AdminProductManagementTabPane",
     components: {AdminProductAddDrawer, AdminProductModifyDrawer},
     data() {
@@ -119,7 +120,7 @@ export default {
             }
         })
     },
-}
+})
 </script>
 
 <style scoped>

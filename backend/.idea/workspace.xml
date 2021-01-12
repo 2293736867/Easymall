@@ -5,31 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="837c2500-c14a-405d-b15b-297672f15df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/js/constant/Config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/utils/Form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/utils/FormItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/js/utils/Mitt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/js/utils/Validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/filter/UserHandlerFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pers/wzr/easymall/entity/entity/Product.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/content/AdminIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/content/AdminIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/content/header/AdminHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/content/header/AdminHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/content/tabpane/AdminHomeTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/content/tabpane/AdminHomeTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/router/AdminRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/router/AdminRouter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/FavouriteDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/FavouriteDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/DeliveredOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/DeliveredOrdersDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/FinishedOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/FinishedOrdersDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/NonReviewsOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/NonReviewsOrdersDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/PaidOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/index/header/drawer/orders/PaidOrdersDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/product/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/UserIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/UserIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/FinishedOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/FinishedOrdersTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/NonPaymentOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/NonPaymentOrdersTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/NonReviewsOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/NonReviewsOrdersTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/OverviewTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/PaidOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/PaidOrdersTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/content/user/tabpane/ShoppingCardTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/router/IndexRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/router/IndexRouter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/easymall/router/UserRouter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/easymall/router/UserRouter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/content/tabpane/productManagement/AdminProductAddDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/content/tabpane/productManagement/AdminProductAddDrawer.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

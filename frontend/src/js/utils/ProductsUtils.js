@@ -41,7 +41,10 @@ const ProductsUtils={
             num:arr[6],
             description:arr[7]
         }
-    }
+    },
+    getPreModifyArrayFromJSON:p=>{
+        return [p.id,p.name,p.price,p.rating,p.freight,p.category,p.num,p.description]
+    },
 }
 
 export default ProductsUtils

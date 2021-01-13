@@ -1,29 +1,17 @@
 <template>
-    <el-empty v-if="none" :description="noneText"></el-empty>
+    <el-empty v-if="noneUser" :description="noneTipText"></el-empty>
     <el-row v-else>
         <el-col :span="24">
-            <el-table v-loading="loadingTable" :data="users">
-                <el-table-column
-                    label="Id"
-                    prop="id">
-                </el-table-column>
-                <el-table-column
-                    label="用户名"
-                    prop="username">
-                </el-table-column>
-                <el-table-column
-                    label="昵称"
-                    prop="nickname">
-                </el-table-column>
-                <el-table-column
-                    label="邮箱"
-                    prop="email">
-                </el-table-column>
+            <el-table v-loading="loading" :data="users">
+                <el-table-column label="Id" prop="id"></el-table-column>
+                <el-table-column label="用户名" prop="username"></el-table-column>
+                <el-table-column label="昵称" prop="nickname"></el-table-column>
+                <el-table-column label="邮箱" prop="email"></el-table-column>
                 <el-table-column label="操作">
                     <template #default="scope">
                         <el-tooltip content="编辑" effect="light" placement="top">
                             <el-button circle icon="el-icon-edit" size="medium" type="primary"
-                                       @click="editUser(scope.row)">
+                                   @click="modifyUser(scope.row)">
                             </el-button>
                         </el-tooltip>
                         <el-popconfirm
@@ -44,17 +32,19 @@
             </el-table>
         </el-col>
         <el-col>
-            <el-row justify="end" type="flex" style="margin-top: 1.5rem">
+            <el-row justify="end" style="margin-top: 1.5rem" type="flex">
                 <el-col :span="1">
-                    <el-tooltip placement="left" content="添加用户" effect="light">
-                        <el-button type="primary" circle icon="el-icon-plus" size="medium" @click="showAddDrawer"></el-button>
+                    <el-tooltip content="添加用户" effect="light" placement="left">
+                        <el-button circle icon="el-icon-plus" size="medium" type="primary"
+                                   @click="addUser"></el-button>
                     </el-tooltip>
                 </el-col>
             </el-row>
         </el-col>
     </el-row>
-    <AdminUserModifyDrawer ref="modifyDrawer" v-model="modifyDrawer" @success="modifyTable"></AdminUserModifyDrawer>
-    <AdminUserAddDrawer v-model="addDrawer" @success="addTable"></AdminUserAddDrawer>
+    <AdminUserModifyDrawer ref="modifyDrawer" v-model="showModifyDrawer"
+                           @success="modifyUserSuccessCallback"></AdminUserModifyDrawer>
+    <AdminUserAddDrawer v-model="showAddDrawer" @success="addUserSuccessCallback"></AdminUserAddDrawer>
 </template>
 
 <script>
@@ -62,69 +52,82 @@ import AdminUserModifyDrawer from "./AdminUserModifyDrawer.vue";
 import axios from "axios";
 import URL from "../../../../../js/constant/URL";
 import AdminUserAddDrawer from "./AdminUserAddDrawer.vue";
+import {defineComponent, ref} from 'vue'
+import {ElMessage} from 'element-plus'
+import Utils from "../../../../../js/utils/Utils";
+import UserUtils from "../../../../../js/utils/UserUtils";
 
-export default {
+export default defineComponent({
     name: "AdminUserManagementTabPane",
     components: {AdminUserAddDrawer, AdminUserModifyDrawer},
-    data() {
-        return {
-            users: [],
-            modifyDrawer: false,
-            addDrawer:false,
-            loadingTable: true,
-            none: false,
-            noneText: '用户列表为空'
-        }
-    },
-    methods: {
-        editUser(row) {
-            this.$refs.modifyDrawer.init(row)
-            this.modifyDrawer = true
-        },
-        deleteUser(row) {
-            axios.delete(URL.userDelete + row.id).then(res => {
-                let code = parseInt(res.data.code)
-                if (code === 100300) {
-                    this.users.forEach((item, i) => {
-                        if (item.id === row.id)
-                            this.users.splice(i, 1)
-                    })
-                    this.$message.success('删除成功')
-                } else {
-                    this.$message.error('未知原因删除失败')
-                }
-            })
-        },
-        modifyTable(u) {
-            let target = this.users.find(item => {
-                return item.id === u.id
-            })
-            target.username = u.username
-            target.email = u.email
-            target.nickname = u.nickname
-        },
-        addTable(u){
-            this.users.push(u)
-        },
-        showAddDrawer(){
-            this.addDrawer = true
-        }
-    },
-    mounted() {
+    setup() {
+        const modifyDrawer = ref(null)
+        const showAddDrawer = ref(false)
+        const showModifyDrawer = ref(false)
+        const users = ref([])
+        const loading = ref(true)
+        const noneUser = ref(false)
+        const noneTipText = ref('用户列表为空')
+
         axios.get(URL.userGetAll).then(res => {
-            let code = parseInt(res.data.code)
-            if (code === 100105) {
-                this.users = res.data.data
-                this.loadingTable = false
+            if (Utils.responseCodeEquals(res, 100105)) {
+                users.value = Utils.getResponseData(res)
+                loading.value = false
             } else {
-                this.none = true
-                if (code !== 100106) {
-                    this.noneText = '未知原因加载失败'
+                noneUser.value = true
+                if (Utils.responseCodeNotEquals(res, 100106)) {
+                    noneTipText.value = '未知原因加载失败'
                 }
             }
         })
+
+        const addUser = _ => {
+            showAddDrawer.value = true
+        }
+
+        const modifyUser = row => {
+            modifyDrawer.value.init(row)
+            showModifyDrawer.value = true
+        }
+
+        const deleteUser = row => {
+            axios.delete(URL.userDelete + row.id).then(res => {
+                if (Utils.responseCodeEquals(res, 100300)) {
+                    users.value.forEach((item, i) => {
+                        if (item.id === row.id)
+                            users.value.splice(i, 1)
+                    })
+                    ElMessage.success('删除成功')
+                } else {
+                    ElMessage.error('未知原因删除失败')
+                }
+            })
+        }
+
+        const modifyUserSuccessCallback = u => {
+            console.log(u)
+            let target = users.value.find(item => {
+                return item.id === u[0]
+            })
+            UserUtils.setModifiedJSONFromArray(target,u)
+        }
+
+        const addUserSuccessCallback = u => {
+            users.value.push(UserUtils.getShowJSONFromArray(u))
+        }
+
+        return {
+            //data
+            users, loading, noneUser, noneTipText, showModifyDrawer, showAddDrawer,
+
+            //components
+            modifyDrawer,
+
+            //methods
+            addUser, modifyUser, deleteUser, modifyUserSuccessCallback, addUserSuccessCallback
+        }
     }
-}
+})
 </script>
 
 <style scoped>

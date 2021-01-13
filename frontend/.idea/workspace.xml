@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2deb51d2-bb2b-45f0-8050-eecf467a2f4c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/.attach_pid8449" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/ProductsUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/.attach_pid8532" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/utils/UserUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductAddDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductAddDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminHomeTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/AdminHomeTabPane.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductManagementTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductManagementTabPane.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductModifyDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/productManagement/AdminProductModifyDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/ShoppingCardDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/ShoppingCardDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/DeliveredOrdersTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/user/tabpane/FavouriteTabPane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserAddDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserAddDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserManagementTabPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserManagementTabPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserModifyDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/content/tabpane/usermanagement/AdminUserModifyDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/NonPaymentOrdersDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/NonPaymentOrdersDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/OrdersIndexDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/index/header/drawer/orders/OrdersIndexDrawer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/easymall/content/product/ProductFirstPart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/easymall/content/product/ProductFirstPart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/utils/FormItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/FormItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/constant/REG.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/constant/REG.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/Mitt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/Emitter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/Utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/utils/Validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/Validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/ProductsUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/utils/ProductsUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -175,6 +173,7 @@
       <workItem from="1610454321053" duration="5832000" />
       <workItem from="1610500972746" duration="6241000" />
       <workItem from="1610507391861" duration="202000" />
+      <workItem from="1610526250968" duration="10141000" />
     </task>
     <servers />
   </component>

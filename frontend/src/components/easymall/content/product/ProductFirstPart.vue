@@ -107,6 +107,7 @@ export default {
 }
 </script>
 
+<!--suppress CssUnusedSymbol, CssUnusedSymbol -->
 <style scoped>
 .thumbnail-mouse-hover {
     border: 1px solid #909399;

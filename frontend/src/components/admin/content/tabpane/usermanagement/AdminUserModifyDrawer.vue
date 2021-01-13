@@ -1,24 +1,13 @@
 <template>
-    <el-drawer ref="drawer" direction="rtl" size="25%" title="用户编辑">
-        <el-form ref="form" :model="form" :rules="rules" status-icon style="margin-left: 2.5rem;margin-right: 2.5rem;">
-            <el-form-item label="Id" prop="id">
-                <el-input v-model="form.id" disabled prefix-icon="el-icon-s-flag"></el-input>
-            </el-form-item>
-            <el-form-item label="用户名" prop="username">
-                <el-input v-model="form.username" clearable prefix-icon="el-icon-s-custom">
-                </el-input>
-            </el-form-item>
-            <el-form-item label="昵称" prop="nickname">
-                <el-input v-model="form.nickname" clearable prefix-icon="el-icon-message"></el-input>
-            </el-form-item>
-            <el-form-item label="电子邮箱" prop="email">
-                <el-input v-model="form.email" clearable prefix-icon="el-icon-chat-round"></el-input>
-            </el-form-item>
-        </el-form>
+    <el-drawer destroy-on-close ref="drawer" direction="rtl" size="25%" title="用户编辑">
+        <Form ref="form" v-loading="loading" style="margin-left: 2.5rem;margin-right: 2.5rem">
+            <FormItem disabled label="id" no-check prefix-icon="el-icon-s-flag"></FormItem>
+            <FormItem ref="username" label="用户名" prefix-icon="el-icon-user" :check-function="usernameCheck"></FormItem>
+            <FormItem label="昵称" prefix-icon="el-icon-news"></FormItem>
+            <FormItem label="邮箱" prefix-icon="el-icon-message" :check-function="emailCheck"></FormItem>
+        </Form>
         <el-button type="primary" @click="commit">
-            <i class="el-icon-arrow-right"></i>
-            修改
-            <i class="el-icon-arrow-left"></i>
+            <i class="el-icon-arrow-right"></i>修改<i class="el-icon-arrow-left"></i>
         </el-button>
     </el-drawer>
 </template>
@@ -27,96 +16,112 @@
 import REG from "../../../../../js/constant/REG";
 import axios from "axios"
 import URL from "../../../../../js/constant/URL";
+import Form from "../../../../utils/Form.vue";
+import FormItem from "../../../../utils/FormItem.vue";
+import {ElMessage} from 'element-plus'
+import {defineComponent, ref} from 'vue'
+import Utils from "../../../../../js/utils/Utils";
+import UserUtils from "../../../../../js/utils/UserUtils";
 
-export default {
+export default defineComponent({
     name: "AdminUserModifyDrawer",
-    data() {
-        let usernameCheck = (rule, value, callback) => {
-            if (!value)
-                callback(new Error('请输入用户名'))
-            if (!REG.username.test(value))
-                callback(new Error('用户名非法'))
-            callback()
-        }
+    components: {FormItem, Form},
+    setup(props, context) {
+        const drawer = ref(null)
+        const user = ref('')
+        const form = ref(null)
+        const loading = ref(true)
+        const username = ref(null)
+        let oldUsername = ''
 
-        let nicknameCheck = (rule, value, callback) => {
+        const usernameCheck = value => {
+            let result = false
+            let message = ''
             if (!value) {
-                callback(new Error('请输入昵称'))
+                message = '请输入用户名'
+            } else if (!REG.username.test(value)) {
+                message = '用户名非法'
+            } else {
+                result = true
             }
-            callback()
+            return {
+                valid: result,
+                message: message
+            }
         }
 
-        let emailCheck = (rule, value, callback) => {
-            if (!value)
-                callback(new Error('请输入邮箱'))
-            if (!REG.email.test(value))
-                callback(new Error('请输入合法的邮箱'))
-            callback()
+        const emailCheck = value => {
+            let result = false
+            let message = ''
+            if (!value) {
+                message = '请输入邮箱'
+            } else if (!REG.email.test(value)) {
+                message = '请输入合法的邮箱'
+            } else {
+                result = true
+            }
+            return {
+                valid: result,
+                message: message
+            }
+        }
+
+        const init = user => {
+            loading.value = true
+            oldUsername = user.username
+            setTimeout(() => {
+                form.value.set(UserUtils.getPreModifyArrayFromJSON(user))
+                loading.value = false
+            }, 500)
+        }
+
+        const commit = _ => {
+            form.value.validate((valid) => {
+                if (valid) {
+                    const tempName = username.value.get()
+                    if (tempName !== oldUsername) {
+                        axios.get(URL.userCheckUsername + tempName).then(res => {
+                            if (Utils.responseCodeEquals(res, 100104)) {
+                                ElMessage.warning('用户名已存在')
+                            } else {
+                                userUpdate()
+                            }
+                        })
+                    } else {
+                        userUpdate()
+                    }
+                } else {
+                    ElMessage.warning('请输入合法信息')
+                }
+            })
+        }
+
+        const userUpdate = _ => {
+            const data = form.value.get()
+            axios.put(URL.userUpdate, UserUtils.getModifyJSONFromArray(data)).then(res => {
+                if (Utils.responseCodeEquals(res, 100200)) {
+                    ElMessage.success('修改成功')
+                    context.emit('success', data)
+                    drawer.value.handleClose()
+                } else {
+                    ElMessage.warning('未知原因修改失败')
+                }
+            })
         }
 
         return {
-            form: {
-                id: '',
-                username: '',
-                nickname: '',
-                email: '',
-            },
-            user: '',
-            rules: {
-                username: [{validator: usernameCheck, trigger: 'blur'}],
-                nickname: [{validator: nicknameCheck, trigger: 'blur'}],
-                email: [{validator: emailCheck, trigger: 'blur'}],
-            },
-            oldUsername:'',
-        }
-    },
-    methods: {
-        init(user) {
-            this.form.id = user.id
-            this.form.username = user.username
-            this.form.nickname = user.nickname
-            this.form.email = user.email
-            this.oldUsername = user.username
-        },
-        commit() {
-            this.$refs['form'].validate((valid) => {
-                if (valid) {
-                    if(this.form.username !== this.oldUsername){
-                        axios.get(URL.userCheckUsername + this.form.username).then(res => {
-                            if (parseInt(res.data.code) === 100104) {
-                                this.$message.warning('用户名已存在')
-                            } else {
-                                this.userUpdate()
-                            }
-                        })
-                    }
-                    else {
-                        this.userUpdate()
-                    }
-                } else {
-                    this.$message.warning('请输入合法信息')
-                }
-            })
-        },
-        userUpdate(){
-            axios.put(URL.userUpdate, {
-                id: this.form.id,
-                username: this.form.username,
-                nickname: this.form.nickname,
-                email: this.form.email,
-            }).then(res => {
-                if (parseInt(res.data.code) === 100200) {
-                    this.$message.success('修改成功')
-                    this.$emit('success', this.form)
-                    this.$refs.drawer.handleClose()
-                } else {
-                    this.$message.warning('未知原因修改失败')
-                }
-            })
+            //data
+            user, loading,
+
+            //components
+            form, drawer, username,
+
+            //methods
+            usernameCheck, emailCheck, init, commit
         }
     },
     emits: ['success']
-}
+})
 </script>
 
 <style scoped>

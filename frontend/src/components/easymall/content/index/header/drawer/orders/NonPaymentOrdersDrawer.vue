@@ -26,7 +26,7 @@
                 </el-col>
                 <el-col :span="4">
                     <el-badge :value="num">
-                        <el-image :preview-src-list="getThumbnailList" :src="getSrc" fit="contain" style="width: 50px">
+                        <el-image :preview-src-list="thumbnailList" :src="src" fit="contain" style="width: 50px">
                             <template #placeholder>
                                 <div>加载中...</div>
                             </template>
@@ -91,21 +91,19 @@
 </template>
 
 <script>
-export default {
+import {defineComponent,ref} from 'vue'
+export default defineComponent({
     name: "NonPaymentOrdersDrawer",
-    data() {
+    setup() {
+        const src = ref('/1.jpg')
+        const thumbnailList = ref(['/default/Product.png','/default/Product.png'])
+        const num = ref(13)
         return {
-            getSrc: '/1.jpg',
-            getThumbnailList: [
-                '/default/Product.png', '/default/Product.png'
-            ],
-            num: 13
+            //data
+            src,thumbnailList,num,
         }
     },
-    methods:{
-
-    }
-}
+})
 </script>
 
 <style scoped>

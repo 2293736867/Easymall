@@ -2,7 +2,7 @@
     <el-empty v-if="noneProduct" :description="noneTipText"></el-empty>
     <el-row v-else>
         <el-col :span="24">
-            <el-table v-loading="loadingProductTableData" :data="products">
+            <el-table v-loading="loadingProductTableData" element-loading-text="拼命加载中" :data="products">
                 <el-table-column fixed label="Id" prop="id" width="300"></el-table-column>
                 <el-table-column label="名称" prop="name" width="300"></el-table-column>
                 <el-table-column label="价格" prop="price" width="300"></el-table-column>
@@ -102,7 +102,7 @@ export default defineComponent({
 
         const modifyProductSuccessCallback = p => {
             const target = products.value.find(item => {
-                return item.id === p
+                return item.id === p[0]
             })
             ProductsUtils.setModifiedJSONFromArray(target,p)
         }

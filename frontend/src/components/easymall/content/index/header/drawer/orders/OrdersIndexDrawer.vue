@@ -8,16 +8,13 @@
 <script>
 import * as echarts from 'echarts'
 import Utils from "../../../../../../../js/utils/Utils";
-export default {
-    name: "OrdersIndexDrawer",
-    data(){
-        return{
+import {defineComponent} from 'vue'
 
-        }
-    },
-    methods:{
-        init(){
-            let ordersDetailCharts = echarts.init(Utils.getCharts('ordersDetail',600,600))
+export default defineComponent({
+    name: "OrdersIndexDrawer",
+    setup() {
+        const init = _ => {
+            let ordersDetailCharts = echarts.init(Utils.getCharts('ordersDetail', 600, 600))
             ordersDetailCharts.setOption({
                 name: '订单分类',
                 type: 'pie',
@@ -38,8 +35,11 @@ export default {
                 }
             })
         }
-    }
-}
+        return {
+            init
+        }
+    },
+})
 </script>
 
 <style scoped>

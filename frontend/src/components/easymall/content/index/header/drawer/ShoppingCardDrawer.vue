@@ -129,7 +129,7 @@ export default {
             return p.thumbnailImageBaseUrl+"1"
         },
         getCoverImageList(p){
-            var list = []
+            let list = []
             for(let i=0;i<p.coverImagesSize;++i)
                 list.push(p.coverImageBaseUrl+(i+1))
             return list

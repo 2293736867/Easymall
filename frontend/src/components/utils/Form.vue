@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import {defineComponent, onErrorCaptured} from 'vue'
-import emitter from "../../js/utils/Mitt";
+import {defineComponent} from 'vue'
+import emitter from "../../js/utils/Emitter";
 
 export default defineComponent({
     name: "Form",
@@ -14,7 +14,7 @@ export default defineComponent({
         let items = []
         let values = []
         let result = true
-        const valid = (callback) => {
+        const validate = (callback) => {
             for (const i in items) {
                 if (items.hasOwnProperty(i)) {
                     items[i].value.validate().catch(_ => {
@@ -25,6 +25,17 @@ export default defineComponent({
                             result = true
                         }
                     })
+                }
+            }
+        }
+
+        const set = value =>{
+            let i = 0
+            for(const k in value){
+                if(value.hasOwnProperty(k)){
+                    if(items.hasOwnProperty(i)){
+                        items[i++].value.model.value = value[k]
+                    }
                 }
             }
         }
@@ -43,8 +54,8 @@ export default defineComponent({
         })
 
         return {
-            valid,
-            get
+            //methods
+            validate,get,set
         }
     }
 })

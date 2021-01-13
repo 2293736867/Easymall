@@ -13,6 +13,15 @@ const Utils = {
         Object.defineProperty(element,'clientHeight',{get:function(){return height;}})
         return element
     },
+    responseCodeEquals(result, code){
+        return parseInt(result.data.code) === code
+    },
+    responseCodeNotEquals(result,code){
+        return parseInt(result.data.code) !== code
+    },
+    getResponseData(result){
+        return result.data.data
+    }
 }
 
 export default Utils

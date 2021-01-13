@@ -2,7 +2,7 @@
     <el-form ref="item" :model="form" :rules="rules" status-icon>
         <el-form-item :label="label" prop="value">
             <el-input v-model="form.value" :prefix-icon="prefixIcon" clearable>
-                <template #append v-if="$slots.append">
+                <template v-if="$slots.append" #append>
                     <slot name="append"></slot>
                 </template>
             </el-input>
@@ -12,19 +12,18 @@
 
 <script>
 import {defineComponent, ref} from 'vue'
-import emitter from "../../js/utils/Mitt";
+import emitter from "../../js/utils/Emitter";
 import Validation from "../../js/utils/Validation";
-import { ElMessage } from 'element-plus'
 
 export default defineComponent({
     name: "FormItem",
     props: {
         label: String,
         prefixIcon: String,
-        checkFunction:Function,
-        noCheck:Boolean,
-        maxNum:String,
-        numCheck:Boolean,
+        checkFunction: Function,
+        noCheck: Boolean,
+        maxNum: String,
+        numCheck: Boolean,
     },
     setup(props) {
         let label = props.label
@@ -43,64 +42,70 @@ export default defineComponent({
             return form.value.value
         }
 
-        if(!label){
+        if (!label) {
             label = '内容'
         }
-        if(!prefixIcon) {
+        if (!prefixIcon) {
             prefixIcon = 'el-icon-remove-outline'
         }
-        if(!checkFunction){
-            if(noCheck){
-                check = (rule,value,callback)=>{
+        if (!checkFunction) {
+            if (noCheck) {
+                check = (rule, value, callback) => {
                     callback()
                 }
-            }
-            else{
-                check = function (rule,value,callback){
-                    if(!value)
-                        callback(new Error('请输入'+label))
-                    if(numCheck){
-                        if(typeof maxNum === 'undefined'){
-                            if(!Validation.num(value)) {
-                                callback(new Error(value.substr(0,1) === '-' ? '请不要输入负数' : '请输入数字'))
+            } else {
+                check = function (rule, value, callback) {
+                    if (!value)
+                        callback(new Error('请输入' + label))
+                    if (numCheck || typeof maxNum !== 'undefined') {
+                        if (Validation.isNum(value)) {
+                            if (Validation.isNegative(value)) {
+                                callback(new Error('请输入非负数'))
+                            } else {
+                                if (typeof maxNum === 'undefined') {
+                                    callback()
+                                } else {
+                                    if (Validation.isLessEqualThan(value,maxNum)) {
+                                        callback()
+                                    } else {
+                                        callback(new Error('请输入合适范围内的数字'))
+                                    }
+                                }
                             }
                         }else{
-                            if(!Validation.num(value,parseFloat(maxNum))){
-                                ElMessage.warning('111请输入0-'+maxNum+'内的数字')
-                                callback(new Error('请输入合适范围数字'))
-                            }
-                        }
-                    }
-                    else if(typeof maxNum !== 'undefined') {
-                        if(!Validation.num(value,parseFloat(maxNum))){
-                            ElMessage.warning('www请输入0-'+maxNum+'内的数字')
-                            callback(new Error('请输入合适范围数字'))
+                            callback(new Error('请输入数字'))
                         }
                     }
                     callback()
                 }
             }
-        } else{
-            check = (rule,value,callback)=>{
+        } else {
+            check = (rule, value, callback) => {
                 const checkResult = checkFunction(value)
-                if(checkResult.valid)
+                if (checkResult.valid)
                     callback()
                 else
                     callback(new Error(checkResult.message))
             }
         }
 
-        emitter.emit('add',item)
+        emitter.emit('add', item)
 
         return {
-            form, label, prefixIcon, rules: {
+            //data
+            form, label, prefixIcon,
+            rules: {
                 value: [{validator: check, trigger: 'blur'}],
-            },item,
+            },
 
+            //components
+            item,
+
+            //methods
             get
         }
     },
-    emits:['add']
+    emits: ['add']
 })
 </script>
 

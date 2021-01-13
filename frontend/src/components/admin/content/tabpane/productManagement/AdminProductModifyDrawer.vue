@@ -1,144 +1,77 @@
 <template>
-    <el-drawer direction="rtl" size="25%" title="商品编辑">
-        <el-form ref="form" :model="form" :rules="rules" status-icon style="margin-left: 2.5rem;margin-right: 2.5rem;">
-            <el-form-item label="Id" prop="id">
-                <el-input disabled prefix-icon="el-icon-s-flag" v-model="form.id"></el-input>
-            </el-form-item>
-            <el-form-item label="名称" prop="name">
-                <el-input v-model="form.name" clearable prefix-icon="el-icon-connection"></el-input>
-            </el-form-item>
-            <el-form-item label="价格" prop="price">
-                <el-input v-model="form.price" clearable prefix-icon="el-icon-price-tag"></el-input>
-            </el-form-item>
-            <el-form-item label="评分" prop="rating">
-                <el-input v-model="form.rating" clearable prefix-icon="el-icon-medal"></el-input>
-            </el-form-item>
-            <el-form-item label="运费" prop="freight">
-                <el-input v-model="form.freight" clearable prefix-icon="el-icon-mobile"></el-input>
-            </el-form-item>
-            <el-form-item label="分类" prop="category">
-                <el-input v-model="form.category" clearable prefix-icon="el-icon-reading"></el-input>
-            </el-form-item>
-            <el-form-item label="库存" prop="num">
-                <el-input v-model="form.num" clearable prefix-icon="el-icon-reading"></el-input>
-            </el-form-item>
-            <el-form-item label="描述" prop="description">
-                <el-input v-model="form.description" clearable prefix-icon="el-icon-collection-tag"></el-input>
-            </el-form-item>
-        </el-form>
-        <el-button type="primary" @click="commit" style="margin-top: 2rem">
-            <i class="el-icon-arrow-right"></i>
-            修改
-            <i class="el-icon-arrow-left"></i>
+    <el-drawer ref="drawer" destroy-on-close direction="rtl" size="25%" title="商品编辑">
+        <Form ref="form" style="margin-left: 2.5rem;margin-right: 2.5rem">
+            <FormItem label="id" prefix-icon="el-icon-s-flag"/>
+            <FormItem label="名称" prefix-icon="el-icon-connection"/>
+            <FormItem label="价格" num-check prefix-icon="el-icon-price-tag">
+                <template #append>元</template>
+            </FormItem>
+            <FormItem label="评分" max-num="5.0" prefix-icon="el-icon-medal">
+                <template #append>0.0-5.0</template>
+            </FormItem>
+            <FormItem label="运费" num-check prefix-icon="el-icon-mobile">
+                <template #append>元</template>
+            </FormItem>
+            <FormItem label="分类" prefix-icon="el-icon-reading"/>
+            <FormItem label="库存" num-check prefix-icon="el-icon-files"/>
+            <FormItem label="描述" no-check prefix-icon="el-icon-collection-tag"/>
+        </Form>
+        <el-button style="margin-top: 2rem" type="primary" @click="commit">
+            <i class="el-icon-arrow-right"/>修改<i class="el-icon-arrow-left"/>
         </el-button>
     </el-drawer>
 </template>
 
 <script>
-import REG from "../../../../../js/constant/REG";
 import axios from "axios"
 import URL from "../../../../../js/constant/URL";
+import Form from "../../../../utils/Form.vue";
+import FormItem from "../../../../utils/FormItem.vue";
+import {defineComponent,ref} from 'vue'
+import {ElMessage} from "element-plus";
+import ProductsUtils from "../../../../../js/utils/ProductsUtils";
 
-export default {
+export default defineComponent({
     name: "AdminProductModifyDrawer",
-    data(){
-        let nameCheck = (rule, value, callback) => {
-            if (!value)
-                callback(new Error('请输入名称'))
-            callback()
+    components: {FormItem, Form},
+    setup(props, context) {
+        const drawer = ref(null)
+        const form = ref(null)
+
+        const init = p=>{
+            setInterval(()=>{
+                form.value.set(p)
+            },1000)
         }
 
-        let priceCheck = (rule, value, callback) => {
-            if (!value) {
-                callback(new Error('请输入价格'))
-            }
-            callback()
-        }
-
-        let ratingCheck = (rule, value, callback) => {
-            if (!value)
-                callback(new Error('请输入评分'))
-            callback()
-        }
-
-        let freightCheck = (rule,value,callback) => {
-            if(!value)
-                callback(new Error('请输入运费'))
-            callback()
-        }
-
-        let categoryCheck = (rule,value,callback) => {
-            if(!value)
-                callback(new Error('请输入分类'))
-            callback()
-        }
-
-        let numCheck = (rule,value,callback) => {
-            if(!value)
-                callback(new Error('请输入库存'))
-            callback()
-        }
-
-        return{
-            form:{
-                id:'',
-                name:'',
-                price:'',
-                rating:'',
-                freight:'',
-                category:'',
-                num:'',
-                description:''
-            },
-            user:'',
-            rules: {
-                name: [{validator: nameCheck, trigger: 'blur'}],
-                price: [{validator: priceCheck, trigger: 'blur'}],
-                rating:[{validator:ratingCheck,trigger:'blur'}],
-                freight: [{validator: freightCheck, trigger: 'blur'}],
-                num:[{validator:numCheck,trigger:'blur'}],
-                category: [{validator: categoryCheck, trigger: 'blur'}],
-            },
-        }
-    },
-    methods:{
-        init(product){
-            this.form.id = product.id
-            this.form.name = product.name
-            this.form.price = product.price
-            this.form.rating = product.rating
-            this.form.freight = product.freight
-            this.form.category = product.category
-            this.form.num = product.num
-            this.form.description = product.description
-        },
-        commit(){
-            this.$refs['form'].validate((valid) => {
-                if(valid){
-                    axios.put(URL.productUpdate+this.form.id,{
-                        name:this.form.name,
-                        price:this.form.price,
-                        rating:this.form.rating,
-                        freight:this.form.freight,
-                        category:this.form.category,
-                        num:this.form.num,
-                        description:this.form.description
-                    }).then(res=>{
-                        if(parseInt(res.data.code) === 110200){
-                            this.$message.success('修改成功')
-                            this.$emit('success',this.form)
-                        }else{
-                            this.$message.error('未知原因修改失败')
+        const commit = _ => {
+            form.value.validate(valid => {
+                if (valid) {
+                    const data = form.value.get()
+                    axios.put(URL.productUpdate + data[0], ProductsUtils.getModifyJSONFromArray(data)).then(res => {
+                        if (Utils.responseCodeEquals(res, 110200)) {
+                            ElMessage.success('修改成功')
+                            context.emit('success', data)
+                        } else {
+                            ElMessage.error('未知原因修改失败')
                         }
                     })
-                }else{
-                    this.$message.warning('请输入合法信息')
+                } else {
+                    ElMessage.warning('请输入合法信息')
                 }
             })
         }
+
+        return {
+            //components
+            form, drawer,
+
+            //methods
+            init,commit
+        }
     },
-    emits:['success']
-}
+    emits: ['success']
+})
 </script>
 
 <style scoped>

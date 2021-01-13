@@ -1,9 +1,8 @@
 <template>
-    <el-empty v-if="none" :description="noneText"></el-empty>
+    <el-empty v-if="noneProduct" :description="noneTipText"></el-empty>
     <el-row v-else>
         <el-col :span="24">
-
-            <el-table v-loading="loadingTable" :data="products">
+            <el-table v-loading="loadingProductTableData" :data="products">
                 <el-table-column fixed label="Id" prop="id" width="300"></el-table-column>
                 <el-table-column label="名称" prop="name" width="300"></el-table-column>
                 <el-table-column label="价格" prop="price" width="300"></el-table-column>
@@ -16,17 +15,11 @@
                     <template #default="scope">
                         <el-tooltip content="编辑" effect="light" placement="top">
                             <el-button circle icon="el-icon-edit" size="medium" type="primary"
-                                       @click="editProduct(scope.row)">
+                                       @click="modifyProduct(scope.row)">
                             </el-button>
                         </el-tooltip>
-                        <el-popconfirm
-                            cancelButtonText='否'
-                            confirmButtonText='是'
-                            icon="el-icon-error"
-                            iconColor="red"
-                            title="确定删除该商品吗？"
-                            @confirm="deleteProduct(scope.row)"
-                        >
+                        <el-popconfirm cancelButtonText='否' confirmButtonText='是' icon="el-icon-error" iconColor="red"
+                            title="确定删除该商品吗？" @confirm="deleteProduct(scope.row)">
                             <template #reference>
                                 <el-button circle icon="el-icon-close" size="medium" type="danger">
                                 </el-button>
@@ -37,18 +30,18 @@
             </el-table>
         </el-col>
         <el-col>
-            <el-row justify="end" type="flex" style="margin-top: 1.5rem">
+            <el-row justify="end" style="margin-top: 1.5rem" type="flex">
                 <el-col :span="1">
-                    <el-tooltip placement="left" content="添加商品" effect="light">
-                        <el-button type="primary" circle icon="el-icon-plus" size="medium" @click="showAddDrawer"></el-button>
+                    <el-tooltip content="添加商品" effect="light" placement="left">
+                        <el-button circle icon="el-icon-plus" size="medium" type="primary"
+                                   @click="addProduct"></el-button>
                     </el-tooltip>
                 </el-col>
             </el-row>
         </el-col>
     </el-row>
-    <AdminProductModifyDrawer ref="modifyDrawer" v-model="modifyDrawer"
-                              @success="modifyTable"></AdminProductModifyDrawer>
-    <AdminProductAddDrawer v-model="addDrawer" @success="addTable"></AdminProductAddDrawer>
+    <AdminProductModifyDrawer ref="modifyDrawer" v-model="showModifyDrawer" @success="modifyProductSuccessCallback"></AdminProductModifyDrawer>
+    <AdminProductAddDrawer v-model="showAddDrawer" @success="addProductSuccessCallback"></AdminProductAddDrawer>
 </template>
 
 <script>
@@ -56,70 +49,79 @@ import AdminProductModifyDrawer from "./AdminProductModifyDrawer.vue";
 import axios from "axios";
 import URL from "../../../../../js/constant/URL";
 import AdminProductAddDrawer from "./AdminProductAddDrawer.vue";
-import {defineComponent} from 'vue'
+import {defineComponent,ref} from 'vue'
+import Utils from "../../../../../js/utils/Utils";
+import {ElMessage} from "element-plus";
+import ProductsUtils from "../../../../../js/utils/ProductsUtils";
 
 export default defineComponent({
     name: "AdminProductManagementTabPane",
     components: {AdminProductAddDrawer, AdminProductModifyDrawer},
-    data() {
-        return {
-            products: [],
-            modifyDrawer: false,
-            addDrawer: false,
-            loadingTable: true,
-            none: false,
-            noneText: '商品列表为空',
-        }
-    },
-    methods: {
-        editProduct(row) {
-            this.$refs.modifyDrawer.init(row)
-            this.modifyDrawer = true
-        },
-        deleteProduct(row) {
-            axios.delete(URL.productDelete+row.id).then(res=>{
-                let code = parseInt(res.data.code)
-                if(code === 110300){
-                    this.products.forEach((item, i) => {
-                        if (item.id === row.id)
-                            this.products.splice(i, 1)
-                    })
-                    this.$message.success('删除成功')
-                }
-            })
-        },
-        modifyTable(p) {
-            let target = this.products.find(item => {
-                return item.id === p.id
-            })
-            target.name = p.name
-            target.rating = p.rating
-            target.freight = p.freight
-            target.category = p.category
-            target.description = p.description
-            target.num = p.num
-        },
-        addTable(p) {
-            this.products.push(p)
-        },
-        showAddDrawer(){
-            this.addDrawer = true
-        }
-    },
-    mounted() {
+    setup() {
+        const noneProduct = ref(false)
+        const noneTipText = ref('商品列表为空')
+        const loadingProductTableData = ref(true)
+        const products = ref([])
+        const modifyDrawer = ref(null)
+        const showModifyDrawer = ref(false)
+        const showAddDrawer = ref(false)
+
         axios.get(URL.productGetAll).then(res => {
-            let code = parseInt(res.data.code)
-            if (code === 110100) {
-                this.products = res.data.data
-                this.loadingTable = false
+            if (Utils.responseCodeEquals(res, 110100)) {
+                products.value = Utils.getResponseData(res)
+                loadingProductTableData.value = false
             } else {
-                this.none = true
-                if (code !== 110101) {
-                    this.none = '未知原因加载失败'
+                noneProduct.value = true
+                if (Utils.responseCodeNotEquals(res, 110101)) {
+                    noneTipText.value = '未知原因加载失败'
                 }
             }
         })
-    },
+
+        const modifyProduct = row => {
+            showModifyDrawer.value = true
+            modifyDrawer.value.init(row)
+        }
+
+        const addProduct = _ =>{
+            showAddDrawer.value = true
+        }
+
+        const deleteProduct = row => {
+            axios.delete(URL.productDelete + row.id).then(res => {
+                if (Utils.responseCodeEquals(res, 110300)) {
+                    products.value.forEach((item, i) => {
+                        if (item.id === row.id) {
+                            products.value.splice(i, 1)
+                        }
+                    })
+                    ElMessage.success('删除成功')
+                }
+            })
+        }
+
+        const modifyProductSuccessCallback = p => {
+            const target = products.value.find(item => {
+                return item.id === p
+            })
+            ProductsUtils.setModifiedJSONFromArray(target,p)
+        }
+
+        const addProductSuccessCallback = p => {
+            products.value.push(ProductsUtils.getShowJSONFromArray(p))
+        }
+
+        return {
+            //data
+            noneProduct,noneTipText,loadingProductTableData,products,showModifyDrawer,showAddDrawer,
+
+            //components
+            modifyDrawer,
+
+            //methods
+            modifyProduct,addProduct,deleteProduct,modifyProductSuccessCallback,addProductSuccessCallback,
+        }
+    }
 })
 </script>
 

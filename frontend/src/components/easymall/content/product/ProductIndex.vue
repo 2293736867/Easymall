@@ -70,7 +70,7 @@
 <script>
 import URL from "../../../../js/constant/URL";
 import axios from 'axios'
-import router from "../../../../js/router/router";
+import router from "../../../../js/router/Router";
 import Categories from "../../../../js/constant/Categories";
 
 export default {

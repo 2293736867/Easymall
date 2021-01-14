@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import router from "../../../../../js/router/router";
+import router from "../../../../../js/router/Router";
 import ShoppingCardDrawer from "../../index/header/drawer/ShoppingCardDrawer.vue";
 import FavouriteDrawer from "../../index/header/drawer/FavouriteDrawer.vue";
 import OrdersIndexDrawer from "../../index/header/drawer/orders/OrdersIndexDrawer.vue";
@@ -49,7 +49,6 @@ export default {
             searchBar: '',
             signInDrawer: false,
             signUpDrawer: false,
-            personalDrawer: false,
             shoppingCardDrawer: false,
             favouriteDrawer: false,
             ordersDrawer: false,
@@ -78,10 +77,6 @@ export default {
         showSignUpDrawer() {
             this.$refs.signUp.init()
             this.signUpDrawer = true
-        },
-        showPersonalDrawer() {
-            this.$refs.personal.init()
-            this.personalDrawer = true
         },
         showShoppingCardDrawer() {
             this.$refs.shoppingCard.init()

@@ -1,16 +1,33 @@
 <template>
     <el-form ref="item" :model="form" :rules="rules" status-icon>
         <el-form-item :label="label" prop="value">
-            <el-input v-model="form.value" :prefix-icon="prefixIcon" clearable v-if="password" type="password" show-password>
+            <el-input v-if="password" v-model="form.value" :prefix-icon="prefixIcon" clearable show-password
+                      type="password" @change="inputChange">
                 <template v-if="$slots.append" #append>
                     <slot name="append"></slot>
                 </template>
             </el-input>
-            <el-input v-model="form.value" :prefix-icon="prefixIcon" clearable v-else :disabled="disabled">
+            <el-input v-if="!password && !verificationCode" v-model="form.value" :disabled="disabled"
+                      :prefix-icon="prefixIcon"
+                      clearable @change="inputChange">
                 <template v-if="$slots.append" #append>
                     <slot name="append"></slot>
                 </template>
             </el-input>
+            <div v-if="verificationCode">
+                <br>
+                <el-row>
+                    <el-col :span="10">
+                        <el-input v-model="form.value" clearable prefix-icon="el-icon-aim">
+                        </el-input>
+                    </el-col>
+                    <el-col :span="14">
+                        <el-image v-loading="loadingVerificationCodeImage" :src="verificationCodeImage"
+                                  element-loading-spinner="el-icon-loading" style="margin-top: 0.3rem"
+                                  @click="resetVerificationCode"></el-image>
+                    </el-col>
+                </el-row>
+            </div>
         </el-form-item>
     </el-form>
 </template>
@@ -19,6 +36,10 @@
 import {defineComponent, ref} from 'vue'
 import emitter from "../../js/utils/Emitter";
 import Validation from "../../js/utils/Validation";
+import Event from "../../js/constant/Event";
+import axios from 'axios'
+import URL from "../../js/constant/URL";
+import Utils from "../../js/utils/Utils";
 
 export default defineComponent({
     name: "FormItem",
@@ -29,8 +50,9 @@ export default defineComponent({
         noCheck: Boolean,
         maxNum: String,
         numCheck: Boolean,
-        password:Boolean,
-        disabled:Boolean,
+        password: Boolean,
+        disabled: Boolean,
+        verificationCode: Boolean,
     },
     setup(props) {
         let label = props.label
@@ -41,8 +63,12 @@ export default defineComponent({
         let numCheck = props.numCheck
         let password = props.password
         let disabled = props.disabled
-        let check = new Function()
+        let verificationCode = props.verificationCode
 
+        const verificationCodeImage = ref('')
+        const loadingVerificationCodeImage = ref(true)
+
+        let check = new Function()
         const item = ref(null)
         const form = ref({
             value: ''
@@ -52,11 +78,36 @@ export default defineComponent({
             return form.value.value
         }
 
-        const getType = _=>{
-            return password ? 'password' : ''
+        const inputChange = _ => {
+            emitter.emit(Event.FORM_ITEM_CHANGED)
         }
 
-        if (!label) {
+        const resetVerificationCode = _ => {
+            loadingVerificationCodeImage.value = true
+            axios.get(URL.code).then(res => {
+                verificationCodeImage.value = 'data:image/png;base64,' + Utils.getResponseData(res)
+                loadingVerificationCodeImage.value = false
+            })
+        }
+
+        resetVerificationCode()
+        if (password) {
+            label = '密码'
+        } else if (verificationCode) {
+            label = '验证码'
+            checkFunction = value => {
+                let result = false
+                let message = ''
+                if (!value) {
+                    message = '请输入验证码'
+                } else if (value.length !== 4) {
+                    message = '请输入4位验证码'
+                } else {
+                    result = true
+                }
+                return Utils.validatedResult(result, message)
+            }
+        } else if (!label) {
             label = '内容'
         }
         if (!prefixIcon) {
@@ -69,7 +120,7 @@ export default defineComponent({
                 }
             } else {
                 check = function (rule, value, callback) {
-                    if (!value)
+                    if (value.isEmpty())
                         callback(new Error('请输入' + label))
                     if (numCheck || typeof maxNum !== 'undefined') {
                         if (Validation.isNum(value)) {
@@ -79,14 +130,14 @@ export default defineComponent({
                                 if (typeof maxNum === 'undefined') {
                                     callback()
                                 } else {
-                                    if (Validation.isLessEqualThan(value,maxNum)) {
+                                    if (Validation.isLessEqualThan(value, maxNum)) {
                                         callback()
                                     } else {
                                         callback(new Error('请输入合适范围内的数字'))
                                     }
                                 }
                             }
-                        }else{
+                        } else {
                             callback(new Error('请输入数字'))
                         }
                     }
@@ -96,27 +147,34 @@ export default defineComponent({
         } else {
             check = (rule, value, callback) => {
                 const checkResult = checkFunction(value)
-                if(typeof checkResult.valid === 'undefined'){
-                    checkResult.catch(err=>{
+                if (typeof checkResult.valid === 'undefined') {
+                    checkResult.catch(err => {
                         callback(new Error(err))
-                    }).then(_=>{
+                    }).then(_ => {
                         callback()
                     })
-                }else{
-                    if(checkResult.valid){
+                } else {
+                    if (checkResult.valid) {
                         callback()
-                    }else{
+                    } else {
                         callback(new Error(checkResult.message))
                     }
                 }
             }
         }
 
-        emitter.emit('add', item)
+        emitter.emit(Event.FORM_ITEM_ADD, item)
 
         return {
             //data
-            form, label, prefixIcon,password,disabled,
+            form,
+            label,
+            prefixIcon,
+            password,
+            disabled,
+            verificationCode,
+            loadingVerificationCodeImage,
+            verificationCodeImage,
             rules: {
                 value: [{validator: check, trigger: 'blur'}],
             },
@@ -125,7 +183,9 @@ export default defineComponent({
             item,
 
             //methods
-            get,getType
+            get,
+            inputChange,
+            resetVerificationCode,
         }
     },
     emits: ['add']

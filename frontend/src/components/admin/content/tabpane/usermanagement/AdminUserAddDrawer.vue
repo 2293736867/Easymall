@@ -65,10 +65,7 @@ export default defineComponent({
             } else {
                 result = true
             }
-            return {
-                valid: result,
-                message: message
-            }
+            return Utils.validatedResult(result,message)
         }
 
         const emailCheck = value => {
@@ -81,10 +78,7 @@ export default defineComponent({
             } else {
                 result = true
             }
-            return {
-                valid: result,
-                message: message
-            }
+            return Utils.validatedResult(result,message)
         }
 
         const commit = _ => {

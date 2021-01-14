@@ -79,8 +79,8 @@ export default defineComponent({
         })
 
         const modifyProduct = row => {
-            showModifyDrawer.value = true
             modifyDrawer.value.init(row)
+            showModifyDrawer.value = true
         }
 
         const addProduct = _ =>{

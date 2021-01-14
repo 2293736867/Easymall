@@ -44,10 +44,7 @@ export default defineComponent({
             } else {
                 result = true
             }
-            return {
-                valid: result,
-                message: message
-            }
+            return Utils.validatedResult(result,message)
         }
 
         const emailCheck = value => {
@@ -60,10 +57,7 @@ export default defineComponent({
             } else {
                 result = true
             }
-            return {
-                valid: result,
-                message: message
-            }
+            return Utils.validatedResult(result,message)
         }
 
         const init = user => {
@@ -76,24 +70,29 @@ export default defineComponent({
         }
 
         const commit = _ => {
-            form.value.validate((valid) => {
-                if (valid) {
-                    const tempName = username.value.get()
-                    if (tempName !== oldUsername) {
-                        axios.get(URL.userCheckUsername + tempName).then(res => {
-                            if (Utils.responseCodeEquals(res, 100104)) {
-                                ElMessage.warning('用户名已存在')
-                            } else {
-                                userUpdate()
-                            }
-                        })
+            if(form.value.ifChanged()) {
+
+                form.value.validate((valid) => {
+                    if (valid) {
+                        const tempName = username.value.get()
+                        if (tempName !== oldUsername) {
+                            axios.get(URL.userCheckUsername + tempName).then(res => {
+                                if (Utils.responseCodeEquals(res, 100104)) {
+                                    ElMessage.warning('用户名已存在')
+                                } else {
+                                    userUpdate()
+                                }
+                            })
+                        } else {
+                            userUpdate()
+                        }
                     } else {
-                        userUpdate()
+                        ElMessage.warning('请输入合法信息')
                     }
-                } else {
-                    ElMessage.warning('请输入合法信息')
-                }
-            })
+                })
+            }else{
+                ElMessage.info('未修改信息')
+            }
         }
 
         const userUpdate = _ => {

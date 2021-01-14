@@ -105,7 +105,6 @@ export default defineComponent({
         }
 
         const modifyUserSuccessCallback = u => {
-            console.log(u)
             let target = users.value.find(item => {
                 return item.id === u[0]
             })

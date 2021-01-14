@@ -7,6 +7,7 @@
 <script>
 import {defineComponent} from 'vue'
 import emitter from "../../js/utils/Emitter";
+import Event from "../../js/constant/Event";
 
 export default defineComponent({
     name: "Form",
@@ -14,6 +15,7 @@ export default defineComponent({
         let items = []
         let values = []
         let result = true
+        let changed = false
         const validate = (callback) => {
             for (const i in items) {
                 if (items.hasOwnProperty(i)) {
@@ -29,15 +31,19 @@ export default defineComponent({
             }
         }
 
-        const set = value =>{
+        const set = value => {
             let i = 0
-            for(const k in value){
-                if(value.hasOwnProperty(k)){
-                    if(items.hasOwnProperty(i)){
+            for (const k in value) {
+                if (value.hasOwnProperty(k)) {
+                    if (items.hasOwnProperty(i)) {
                         items[i++].value.model.value = value[k]
                     }
                 }
             }
+        }
+
+        const ifChanged = _ => {
+            return changed
         }
 
         const get = _ => {
@@ -49,13 +55,17 @@ export default defineComponent({
             return values
         }
 
-        emitter.on('add', formItem => {
+        emitter.on(Event.FORM_ITEM_ADD, formItem => {
             items.push(formItem)
+        })
+
+        emitter.on(Event.FORM_ITEM_CHANGED, _ => {
+            changed = true
         })
 
         return {
             //methods
-            validate,get,set
+            validate, get, set, ifChanged
         }
     }
 })

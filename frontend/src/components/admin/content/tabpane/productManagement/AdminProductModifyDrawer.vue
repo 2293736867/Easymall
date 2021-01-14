@@ -1,7 +1,7 @@
 <template>
     <el-drawer ref="drawer" destroy-on-close direction="rtl" size="25%" title="商品编辑">
         <Form ref="form" v-loading="loading" style="margin-left: 2.5rem;margin-right: 2.5rem">
-            <FormItem label="id" prefix-icon="el-icon-s-flag"></FormItem>
+            <FormItem label="id" prefix-icon="el-icon-s-flag" disabled></FormItem>
             <FormItem label="名称" prefix-icon="el-icon-connection"></FormItem>
             <FormItem label="价格" num-check prefix-icon="el-icon-price-tag">
                 <template #append>元</template>
@@ -27,7 +27,7 @@ import axios from "axios"
 import URL from "../../../../../js/constant/URL";
 import Form from "../../../../utils/Form.vue";
 import FormItem from "../../../../utils/FormItem.vue";
-import {defineComponent,ref} from 'vue'
+import {defineComponent, ref} from 'vue'
 import {ElMessage} from "element-plus";
 import ProductsUtils from "../../../../../js/utils/ProductsUtils";
 import Utils from "../../../../../js/utils/Utils";
@@ -40,40 +40,43 @@ export default defineComponent({
         const form = ref(null)
         const loading = ref(true)
 
-        const init = p=>{
+        const init = p => {
             loading.value = true
-            setTimeout(()=>{
+            setTimeout(() => {
                 form.value.set(ProductsUtils.getPreModifyArrayFromJSON(p))
                 loading.value = false
-            },500)
+            }, 500)
         }
 
         const commit = _ => {
-            form.value.validate(valid => {
-                if (valid) {
-                    const data = form.value.get()
-                    console.log(data)
-                    axios.put(URL.productUpdate + data[0], ProductsUtils.getModifyJSONFromArray(data)).then(res => {
-                        if (Utils.responseCodeEquals(res, 110200)) {
-                            ElMessage.success('修改成功')
-                            context.emit('success', data)
-                            drawer.value.handleClose()
-                        } else {
-                            ElMessage.error('未知原因修改失败')
-                        }
-                    })
-                } else {
-                    ElMessage.warning('请输入合法信息')
-                }
-            })
+            if (form.value.ifChanged()){
+                form.value.validate(valid => {
+                    if (valid) {
+                        const data = form.value.get()
+                        axios.put(URL.productUpdate + data[0], ProductsUtils.getModifyJSONFromArray(data)).then(res => {
+                            if (Utils.responseCodeEquals(res, 110200)) {
+                                ElMessage.success('修改成功')
+                                context.emit('success', data)
+                                drawer.value.handleClose()
+                            } else {
+                                ElMessage.error('未知原因修改失败')
+                            }
+                        })
+                    } else {
+                        ElMessage.warning('请输入合法信息')
+                    }
+                })
+            } else {
+                ElMessage.info('未修改信息')
+            }
         }
 
         return {
             //components
-            form, drawer,loading,
+            form, drawer, loading,
 
             //methods
-            init,commit
+            init, commit
         }
     },
     emits: ['success']

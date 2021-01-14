@@ -21,6 +21,18 @@ const Utils = {
     },
     getResponseData(result){
         return result.data.data
+    },
+    getResponseDataLength(result){
+        return result.data.data.length
+    },
+    responseDataLengthIsZero(result){
+        return result.data.data.length === 0
+    },
+    validatedResult(valid,message){
+        return{
+            valid:valid,
+            message:message
+        }
     }
 }
 

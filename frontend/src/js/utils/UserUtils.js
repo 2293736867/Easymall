@@ -33,6 +33,13 @@ const UserUtils = {
             email:arr[3],
         }
     },
+    getSignInJSONFromArray:arr=>{
+        return{
+            username:arr[0],
+            password:Utils.sha3(arr[1]),
+            code:arr[2],
+        }
+    }
 }
 
 export default UserUtils

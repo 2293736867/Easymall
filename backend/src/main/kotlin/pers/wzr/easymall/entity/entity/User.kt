@@ -35,7 +35,7 @@ class User(
 
     @NotBlank(
         message = ValidationMessage.NICKNAME_IS_BLANK,
-        groups = [ValidationGroup.UserSignUp::class,ValidationGroup.UserUpdate::class]
+        groups = [ValidationGroup.UserUpdate::class]
     )
     var nickname = nickname
 

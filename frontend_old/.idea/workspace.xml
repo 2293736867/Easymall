@@ -5,12 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2deb51d2-bb2b-45f0-8050-eecf467a2f4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../EasymallWeb/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EasymallWeb/.idea/EasymallWeb.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EasymallWeb/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EasymallWeb/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/banner/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/banner/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/banner/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/banner/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/banner/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/default/Product.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/default/SideBarUser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/default/User.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/default/User.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/logo/Favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/public/logo/Logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/utils/Form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/utils/FormItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/content/index/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/content/index/header/IndexNavBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/content/index/header/IndexTopBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/content/index/header/drawer/SignInDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/content/index/header/drawer/SignUpDrawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/router/IndexRouter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/components/web/router/UserRouter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/constant/Categories.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/constant/Config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/constant/Event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/constant/REG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/constant/URL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/router/Router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EasymallWeb/src/js/store/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EasymallWeb/.idea/EasymallWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../EasymallWeb/.idea/EasymallWeb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EasymallWeb/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../EasymallWeb/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EasymallWeb/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../EasymallWeb/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EasymallWeb/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../EasymallWeb/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EasymallWeb/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../EasymallWeb/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EasymallWeb/src/components/HelloWorld.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../EasymallWeb/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../EasymallWeb/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/element-plus-vite-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/element-plus-vite-starter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +87,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
